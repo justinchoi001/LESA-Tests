@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+</head>
+<body>
+<h1 id="lesa---customer-feedback---p1-escalation">LESA - Customer Feedback - P1 Escalation</h1>
+<hr />
+<h4 id="prerequisites">Prerequisites:</h4>
+<ul>
+<li>Customer account</li>
+<li>Liferay CSE account</li>
+<li>Partner (non manager) account</li>
+</ul>
+<h4 id="description">Description:</h4>
+<p>This test is designed to have users test the feedback feature's pagination controls. Liferay CSE can view customer feedback which number in the hundreds and thousands. Pagination can be lost by advancing to the next page. Sign in as a CSE and assert that the pagination control preferences are not lost.</p>
+<hr />
+<h4 id="road-map">Road Map:</h4>
+<ol style="list-style-type: decimal">
+<li><a href="#SignInAsACSE">Sign In as a CSE</a></li>
+<li><a href="#ViewWaitingFeedback">View Waiting Feedback</a></li>
+<li><a href="#ChangeWaitingPaginationDelta">Change Waiting Pagination Delta</a></li>
+<li><a href="#ViewAllFeedback">View All Feedback</a></li>
+<li><a href="#ChangeAllFeedbackPaginationDelta">Change All Feedback Pagination Delta</a></li>
+</ol>
+<hr />
+<h4 id="test-steps">Test Steps:</h4>
+<ol style="list-style-type: decimal">
+<li><a href="#SignInAsACSE" name="SignInAsACSE"></a>Navigate to http://www-uat.liferay.com</li>
+<li>Click Menu &gt; Sign In</li>
+<li>Enter the following:
+<ol style="list-style-type: lower-alpha">
+<li><strong>Email Address:</strong> brian.suh@liferay.com.broken<br /></li>
+<li><strong>Password:</strong> test</li>
+</ol></li>
+<li>Click Sign In</li>
+<li>Click Menu &gt; User Profile</li>
+<li>Click Support</li>
+<li>Click the Feedback tab<br /><a href="#ViewWaitingFeedback" name="ViewWaitingFeedback">View Waiting Feedback</a></li>
+<li>Click Waiting</li>
+<li>Assert the default number of Items is 20<br /><a href="#ChangeWaitingPaginationDelta" name="ChangeWaitingPaginationDelta">Change Waiting Pagination Delta</a></li>
+<li>Select 50 from the Item drop down</li>
+<li>Assert that 50 results display in the results area</li>
+<li>Click Next</li>
+<li>Assert that 50 results display in the results area</li>
+<li>Click Last</li>
+<li>Assert the number of Items is 50</li>
+<li>Click Previous</li>
+<li>Assert that 50 results display in the results area</li>
+<li>Click First</li>
+<li>Assert that 50 results display in the results area<br /><a href="#ViewAllFeedback" name="ViewAllFeedback">View All Feedback</a></li>
+<li>Click All Feedback</li>
+<li>Assert the default number of Items is 20<br /><a href="#ChangeAllFeedbackPaginationDelta" name="ChangeAllFeedbackPaginationDelta">Change All Pagination Delta</a></li>
+<li>Select 50 from the Item drop down</li>
+<li>Assert that 50 results display in the results area</li>
+<li>Click Next</li>
+<li>Assert that 50 results display in the results area</li>
+<li>Click Last</li>
+<li>Assert the number of Items is 50</li>
+<li>Click Previous</li>
+<li>Assert that 50 results display in the results area</li>
+<li>Click First</li>
+<li>Assert that 50 results display in the results area</li>
+</ol>
+</body>
+</html>
