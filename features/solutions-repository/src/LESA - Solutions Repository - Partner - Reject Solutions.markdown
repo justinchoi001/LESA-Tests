@@ -1,4 +1,4 @@
-LESA - Solutions Repository - Partner - Accept Solutions
+LESA - Solutions Repository - Partner - Reject Solutions
 ========================================================
 ****
 #### Prerequisites: ####
@@ -15,8 +15,9 @@ This test is designed to have users test the solutions repository's acceptance f
 1. [Sign In As Customer](#SignInAsCustomer)
 1. [Open A Ticket](#OpenATicket)
 1. [Sign In As Partner](#SignInAsPartner)
-1. [Resolve The ticket](#ResolveTheTicket)
-
+1. [Offer Solution](#OfferSolution)
+1. [Reject Preproduction Solution](#RejectPreproductionSolution)
+1. [Reject Production Solution](#RejectProductionSolution)
 
 ****
 
@@ -74,9 +75,9 @@ This test is designed to have users test the solutions repository's acceptance f
 1. Click Support
 1. Click My Open Tickets
 1. Assert the ticket displays in the results (e.g. IHG-57)    
-<a href="#ResolveTheTicket" name="ResolveTheTicket">Resolve The Ticket</a>
+<a href="#OfferSolution" name="OfferSolution">Offer Solution</a>
 1. Click the newly created ticket's link
-1. Assert the Propose Solution button displays    
+1. Assert the Propose Solution button displays
 1. Click Propose Solution
 1. Enter "Solutions Repository test" in the Instructions field
 1. Upload an .xml file
@@ -93,13 +94,56 @@ This test is designed to have users test the solutions repository's acceptance f
 1. Click Menu > User Profile
 1. Click Support
 1. Click the newly created ticket's link in the results field
-1. Assert the Solutions Repository solution pop-up displays    
+1. Assert the Solutions Repository solution pop-up displays     
 ![screenshot01.jpg](../images/LESA-Solutions-Repository-Partner-Accept Solutions/screenshot01.jpg)
 1. Close the pop-up window
 1. Assert that the Solution Proposed tab displays on the right side
-1. Click the Solution Proposed tab
+1. Click the Solution Proposed tab    
+<a href="#RejectPreproductionSolution" name="RejectPreproductionSolution">Reject Preproduction Solution</a>
 1. Assert the Solutions Repository solution pop-up displays
+1. Click No 
+1. Select "The fix did not deploy" from the "What is the reason for rejecting the ticket solution?"
+1. Enter "The fix is not working." in the Explanation field
+1. Click the Send button
+1. Assert "Your request completed successfully." displays
+1. Assert that "Investigating" displays in the Status section
+1. Assert that "N/A" displays in the Resolution section
+1. Assert the Solution Proposed tab does not display
+1. Sign Out
+1. Click Menu > Sign In
+1. Enter the following:    
+	(a) **Email Address:**	jogen.gondalia@cignex.com.broken    
+	(b) **Password:**	test
+1. Click Sign In
+1. Click Menu > User Profile
+1. Click Support
+1. Click My Open Tickets
+1. Click the newly created ticket's link
+1. Assert the Propose Solution button displays
+1. Click Propose Solution
+1. Enter "Solutions Repository test" in the Instructions field
+1. Upload an .xml file
+1. Click Save
+1. Assert that "Your request completed successfully" message displays
+1. Assert that "Solution Proposed" displays in the Status box
+1. Assert that "Customer" displays in the Pending box
+1. Sign Out    
+1. Click Menu > Sign In
+1. Enter the following:    
+	(a) **Email Address:**	vineith.kaul@ihg.com.broken    
+	(b) **Password:**	test
+1. Click Sign In
+1. Click Menu > User Profile
+1. Click Support
+1. Click the newly created ticket's link in the results field
+1. Assert the Solutions Repository solution pop-up displays     
+![screenshot01.jpg](../images/LESA-Solutions-Repository-Partner-Accept Solutions/screenshot01.jpg)
 1. Click Yes to accept the preproduction resolution
-1. Click Yes to accept the production resolution
-1. Assert that "Closed" displays in the Status box
-1. Assert that "Completed" displays in the Resolution box
+1. Click No to reject the production resolution
+1. Select "The fix did not deploy" from the "What is the reason for rejecting the ticket solution?"
+1. Enter "The fix is not working." in the Explanation field
+1. Click Send
+1. Assert "Your request completed successfully." displays
+1. Assert that "Investigating" displays in the Status section
+1. Assert that "N/A" displays in the Resolution section
+1. Assert the Solution Proposed tab does not display
