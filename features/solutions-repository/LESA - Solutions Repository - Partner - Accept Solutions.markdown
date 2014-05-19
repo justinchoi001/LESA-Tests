@@ -76,8 +76,7 @@ This test is designed to have users test the solutions repository's acceptance f
 1. Assert the ticket displays in the results (e.g. IHG-57)    
 <a href="#ResolveTheTicket" name="ResolveTheTicket">Resolve The Ticket</a>
 1. Click the newly created ticket's link
-1. Assert the Proposed Solution button displays    
-![screenshot01.jpg](https://github.com/liferay/liferay-qa-ee/raw/master/features/solutions-repository/images/LESA-Solutions-Repository-Partner-Accept Solutions/screenshot01.jpg)
+1. Assert the Propose Solution button displays    
 1. Click Propose Solution
 1. Enter "Solutions Repository test" in the Instructions field
 1. Upload an .xml file
@@ -94,12 +93,13 @@ This test is designed to have users test the solutions repository's acceptance f
 1. Click Menu > User Profile
 1. Click Support
 1. Click the newly created ticket's link in the results field
-1. Assert the Solutions Repository solution pop-up displays
+1. Assert the Solutions Repository solution pop-up displays    
+![screenshot01.jpg](https://github.com/liferay/liferay-qa-ee/raw/master/features/solutions-repository/images/LESA-Solutions-Repository-Partner-Accept Solutions/screenshot01.jpg)
 1. Close the pop-up window
 1. Assert that the Solution Proposed tab displays on the right side
 1. Click the Solution Proposed tab
 1. Assert the Solutions Repository solution pop-up displays
-1. Click Yes to accept the pre-production resolution
+1. Click Yes to accept the preproduction resolution
 1. Click Yes to accept the production resolution
 1. Assert that "Closed" displays in the Status box
 1. Assert that "Completed" displays in the Resolution box
