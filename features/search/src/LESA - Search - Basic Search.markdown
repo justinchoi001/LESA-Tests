@@ -1,5 +1,5 @@
-LESA - Solutions Repository - Liferay - Accept Solutions
-========================================================
+LESA - Search - Basic Search
+============================
 ****
 #### Prerequisites: ####
 * Developer-Customer account
