@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="build" default="help" basedir=".">
+	<property name="project.dir" value="." />
+
+	<import file="build-common.xml" />
+
+	<path id="lib.classpath">
+		<fileset dir="${project.dir}/lib" includes="*.jar" />
+		<fileset dir="${project.dir}/java" includes="*.jar" />
+	</path>
+
+	<path id="project.classpath">
+		<pathelement path="${classpath}" />
+		<path refid="lib.classpath" />
+	</path>
+
+	<target name="all">
+		<antcall target="clean" />
+		<antcall target="compile" />
+		<antcall target="deploy" />
+	</target>
+
+	<target name="build-markdown">
+		<java
+			classname="com.liferay.qa.MarkdownBuilder"
+			classpathref="project.classpath"
+			fork="true"
+			maxmemory="1024m"
+			newenvironment="true"
+			failonerror="true"
+		/>
+	</target>
+
+	<target name="clean">
+		<delete dir="java/classes" />
+	</target>
+
+	<target name="compile">
+		<echo file="java/src/build-ext.properties">
+base.dir=${base.dir}
+pandoc.app=${pandoc.app}
+os.unix=${os.unix}
+		</echo>
+
+		<antcall target="compile-java">
+			<param name="javac.classpathref" value="project.classpath" />
+			<param name="javac.destdir" value="java/classes" />
+			<param name="javac.srcdir" value="java/src" />
+		</antcall>
+	</target>
+
+	<target name="compile-java">
+		<copy todir="${javac.destdir}">
+			<fileset dir="${javac.srcdir}" excludes="**/*.java" />
+		</copy>
+
+		<javac
+			classpathref="${javac.classpathref}"
+			destdir="${javac.destdir}"
+			includeAntRuntime="false"
+			srcdir="${javac.srcdir}"
+		/>
+	</target>
+
+	<target name="deploy">
+		<zip destfile="java/liferay-qa.jar">
+			<zipfileset
+				dir="java/classes"
+				includes="**/*.class,**/*.properties,**/*.xml"
+			/>
+		</zip>
+	</target>
+
+	<target name="make-list">
+		<delete file="file-list.txt" />
+
+		<for param="markdown.file">
+			<path>
+				<fileset
+					dir="${project.dir}"
+					excludes="**/src/*.markdown"
+					includes="**/*.markdown"
+				/>
+			</path>
+			<sequential>
+				<var name="markdown.file.content" unset="true" />
+				<var name="priority" unset="true" />
+				<var name="estimate" unset="true" />
+				<var name="edition" unset="true" />
+
+				<loadfile property="markdown.file.content" srcfile="@{markdown.file}" />
+
+				<var name="markdown" unset="true" />
+				<property name="markdown" value="@{markdown.file}" />
+
+				<script classpathref="project.classpath" language="beanshell">
+					<![CDATA[
+						String markdownFileContent = project.getProperty("markdown.file.content");
+						String markdownFile = project.getProperty("markdown");
+
+						int x;
+						int y;
+
+						String priority;
+
+						if (!markdownFileContent.contains("**Priority:**")) {
+							priority = "n/a";
+						}
+						else {
+							x = markdownFileContent.indexOf("**Priority:**") + 14;
+							y = markdownFileContent.indexOf("\n", x);
+
+							priority = markdownFileContent.substring(x, y).trim();
+
+							if (!priority.equals("1") && !priority.equals("2") && !priority.equals("3") &&
+								!priority.equals("4") && !priority.equals("5")) {
+
+								priority = "n/a";
+							}
+						}
+
+						String estimate;
+
+						if (!markdownFileContent.contains("**Estimate:**")) {
+							estimate = "n/a";
+						}
+						else {
+							x = markdownFileContent.indexOf("**Estimate:**") + 14;
+							y = markdownFileContent.indexOf("\n", x);
+
+							estimate = markdownFileContent.substring(x, y).trim();
+
+							if (estimate.equals("")) {
+								estimate = "n/a";
+							}
+						}
+
+						String edition;
+
+						if (!markdownFileContent.contains("**Product Edition:**")) {
+							edition = "n/a";
+						}
+						else {
+							x = markdownFileContent.indexOf("**Product Edition:**") + 21;
+							y = markdownFileContent.indexOf("\n", x);
+
+							edition = markdownFileContent.substring(x, y).trim();
+
+							if (edition.equals("")) {
+								edition = "n/a";
+							}
+						}
+
+						project.setProperty("priority", priority);
+						project.setProperty("estimate", estimate);
+						project.setProperty("edition", edition);
+
+					]]>
+				</script>
+
+				<echo file="file-list.txt" append="true">@{markdown.file}	${priority}	${estimate}	${edition}
+</echo>
+			</sequential>
+		</for>
+	</target>
+</project>

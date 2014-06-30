@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+
+<!--
+
+This ant script was created for converting the separate markdown chapter files of our documents into complete markdown, html, odt, and epub files.
+
+Remember to use the script in the root directory of the document to be converted, NOT THIS ONE.
+
+For example, use the "ant markdown-to-all" command from the documentation/trunk/userGuide directory to convert the userGuide into complete English markdown, html, odt, and epub documents.
+
+ -->
+
+<project name="Markdown Test Case Repository and Converter" default="echo-props" basedir=".">
+	<property name="project.dir" value=".." />
+
+    <property environment="env" />
+
+    <property file="${project.dir}/build.${USERNAME}.properties" />
+    <property file="${project.dir}/build.${user.name}.properties" />
+    <property file="${project.dir}/build.${env.COMPUTERNAME}.properties" />
+    <property file="${project.dir}/build.${env.HOST}.properties" />
+    <property file="${project.dir}/build.${env.HOSTNAME}.properties" />
+    <property file="${project.dir}/build.properties" />
+
+    <!-- property "doc.dir" will be specified in the build.xml of the document root directory. -->
+    <property name="build.dir" value="./build"/>
+    <property name="dist.dir" value="./dist"/>
+
+    <path id="project.classpath">
+        <fileset dir="${project.dir}/lib" includes="*.jar" />
+    </path>
+
+    <taskdef classpathref="project.classpath" resource="net/sf/antcontrib/antlib.xml" />
+
+    <target name="display-pandoc-version">
+        <exec executable="${pandoc.app}">
+            <arg value="-v" />
+        </exec>
+    </target>
+
+    <target name="echo-props">
+        <echo message="pandoc.app -> ${pandoc.app}"/>
+    </target>
+
+<!--     <target name="dist" depends="clean-lang, prepare-dist, concat-markdown-files" description="prepares document zip file for asset import">
+        <copy todir="${dist.dir}/${test.lang}">
+		    <fileset dir="${build.dir}/${test.lang}">
+                <include name="${test.lang}-${doc.dir}.markdown"/>
+            </fileset>
+        </copy>
+        <zip destfile="${dist.dir}/${test.lang}/${test.lang}-${doc.dir}.zip">
+            <fileset dir="${dist.dir}/${test.lang}" includes="images/*.*"/>
+            <fileset dir="${dist.dir}/${test.lang}" includes="${test.lang}-${doc.dir}.markdown"/>
+        </zip>
+    </target> -->
+
+<!--     <target name="markdown-to-odt-win" depends="concat-markdown-files-win" description="converts markdown file to an ODT file on Windows">
+        <echo message="... converting ${doc.dir} (${test.lang}) to odt on windows"/>
+        <exec executable="cmd">
+            <arg value="/C" />
+            <arg value="pandoc"/>
+            <arg value="-f" />
+            <arg value="markdown"/>
+            <arg value="-t"/>
+            <arg value="odt"/>
+            <arg value="+RTS"/>
+            <arg value="-K64m"/>
+            <arg value="-RTS"/>
+            <arg value="-smart"/>
+            <arg value="-o"/>
+            <arg value="${build.dir}/${test.lang}/${test.lang}-${doc.dir}.odt"/>
+            <arg value="${build.dir}/${test.lang}/${test.lang}-${doc.dir}.markdown"/>
+        </exec>
+    </target> -->
+</project>

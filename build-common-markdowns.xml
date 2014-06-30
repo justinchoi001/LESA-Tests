@@ -1,0 +1,489 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="build-markdowns" default="help" basedir=".">
+	<property name="project.dir" value="." />
+
+	<import file="build-common.xml" />
+
+	<target name="help">
+		<echo>.
+Below are some sample commands:
+
+ant all
+
+ant clean
+
+ant html
+
+ant markdown</echo>
+	</target>
+
+	<target name="all">
+		<antcall target="build-test-types">
+			<param name="clean" value="true" />
+		</antcall>
+
+		<antcall target="build-test-types">
+			<param name="build-html" value="true" />
+			<param name="build-markdown" value="true" />
+		</antcall>
+	</target>
+
+	<target name="build-test-types">
+		<if>
+			<not>
+				<isset property="test.type" />
+			</not>
+			<then>
+				<property
+					name="test.types"
+					value="liferay-marketplace,liferay-portal,liferay-social-office,liferay-sync"
+					/>
+
+				<for list="${test.types}" param="test.type">
+					<sequential>
+						<antcall target="build-test-versions">
+							<param name="test.type" value="@{test.type}" />
+						</antcall>
+					</sequential>
+				</for>
+			</then>
+			<else>
+				<antcall target="build-test-versions">
+					<param name="test.type" value="${test.type}" />
+				</antcall>
+			</else>
+		</if>
+	</target>
+
+	<target name="build-test-versions">
+		<if>
+			<not>
+				<isset property="test.version" />
+			</not>
+			<then>
+				<if>
+					<equals arg1="${os.unix}" arg2="true" />
+					<then>
+						<exec executable="sh" dir="${project.dir}/${test.type}">
+							<arg line="-c &quot;ls -d -1 */ > output.txt&quot;" />
+						</exec>
+					</then>
+					<else>
+						<exec executable="cmd.exe" dir="${project.dir}/${test.type}">
+							<arg line="/c dir /b /ad > output.txt" />
+						</exec>
+					</else>
+				</if>
+
+				<var name="output.txt.content" unset="true"/>
+
+				<if>
+					<available file="${project.dir}/${test.type}/output.txt" />
+					<then>
+						<loadfile property="output.txt.content" srcFile="${project.dir}/${test.type}/output.txt" />
+
+						<delete file="${project.dir}/${test.type}/output.txt" />
+
+						<if>
+							<and>
+								<equals arg1="${os.unix}" arg2="true" />
+								<isset property="output.txt.content" />
+							</and>
+							<then>
+								<script classpathref="project.classpath" language="beanshell">
+									String outputTxtContent = project.getProperty("output.txt.content");
+
+									if (outputTxtContent.contains("File Not Found")) {
+										outputTxtContent = "";
+									}
+
+									String directories = outputTxtContent.replaceAll("/\n", ",");
+
+									if (directories.endsWith(",")) {
+										directories = directories.substring(0, directories.length() - 1);
+									}
+
+									project.setProperty("test.versions", directories);
+								</script>
+							</then>
+							<elseif>
+								<isset property="output.txt.content" />
+								<then>
+									<script classpathref="project.classpath" language="beanshell">
+										String outputTxtContent = project.getProperty("output.txt.content");
+
+										if (outputTxtContent.contains("File Not Found")) {
+											outputTxtContent = "";
+										}
+
+										String directories = outputTxtContent.replaceAll("\r\n", ",");
+
+										if (directories.endsWith(",")) {
+											directories = directories.substring(0, directories.length() - 1);
+										}
+
+										project.setProperty("test.versions", directories);
+									</script>
+								</then>
+							</elseif>
+						</if>
+
+						<if>
+							<isset property="test.versions" />
+							<then>
+								<for list="${test.versions}" param="test.version">
+									<sequential>
+										<antcall target="build-test-langs">
+											<param name="test.version" value="@{test.version}" />
+										</antcall>
+									</sequential>
+								</for>
+							</then>
+						</if>
+					</then>
+				</if>
+			</then>
+			<else>
+				<antcall target="build-test-langs">
+					<param name="test.version" value="${test.version}" />
+				</antcall>
+			</else>
+		</if>
+	</target>
+
+	<target name="build-test-langs">
+		<if>
+			<not>
+				<isset property="test.lang" />
+			</not>
+			<then>
+				<if>
+					<equals arg1="${os.unix}" arg2="true" />
+					<then>
+						<exec executable="sh" dir="${project.dir}/${test.type}/${test.version}">
+							<arg line="-c &quot;ls -d -1 */ > output.txt&quot;" />
+						</exec>
+					</then>
+					<else>
+						<exec executable="cmd.exe" dir="${project.dir}/${test.type}/${test.version}">
+							<arg line="/c dir /b /ad > output.txt" />
+						</exec>
+					</else>
+				</if>
+
+				<var name="output.txt.content" unset="true"/>
+
+				<if>
+					<available file="${project.dir}/${test.type}/${test.version}/output.txt" />
+					<then>
+						<loadfile property="output.txt.content" srcFile="${project.dir}/${test.type}/${test.version}/output.txt" />
+
+						<delete file="${project.dir}/${test.type}/${test.version}/output.txt" />
+
+						<if>
+							<and>
+								<equals arg1="${os.unix}" arg2="true" />
+								<isset property="output.txt.content" />
+							</and>
+							<then>
+								<script classpathref="project.classpath" language="beanshell">
+									String outputTxtContent = project.getProperty("output.txt.content");
+
+									if (outputTxtContent.contains("File Not Found")) {
+										outputTxtContent = "";
+									}
+
+									String directories = outputTxtContent.replaceAll("/\n", ",");
+
+									if (directories.endsWith(",")) {
+										directories = directories.substring(0, directories.length() - 1);
+									}
+
+									project.setProperty("test.langs", directories);
+								</script>
+							</then>
+							<elseif>
+								<isset property="output.txt.content" />
+								<then>
+									<script classpathref="project.classpath" language="beanshell">
+										String outputTxtContent = project.getProperty("output.txt.content");
+
+										if (outputTxtContent.contains("File Not Found")) {
+											outputTxtContent = "";
+										}
+
+										String directories = outputTxtContent.replaceAll("\r\n", ",");
+
+										if (directories.endsWith(",")) {
+											directories = directories.substring(0, directories.length() - 1);
+										}
+
+										project.setProperty("test.langs", directories);
+									</script>
+								</then>
+							</elseif>
+						</if>
+
+						<if>
+							<isset property="test.langs" />
+							<then>
+								<for list="${test.langs}" param="test.lang">
+									<sequential>
+										<antcall target="build-test-components">
+											<param name="test.lang" value="@{test.lang}" />
+										</antcall>
+									</sequential>
+								</for>
+							</then>
+						</if>
+					</then>
+				</if>
+			</then>
+			<else>
+				<antcall target="build-test-components">
+					<param name="test.lang" value="${test.lang}" />
+				</antcall>
+			</else>
+		</if>
+	</target>
+
+	<target name="build-test-components">
+		<if>
+			<not>
+				<isset property="test.component" />
+			</not>
+			<then>
+				<if>
+					<equals arg1="${os.unix}" arg2="true" />
+					<then>
+						<exec executable="sh" dir="${project.dir}/${test.type}/${test.version}/${test.lang}">
+							<arg line="-c &quot;ls -d -1 */ > output.txt&quot;" />
+						</exec>
+					</then>
+					<else>
+						<exec executable="cmd.exe" dir="${project.dir}/${test.type}/${test.version}/${test.lang}">
+							<arg line="/c dir /b /ad > output.txt" />
+						</exec>
+					</else>
+				</if>
+
+				<var name="output.txt.content" unset="true"/>
+
+				<if>
+					<available file="${project.dir}/${test.type}/${test.version}/${test.lang}/output.txt" />
+					<then>
+						<loadfile property="output.txt.content" srcFile="${project.dir}/${test.type}/${test.version}/${test.lang}/output.txt" />
+
+						<delete file="${project.dir}/${test.type}/${test.version}/${test.lang}/output.txt" />
+
+						<if>
+							<and>
+								<equals arg1="${os.unix}" arg2="true" />
+								<isset property="output.txt.content" />
+							</and>
+							<then>
+								<script classpathref="project.classpath" language="beanshell">
+									String outputTxtContent = project.getProperty("output.txt.content");
+
+									if (outputTxtContent.contains("File Not Found")) {
+										outputTxtContent = "";
+									}
+
+									String directories = outputTxtContent.replaceAll("/\n", ",");
+
+									if (directories.endsWith(",")) {
+										directories = directories.substring(0, directories.length() - 1);
+									}
+
+									project.setProperty("test.components", directories);
+								</script>
+							</then>
+							<elseif>
+								<isset property="output.txt.content" />
+								<then>
+									<script classpathref="project.classpath" language="beanshell">
+										String outputTxtContent = project.getProperty("output.txt.content");
+
+										if (outputTxtContent.contains("File Not Found")) {
+											outputTxtContent = "";
+										}
+
+										String directories = outputTxtContent.replaceAll("\r\n", ",");
+
+										if (directories.endsWith(",")) {
+											directories = directories.substring(0, directories.length() - 1);
+										}
+
+										project.setProperty("test.components", directories);
+									</script>
+								</then>
+							</elseif>
+						</if>
+
+						<if>
+							<isset property="test.components" />
+							<then>
+								<for list="${test.components}" param="test.component">
+									<sequential>
+										<for param="src.file">
+											<path>
+												<fileset dir="${project.dir}/${test.type}/${test.version}/${test.lang}/@{test.component}" includes="**/src/*.markdown"/>
+											</path>
+											<sequential>
+												<var name="test.case.src" value="@{src.file}"/>
+
+												<script classpathref="project.classpath" language="beanshell">
+													String srcFile = project.getProperty("test.case.src");
+
+													int x;
+
+													if (srcFile.lastIndexOf("/") != -1) {
+														x = srcFile.lastIndexOf("/") + 1;
+													}
+													else {
+														x = srcFile.lastIndexOf("\\") + 1;
+													}
+
+													int y = srcFile.length() - 9;
+
+													String testCase = srcFile.substring(x,y);
+
+													project.setProperty("test.case", testCase);
+												</script>
+
+												<if>
+													<isset property="clean" />
+													<then>
+														<ant antfile="${project.dir}/build-common-markdown.xml" target="clean">
+															<property name="test.component" value="@{test.component}" />
+															<property name="test.lang" value="${test.lang}" />
+															<property name="test.version" value="${test.version}" />
+															<property name="test.type" value="${test.type}" />
+														</ant>
+													</then>
+												</if>
+
+												<if>
+													<isset property="build-html" />
+													<then>
+														<ant antfile="${project.dir}/build-common-markdown.xml" target="html">
+															<property name="test.case" value="${test.case}" />
+															<property name="test.component" value="@{test.component}" />
+															<property name="test.lang" value="${test.lang}" />
+															<property name="test.version" value="${test.version}" />
+															<property name="test.type" value="${test.type}" />
+														</ant>
+													</then>
+												</if>
+
+												<if>
+													<isset property="build-markdown" />
+													<then>
+														<ant antfile="${project.dir}/build-common-markdown.xml" target="markdown">
+															<property name="test.case" value="${test.case}" />
+															<property name="test.component" value="@{test.component}" />
+															<property name="test.lang" value="${test.lang}" />
+															<property name="test.version" value="${test.version}" />
+															<property name="test.type" value="${test.type}" />
+														</ant>
+													</then>
+												</if>
+											</sequential>
+										</for>
+									</sequential>
+								</for>
+							</then>
+						</if>
+					</then>
+				</if>
+			</then>
+			<else>
+				<for param="src.file">
+					<path>
+						<fileset dir="${project.dir}/${test.type}/${test.version}/${test.lang}/${test.component}" includes="**/src/*.markdown"/>
+					</path>
+					<sequential>
+						<var name="test.case.src" value="@{src.file}"/>
+
+						<script classpathref="project.classpath" language="beanshell">
+							String srcFile = project.getProperty("test.case.src");
+
+							int x;
+
+							if (srcFile.lastIndexOf("/") != -1) {
+								x = srcFile.lastIndexOf("/") + 1;
+							}
+							else {
+								x = srcFile.lastIndexOf("\\") + 1;
+							}
+
+							int y = srcFile.length() - 9;
+
+							String testCase = srcFile.substring(x,y);
+
+							project.setProperty("test.case", testCase);
+						</script>
+
+						<if>
+							<isset property="clean" />
+							<then>
+								<ant antfile="${project.dir}/build-common-markdown.xml" target="clean">
+									<property name="test.component" value="${test.component}" />
+									<property name="test.lang" value="${test.lang}" />
+									<property name="test.version" value="${test.version}" />
+									<property name="test.type" value="${test.type}" />
+								</ant>
+							</then>
+						</if>
+
+						<if>
+							<isset property="build-html" />
+							<then>
+								<ant antfile="${project.dir}/build-common-markdown.xml" target="html">
+									<property name="test.case" value="${test.case}" />
+									<property name="test.component" value="${test.component}" />
+									<property name="test.lang" value="${test.lang}" />
+									<property name="test.version" value="${test.version}" />
+									<property name="test.type" value="${test.type}" />
+								</ant>
+							</then>
+						</if>
+
+						<if>
+							<isset property="build-markdown" />
+							<then>
+								<ant antfile="${project.dir}/build-common-markdown.xml" target="markdown">
+									<property name="test.case" value="${test.case}" />
+									<property name="test.component" value="${test.component}" />
+									<property name="test.lang" value="${test.lang}" />
+									<property name="test.version" value="${test.version}" />
+									<property name="test.type" value="${test.type}" />
+								</ant>
+							</then>
+						</if>
+					</sequential>
+				</for>
+			</else>
+		</if>
+	</target>
+
+	<target name="html">
+		<antcall target="build-test-types">
+			<param name="build-html" value="true" />
+		</antcall>
+	</target>
+
+	<target name="markdown">
+		<antcall target="build-test-types">
+			<param name="build-markdown" value="true" />
+		</antcall>
+	</target>
+
+	<target name="clean">
+		<antcall target="build-test-types">
+			<param name="clean" value="true" />
+		</antcall>
+	</target>
+</project>

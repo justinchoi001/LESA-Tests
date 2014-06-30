@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="build-markdown" default="echo-props" basedir=".">
+	<property name="project.dir" value=".." />
+
+	<import file="build-common.xml" />
+
+	<target name="html" description="converts single test case to an html file on windows">
+		<property name="markdown-src" value="${project.dir}/${test.type}/${test.version}/${test.lang}/${test.component}/src" />
+		<property name="html-final" value="${project.dir}/${test.type}/${test.version}/${test.lang}/${test.component}/html" />
+
+		<mkdir dir="${html-final}" />
+
+		<echo>${test.type}/${test.version}/${test.lang}/${test.component}/html/${test.case}.html</echo>
+
+		<if>
+			<equals arg1="${os.unix}" arg2="true" />
+			<then>
+				 <exec executable="${pandoc.app}">
+					<arg value="-f" />
+					<arg value="markdown"/>
+					<arg value="-t"/>
+					<arg value="html"/>
+					<!--<arg value="+RTS"/>
+					<arg value="-K64m"/>
+					<arg value="-RTS"/>
+					<arg value="-smart"/>-->
+					<arg value="-o"/>
+					<arg value="${html-final}/${test.case}.html"/>
+					<arg value="${markdown-src}/${test.case}.markdown"/>
+				</exec>
+			</then>
+			<else>
+				<exec executable="${pandoc.app}">
+					<arg value="-f" />
+					<arg value="markdown"/>
+					<arg value="-t"/>
+					<arg value="html"/>
+					<arg value="+RTS"/>
+					<arg value="-K64m"/>
+					<arg value="-RTS"/>
+					<arg value="-smart"/>
+					<arg value="-o"/>
+					<arg value="&quot;${html-final}/${test.case}.html&quot;"/>
+					<arg value="&quot;${markdown-src}/${test.case}.markdown&quot;"/>
+				</exec>
+			</else>
+		</if>
+		<!-- pandoc -f markdown -t html -o 01-introduction-to-liferay-ui.html 01-introduction-to-liferay-ui.markdown -->
+	</target>
+
+    <target name="markdown" description="converts single markdown src files from relative images to images on github">
+		<property name="markdown-src" value="${test.type}/${test.version}/${test.lang}/${test.component}/src/${test.case}.markdown" />
+		<property name="markdown-final" value="${test.type}/${test.version}/${test.lang}/${test.component}/${test.case}.markdown" />
+		<property name="images.dir" value="${test.type}/${test.version}/${test.lang}/${test.component}/images" />
+
+		<property name="relative-url" value="../images" />
+		<property name="final-url-header" value="https://github.com/liferay/liferay-qa-ee/raw/master"  />
+
+		<copy file="${project.dir}/${markdown-src}" tofile="${project.dir}/${markdown-final}" overwrite="true" />
+
+		<echo>${markdown-final}</echo>
+
+		<replace
+			file="${project.dir}/${markdown-final}"
+			token="${relative-url}"
+			value="${final-url-header}/${images.dir}"
+		/>
+    </target>
+
+	<target name="clean">
+		<delete includeemptydirs="true">
+			<fileset dir="${project.dir}/${test.type}/${test.version}/${test.lang}/${test.component}/" includes="*.markdown"/>
+		</delete>
+
+		<delete dir="${project.dir}/${test.type}/${test.version}/${test.lang}/${test.component}/html" />
+	</target>
+</project>
