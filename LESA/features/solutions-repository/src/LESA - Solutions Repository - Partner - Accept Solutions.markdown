@@ -25,14 +25,14 @@ This test is designed to have users test the solutions repository's acceptance f
 1. Click the Menu drop down
 1. Click Sign In
 1. Enter the following:    
-	(a) **Email Address:**	vineith.kaul@ihg.com.broken    
+	(a) **Email Address:**	${customer with P1 support email address}.broken    
 	(b) **Password:**	test
 1. Click Sign In
 1. Click Menu > User Profile
 1. Click Support    
 <a href="#OpenATicket" name="OpenATicket">Open A Ticket</a>
 1. Click New Ticket
-1. Select Intercontinental Hotel Groups from the drop down
+1. Select Customer Account from the drop down
 1. Click Portal Production
 1. Click Continue Without Adding
 1. Click Create Ticket
@@ -60,14 +60,14 @@ This test is designed to have users test the solutions repository's acceptance f
 	(b) **Severity:**	Major    
 	(c) **Resolution:**	N/A    
 	(d) **Escalation Level:**	P1
-1. Assert that the ticket has been assigned to Jogen Gondalia
+1. Assert that the ticket has been assigned to Partner
 1. Remember the ticket number (e.g. IHG-57)
 1. Click Menu > Sign Out
 1. Assert that the user has been signed out    
 <a href="#SignInAsPartner" name="SignInAsPartner">Sign In as the Partner</a>
 1. Click Menu > Sign In
 1. Enter the following:    
-	(a) **Email Address:**	jogen.gondalia@cignex.com.broken    
+	(a) **Email Address:**	${partner email address}.broken    
 	(b) **Password:**	test
 1. Click Sign In
 1. Click Menu > User Profile
@@ -88,7 +88,7 @@ This test is designed to have users test the solutions repository's acceptance f
 1. Sign Out    
 1. Click Menu > Sign In
 1. Enter the following:    
-	(a) **Email Address:**	vineith.kaul@ihg.com.broken    
+	(a) **Email Address:**	{customer email address}.broken    
 	(b) **Password:**	test
 1. Click Sign In
 1. Click Menu > User Profile

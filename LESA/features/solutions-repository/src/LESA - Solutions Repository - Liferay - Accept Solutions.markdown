@@ -59,15 +59,15 @@ This test is designed to have users test the solutions repository's acceptance f
 	(b) **Severity:**	Major    
 	(c) **Resolution:**	N/A    
 	(d) **Escalation Level:**	P1
-1. Assert that the ticket has been assigned to Melanie Leahy
+1. Assert that the ticket has been assigned to Liferay
 1. Remember the ticket number (e.g. THESPACEPRO-334)
 1. Click Menu > Sign Out
 1. Assert that the user has been signed out    
 <a href="#SignInAsLiferayCSE" name="SignInAsLiferayCSE">Sign In as Liferay CSE</a>
 1. Click Menu > Sign In
 1. Enter the following:    
-	(a) **Email Address:**	melanie.leahy@liferay.com.broken    
-	(b) **Password:**	test
+	(a) **Email Address:**	${liferay engineer email address}.broken    
+	(b) **Password:**	${password}
 1. Click Sign In
 1. Click Menu > User Profile
 1. Click Support

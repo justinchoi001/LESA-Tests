@@ -99,8 +99,8 @@ This test is designed to have users test the basic search feature. Users will se
 1. Click the Menu drop down
 1. Click Sign In
 1. Enter the following:    
-	(a) **Email Address:**	brian.suh@liferay.com.broken    
-	(b) **Password:**	test
+	(a) **Email Address:**	${liferay engineer email address}.broken    
+	(b) **Password:**	${password}
 1. Click Sign In
 1. Click Menu > User Profile
 1. Click Support    

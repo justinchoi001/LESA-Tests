@@ -27,14 +27,14 @@ This test is designed to have users test the feedback feature. Customers will su
 1. Click the Menu drop down
 1. Click Sign In
 1. Enter the following:    
-	(a) **Email Address:**	vineith.kaul@ihg.com.broken    
+	(a) **Email Address:**	${customer email address}.broken    
 	(b) **Password:**	test
 1. Click Sign In
 1. Click Menu > User Profile
 1. Click Support    
 <a href="#OpenATicket" name="OpenATicket">Open A Ticket</a>
 1. Click New Ticket
-1. Select Intercontinental Hotel Groups from the drop down
+1. Select Customer Account from the drop down
 1. Click Portal Production
 1. Click Continue Without Adding
 1. Click Create Ticket
@@ -62,14 +62,14 @@ This test is designed to have users test the feedback feature. Customers will su
 	(b) **Severity:**	Major    
 	(c) **Resolution:**	N/A    
 	(d) **Escalation Level:**	P1
-1. Assert that the ticket has been assigned to Jogen Gondalia
+1. Assert that the ticket has been assigned to Liferay Partner
 1. Remember the ticket number (e.g. IHG-57)
 1. Click Menu > Sign Out
 1. Assert that the user has been signed out    
 <a href="#SignInAsPartner" name="SignInAsPartner">Sign In as the Partner</a>
 1. Click Menu > Sign In
 1. Enter the following:    
-	(a) **Email Address:**	jogen.gondalia@cignex.com.broken    
+	(a) **Email Address:**	${parter email account}.broken    
 	(b) **Password:**	test
 1. Click Sign In
 1. Click Menu > User Profile
@@ -88,7 +88,7 @@ This test is designed to have users test the feedback feature. Customers will su
 <a href="#SubmitFeedback" name="SubmitFeedback">Submit Feedback</a>
 1. Click Menu > Sign In
 1. Enter the following:    
-	(a) **Email Address:**	vineith.kaul@ihg.com.broken    
+	(a) **Email Address:**	${customer account}.broken    
 	(b) **Password:**	test
 1. Click Sign In
 1. Click Menu > User Profile
@@ -106,7 +106,7 @@ This test is designed to have users test the feedback feature. Customers will su
 <a href="#AssertPartnerCanSeeFeedback" name="AssertPartnerCanSeeFeedback">Assert Partners Can See Feedback</a>
 1. Click Menu > Sign In
 1. Enter the following:    
-	(a) **Email Address:**	jogen.gondalia@cignex.com.broken    
+	(a) **Email Address:**	${partner email address}.broken    
 	(b) **Password:**	test
 1. Click Sign In
 1. Click Menu > User Profile
@@ -118,7 +118,7 @@ This test is designed to have users test the feedback feature. Customers will su
 <a href="#AssertLiferayCSEsCanSeeFeedback" name="AssertLiferayCSEsCanSeeFeedback">Assert Liferay CSEs Can See Feedback</a>
 1. Click Menu > Sign In
 1. Enter the following:    
-	(a) **Email Address:**	brian.suh@liferay.com.broken    
+	(a) **Email Address:**	${liferay engineer email account}.broken    
 	(b) **Password:**	test
 1. Click Sign In
 1. Click Menu > User Profile

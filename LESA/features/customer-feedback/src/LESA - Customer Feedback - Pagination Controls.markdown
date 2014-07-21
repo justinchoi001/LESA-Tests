@@ -24,8 +24,8 @@ This test is designed to have users test the feedback feature's pagination contr
 1. <a href="#SignInAsACSE" name="SignInAsACSE"></a>Navigate to http://www-uat.liferay.com
 1. Click Menu > Sign In
 1. Enter the following:    
-	(a) **Email Address:**	brian.suh@liferay.com.broken    
-	(b) **Password:**	test
+	(a) **Email Address:**	${liferay engineer email account}.broken    
+	(b) **Password:**	${password}
 1. Click Sign In
 1. Click Menu > User Profile
 1. Click Support
