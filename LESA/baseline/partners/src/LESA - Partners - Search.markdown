@@ -60,7 +60,7 @@ This test is designed to assert basic functionality and permissions granted to L
 	(b) **Severity:**		Critical    
 	(c) **Pending:**		Liferay    
 	(d) **Escalation Level:**	1    
-1. Click Back to Previous Page.
+1. Click Back to Previous Page.    
 <a href="#SearchForMultipleWords" name="SearchForMultipleWords">Search For Multiple Words</a>
 1. Click the Basic link next to Search if the Search is set to Advanced Search 
 1. Enter "Panzer Kampfwagen V" in the Search field.
