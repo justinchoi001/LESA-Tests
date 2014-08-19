@@ -33,11 +33,11 @@ This test is designed to have users test the solutions repository's acceptance f
 1. Click Support    
 <a href="#OpenATicket" name="OpenATicket">Open A Ticket</a>
 1. Click New Ticket
-1. Select Intercontinental Hotel Groups from the drop down
+1. Select the account associated with this customer from the drop down
 1. Click Portal Production
 1. Click Continue Without Adding
 1. Click Create Ticket
-1. Enter "Solutions Repository Test - Accept Solution" in the Subject field
+1. Enter "Solutions Repository Test - Reject Solution" in the Subject field
 1. Select Unstable with Periodic Interruptions from the System Status field
 1. Select the following:    
 	(a) **Liferay Version**:	 6.2 EE    
@@ -62,7 +62,7 @@ This test is designed to have users test the solutions repository's acceptance f
 	(c) **Resolution:**	N/A    
 	(d) **Escalation Level:**	P1
 1. Assert that the ticket has been assigned to Liferay Partner
-1. Remember the ticket number (e.g. IHG-57)
+1. Remember the ticket number (e.g. ABC-123)
 1. Click Menu > Sign Out
 1. Assert that the user has been signed out    
 <a href="#SignInAsPartner" name="SignInAsPartner">Sign In as the Partner</a>
@@ -74,7 +74,7 @@ This test is designed to have users test the solutions repository's acceptance f
 1. Click Menu > User Profile
 1. Click Support
 1. Click My Open Tickets
-1. Assert the ticket displays in the results (e.g. IHG-57)    
+1. Assert the ticket displays in the results (e.g. ABC-123)    
 <a href="#OfferSolution" name="OfferSolution">Offer Solution</a>
 1. Click the newly created ticket's link
 1. Assert the Propose Solution button displays
