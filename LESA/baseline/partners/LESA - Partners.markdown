@@ -40,8 +40,11 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Click Portal Production
 1. Click the Continue Without Adding button
 1. Click Create Ticket
-1. Enter in the <b>Subject</b> field: Partner Basic Test
-1. Select <b>System Status</b>: Critical Applications Are Completely Inoperable
+1. Enter in the <b>Provide a summary</b> field: Partner Basic Test
+1. Select Document Library from the Component drop down
+1. Select <b>System Status</b>: Completely Inoperable / Shutdown    
+![image02](https://github.com/liferay/liferay-qa-ee/raw/master/LESA/baseline/partners/images/LESA-partners/LESA-partners02.jpg)
+1. Enter: "This is a partner test" in the Description
 1. Select the following:    
 	(a) **Liferay Version**:	 6.2 EE    
 	(b) **Application Server**:	Weblogic 12c    
@@ -55,10 +58,8 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Click Upload New in the Patch Level section
 1. Upload a .txt file
 1. Flag the "This patch level is current" check box if it is not already flagged
-1. Select Document Library from the Component drop down
-1. Enter: "This is a partner test" in the Description
-1. Click the Save button
-1. Enter the name of the account used in the search field (e.g. CALCAS)
+1. Click the Submit button
+1. Enter the name of the account used in the search field (e.g. ABCDEFG)
 1. Assert only one ticket was created.
 1. Click My Open Tickets
 1. Select a ticket that has been assigned to this particular partner
