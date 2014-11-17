@@ -11,7 +11,7 @@ This test covers the forwarding feature for platinum critical tickets only. Plat
 
 If a customer has partner support, it will go to the partner. If the customer does not, it will be assigned to Liferay.
 
-####Road Map:#### 
+#### Road Map: ####
 
 
 
@@ -42,7 +42,7 @@ If a customer has partner support, it will go to the partner. If the customer do
 1. Click that ticket
 1. Select "Investigating" from the Status drop down.
 1. Assert that the Forward button displays    
-![forward-button](../images/forward-button01.jpg)
+![forward-button](../images/forward-button01.jpeg)
 1. Click the Forward button.
 1. Assert the popup window.
 1. Fill in the required fields.
