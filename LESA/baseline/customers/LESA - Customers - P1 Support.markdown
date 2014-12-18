@@ -26,8 +26,8 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Click the Menu drop down
 1. Click Sign In
 1. Sign in with Liferay Customer credentials
-1. Click Menu > User Profile
-1. Click Support    
+1. Click Menu > Customer Portal
+1. Click the LESA button    
 <a href="#VerifyTicketCountsAreCorrect" name="VerifyTicketCountsAreCorrect">Verify Ticket Counts Are Correct</a>
 1. Click My Open Tickets
 1. Assert that the number of My Open Tickets matches the search results
@@ -45,6 +45,7 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Select Document Library from the Component drop down
 1. Select <b>System Status</b>: Completely Inoperable / Shutdown    
 ![customer-creation01](https://github.com/liferay/liferay-qa-ee/raw/master/LESA/baseline/customers/images/customer-creation01.png)
+1. Enter: "This is a customer test" in the Description
 1. Select the following:    
 	(a) **Liferay Version**:	 6.2 EE    
 	(b) **Application Server**:	Weblogic 12c    
@@ -59,12 +60,11 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Upload a .txt file
 1. Flag the "This patch level is current" check box if it is not already flagged
 1. Click the Submit button
-1. Enter the name of the account used in the search field (e.g. ABCDEFG)
-1. Assert only one ticket was created.
-1. Click the newly created ticket (ABCDEFG-123).
+1. Assert that the system redirects to the newly created ticket.
 1. Assert this ticket has been assigned to a Liferay Partner.
 1. Assert that the customer cannot change the Status of the ticket.
-1. Assert that the ticket is pending Liferay.
+1. Assert that the Status is "Incident Reported"
+1. Assert that the ticket resolution is N/A.
 1. Assert that the Liferay comments tab does not display.
 1. Assert that the Workers comments tab does not display.    
 <a href="#AddAComment" name="AddAComment">Add A Comment</a>
@@ -122,3 +122,5 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Open a new browser window.
 1. Paste the URL in the URL field.
 1. Assert that the full ticket displays without signing a second time.
+1. Click Back to Previous Page
+1. Assert only one ticket was created.
