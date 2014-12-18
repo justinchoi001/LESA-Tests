@@ -3,6 +3,7 @@ LESA - Customers
 
 #### Prerequisites: ####
 * Liferay Customer account
+* Liferay Customer Support Engineer account
 
 
 #### Description: ####
@@ -17,6 +18,9 @@ This test is designed to assert basic functionality and permissions granted to L
 1. [Add A Comment](#AddAComment)
 1. [Add An Attachment](#AddAnAttachment)
 1. [Assert Top Permalink](#AssertTopPermalink)
+1. [Sign In As Assigned CSE](#SignInAsAssignedCSE)
+1. [Add Hidden Link](#AddHiddenLink)
+1. [Assert Link Is Hidden](#AssertLinkIsHidden)
 
 ****
 
@@ -26,8 +30,8 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Click the Menu drop down
 1. Click Sign In
 1. Sign in with Liferay Customer credentials
-1. Click Menu > User Profile
-1. Click Support    
+1. Click Menu > Customer Portal
+1. Click the LESA button    
 <a href="#VerifyTicketCountsAreCorrect" name="VerifyTicketCountsAreCorrect">Verify Ticket Counts Are Correct</a>
 1. Click My Open Tickets
 1. Assert that the number of My Open Tickets matches the search results
@@ -60,12 +64,11 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Upload a .txt file
 1. Flag the "This patch level is current" check box if it is not already flagged
 1. Click the Submit button
-1. Enter the name of the account used in the search field (e.g. ABCDEFG)
-1. Assert only one ticket was created.
-1. Click the newly created ticket (ABCDEFG-123).
+1. Assert that the system redirects to the newly created ticket.
 1. Assert this ticket has been assigned to a Liferay Support Engineer.
 1. Assert that the customer cannot change the Status of the ticket.
-1. Assert that the ticket is pending Liferay.
+1. Assert that the Status is "Incident Reported"
+1. Assert that the ticket resolution is N/A.
 1. Assert that the Liferay comments tab does not display.
 1. Assert that the Workers comments tab does not display.    
 <a href="#AddAComment" name="AddAComment">Add A Comment</a>
@@ -123,3 +126,24 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Open a new browser window.
 1. Paste the URL in the URL field.
 1. Assert that the full ticket displays without signing a second time.
+1. Click Back to Previous Page
+1. Assert only one ticket was created.
+1. Sign out of the customer.    
+<a href="#SignInAsAssignedCSE" name="SignInAsAssignedCSE">Sign In As Assigned CSE</a>
+1. Sign in as the assigned CSE.
+1. Click Menu > Customer Portal
+1. Click the LESA button
+1. Click on the newly created ticket.    
+<a href="#AddHiddenLink" name="AddHiddenLink">Add Hidden Link</a>
+1. Click the Manage Links button.
+1. In the URL 1 field, enter: http://www.google.com
+1. Select Liferay from the Visibility drop down.
+1. Click the Save button.
+1. Sign out of the assigned CSE.    
+<a href="#AssertLinkIsHidden" name="AssertLinkIsHidden">Assert Link is Hidden</a>
+
+1. Sign in as the customer.
+1. Click Menu > Customer Portal
+1. Click the LESA button
+1. Click on the newly created ticket.
+1. Assert that the link to Google does not display.

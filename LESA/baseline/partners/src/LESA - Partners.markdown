@@ -25,8 +25,8 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Click the Menu drop down
 1. Click Sign In
 1. Sign in with Liferay Partner credentials
-1. Click Menu > User Profile
-1. Click Support    
+1. Click Menu > Customer Portal
+1. Click the LESA button    
 <a href="#VerifyTicketCountsAreCorrect" name="VerifyTicketCountsAreCorrect">Verify Ticket Counts Are Correct</a>
 1. Click My Open Tickets
 1. Assert that the number of My Open Tickets matches the search results
@@ -59,7 +59,8 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Upload a .txt file
 1. Flag the "This patch level is current" check box if it is not already flagged
 1. Click the Submit button
-1. Enter the name of the account used in the search field (e.g. ABCDEFG)
+1. Assert that the system redirects to the newly created ticket.
+1. Click Back to Previous Page.
 1. Assert only one ticket was created.
 1. Click My Open Tickets
 1. Select a ticket that has been assigned to this particular partner
