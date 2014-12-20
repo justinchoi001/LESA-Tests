@@ -1,5 +1,5 @@
 LESA - Support Engineers
-======================='=
+========================
 
 #### Prerequisites: ####
 * Liferay Customer Support Engineer account
