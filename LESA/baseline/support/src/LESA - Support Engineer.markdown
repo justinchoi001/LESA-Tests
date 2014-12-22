@@ -48,7 +48,12 @@ This test is designed to test the
 1. Upload a .txt file
 1. Flag the "This patch level is current" check box if it is not already flagged
 1. Click the Submit button
-1. Assert that the system redirects to the newly created ticket.    
+1. Assert that the system redirects to the newly created ticket.
+1. Assert that the Public tab displays.
+1. Assert that the Workers tab displays.
+1. Assert that the Liferay tab displays.
+1. Assert that the History tab displays.
+1. Assert that the Solutions tab displays.    
 <a href="#AddComments" name="AddComments">Add Comments</a>
 1. Click Add Comment in the Public tab.
 1. Enter a new comment: This is the first comment.
