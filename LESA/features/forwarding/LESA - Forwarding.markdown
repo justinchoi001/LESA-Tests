@@ -42,11 +42,11 @@ If a customer has partner support, it will go to the partner. If the customer do
 1. Click that ticket
 1. Select "Investigating" from the Status drop down.
 1. Assert that the Forward button displays    
-![forward-button](../images/forward-button01.jpeg)
+![forward-button](https://github.com/liferay/liferay-qa-ee/raw/master/LESA/features/forwarding/images/forward-button01.jpeg)
 1. Click the Forward button.
 1. Assert the popup window.
 1. Fill in the required fields.    
-![required-fields](../images/forward-button02.jpg)
+![required-fields](https://github.com/liferay/liferay-qa-ee/raw/master/LESA/features/forwarding/images/forward-button02.jpg)
 1. Click Forward.
 1. Assert that a new assignee appears in the assigned to in "Ticket Info" section.
 1. Assert that this assignee is also assigned to the Platinum Critical team of that region. (Sometimes the new CSE may not be in the same Support Region.)
