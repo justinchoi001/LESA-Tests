@@ -90,18 +90,3 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Assert that the comment has been published
 1. Click the Public tab.
 1. Assert that the Worker comment does not display in the Public section
-1. Click Back to Previous Page
-1. Select a ticket whose assignee is not the partner and that the partner has worked on.
-1. Click the Watch Ticket button
-1. Assert that the message "Your request completed successfully" displays.
-1. Click Add Comment
-1. Enter: "This is a comment." in the Comments field
-1. Check the "Need Response from Customer" check box
-1. Click the Add Attachment button
-1. Upload an image file. 
-1. Click Reply
-1. Assert that the comment displays
-1. Assert that the image link displays 
-1. Click the Unwatch Ticket button
-1. Assert that the message "Your request completed successfully" displays.
-1. Assert that the Liferay comments tab is hidden.
