@@ -23,8 +23,8 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Click the Menu drop down
 1. Click Sign In
 1. Sign in with Liferay Partner credentials
-1. Click Menu > User Profile
-1. Click Support    
+1. Click Menu > Customer Portal
+1. Click LESA    
 <a href="#CreateATicket" name="CreateATicket">Create A Ticket</a>
 1. Click New Ticket
 1. Select an account
@@ -50,7 +50,6 @@ This test is designed to assert basic functionality and permissions granted to L
 1. Enter: "German World War 2 Tank" in the Description
 1. Click the Save button.
 1. Assert that the message "Your request completed successfully" displays.
-1. Search for the newly created ticket.
 1. Click the Manage Attachment button.
 1. Upload a text document that has unique words (e.g. Panther tank)
 1. Click the Save button.
