@@ -25,9 +25,9 @@ This test is designed to have users test the advanced search feature. Users will
 1. <a href="#SignInAsLiferayCSE" name="SignInAsLiferayCSE"></a>Sign in as a Liferay CSE
 1. Click the Advanced link (if Basic Search displays)    
 <a href="#SearchByAccount" name="SearchByAccount">Search by Account</a>
-1. Enter "UMass" in the Account field
+1. Enter a customer's account code in the Account field
 1. Click the Search button
-1. Assert that only UMASS tickets display in the results section
+1. Assert that only that customer's tickets display in the results section
 1. Click the Reset button    
 <a href="#SearchBySeverity" name="SearchBySeverity">Search by Severity</a>
 1. Click the Critical check box
