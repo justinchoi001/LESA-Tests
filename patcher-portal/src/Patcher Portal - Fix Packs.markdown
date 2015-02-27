@@ -32,7 +32,7 @@ This test is designed to have the user create a fix pack to be released. Users m
 	a) Patcher Fix Name: 	LPEALPHAFIX-1    
 	b) Branch Name:	LPEALPHA-1    
 	c) GitHub URL: git@github.com:EddieOlson/liferay-portal-ee.git
-1. Click the Save button.1
+1. Click the Save button.
 1. Assert that the LPEALPHAFIX-1 has been created.    
 <a href="#CreateAFixComponent" name="CreateAFixComponent">Create A Fix Component</a>
 1. Click the Fix Components tab.
