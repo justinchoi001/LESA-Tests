@@ -1,0 +1,34 @@
+<if>
+	<condition function="IsElementPresent" locator1="SELECT_ENVIRONMENT" />
+	<then>
+		<execute function="Click" locator1="//tr[@class='account-environments']/td/table/tbody/tr[4]/td[2]/input[@value='Select']" />
+	</then>
+	<else>
+		<execute function="Click" locator1="CONTINUE_WITHOUT_ADDING" />
+	</else>
+</if>
+
+<!--
+<if>
+	<conditionTag1 conditionParam="some value" />
+	<then>
+		[steps if condition1 returns true]
+	</then>
+	<elseif>
+		<conditionTag2 conditionParam="some value" />
+		<then>
+			[steps if condition1 returns false and condition2 returns true]
+		</then>
+	</elseif>
+	<elseif>
+		<conditionTag3 conditionParam="some value" />
+		<then>
+			[steps if condition1 and condition2 return false, and condition3 returns true]
+		</then>
+	</elseif>
+
+	...
+	<else>
+		[steps if every preceding condition returns false]
+	</else>
+</if>-->
