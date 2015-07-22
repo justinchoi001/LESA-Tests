@@ -19,7 +19,7 @@ This test is also a continuation of the OSB Admin - Create Account test.
 1. Click Search.
 1. Click Acme Portal link.    
 ![assignworkers01.png](../images/assignworkers01.png)
-1. Click the Assign Workers button.
+1. Click the Assign Workers button.    
 ![assignworkers02.png](../images/assignworkers02.png)
 1. Click the Available tab.
 1. Enter the following:    
