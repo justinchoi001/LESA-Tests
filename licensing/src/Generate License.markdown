@@ -2,6 +2,7 @@ Generate A License
 ==================
 
 #### Prerequisites: ####
+* Liferay OSB Account Admin account
 * Liferay OSB Admin account
 
 
