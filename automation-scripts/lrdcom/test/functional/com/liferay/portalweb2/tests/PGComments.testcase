@@ -1,0 +1,94 @@
+<definition component-name="support-qa">
+	<property name="testray.main.component.name" value="Support QA" />
+
+	<var name="accountP1" value="California Casualty" />
+	<var name="account" value="Adelphi University" />
+	<var name="component" value="Document Library" />
+	<var name="description" value="Support Test Ticket" />
+	<var name="status" value="Completely Inoperable/Shutdown" />
+ 	<var name="userEmailAddress1" property-value="marketplace.email.address.1" />
+	<var name="userEmailAddress2" property-value="marketplace.email.address.2" />
+	<var name="userEmailAddress3" property-value="marketplace.email.address.3" />
+	<var name="userEmailAddress4" property-value="marketplace.email.address.4" />
+	<var name="userEmailPassword1" property-value="marketplace.email.password.1" />
+	<var name="userEmailPassword2" property-value="marketplace.email.password.2" />
+	<var name="userEmailPassword3" property-value="marketplace.email.password.3" /> 
+	<var name="userEmailPassword4" property-value="marketplace.email.password.4" />
+
+	<var name="liferayURL" property-value="portal.url" />
+	<var name="lesaURL" value="/group/customer" />
+
+	<set-up>
+		<execute macro="User#login">
+			<var name="userEmailAddress" value="${userEmailAddress2}" />
+			<var name="userPassword" value="${userEmailPassword2}" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+
+	</set-up>
+	
+	<command name="AddFormattedComments" priority="5">
+		<execute macro="Ticket#CreateTicket">
+			<var name="account" value="${account}" />
+			<var name="component" value="${component}" />
+			<var name="summary" value="Support Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+			<var name="description" value="Support Test Ticket" />
+		</execute>
+		
+		<execute function="ScrollWebElementIntoView" locator1="PGTicket#ADD_COMMENT" />
+		<execute function="Click" locator1="PGTicket#ADD_COMMENT" />
+		
+		<execute function="KeyPress" locator1="PGTicket#NEW_COMMENT_FIELD" value1="[b]bold[/b]" />
+		<execute function="KeyPress" locator1="PGTicket#NEW_COMMENT_FIELD" value1="\RETURN"  />
+		
+		<execute function="KeyPress" locator1="PGTicket#NEW_COMMENT_FIELD" value1="[i]italics comment[/i]" />
+		<execute function="KeyPress" locator1="PGTicket#NEW_COMMENT_FIELD" value1="\RETURN" />
+		<execute function="KeyPress" locator1="PGTicket#NEW_COMMENT_FIELD" value1="[u]underline[/u]" />
+		<execute function="KeyPress" locator1="PGTicket#NEW_COMMENT_FIELD" value1="\RETURN"  />
+		<execute function="KeyPress" locator1="PGTicket#NEW_COMMENT_FIELD" value1="[quote]This is quoted text.[/quote]" />
+		<execute function="KeyPress" locator1="PGTicket#NEW_COMMENT_FIELD" value1="\RETURN" />
+		<execute function="KeyPress" locator1="PGTicket#NEW_COMMENT_FIELD" value1="[code] This is a line of code.[/code]" />
+		<execute function="KeyPress" locator1="PGTicket#NEW_COMMENT_FIELD" value1="\RETURN" />
+		<execute function="KeyPress" locator1="PGTicket#NEW_COMMENT_FIELD" value1="[url=http://www.google.com]Google[/url]" />
+		<execute function="ScrollWebElementIntoView" locator1="PGTicket#REPLY_BUTTON" />
+		<execute function="Click#clickAtAndWait" locator1="PGTicket#REPLY_BUTTON" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+	
+	
+	<command name="AddSmallAttachmentOnComment" priority="4">
+		<execute macro="Ticket#CreateTicket">
+			<var name="account" value="${account}" />
+			<var name="component" value="${component}" />
+			<var name="summary" value="Support Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+			<var name="description" value="Support Test Ticket" />
+		</execute>
+	
+		<execute function="ScrollWebElementIntoView" locator1="PGTicket#ADD_COMMENT" />
+		<execute function="Click" locator1="PGTicket#ADD_COMMENT" />
+		<execute function="Type" locator1="PGTicket#NEW_COMMENT_FIELD" value1="This is a comment with an attachment." />
+		<execute function="ScrollWebElementIntoView" locator1="PGTicket#ADD_ATTACHMENT_BUTTON" />
+		<execute function="Click" locator1="PGTicket#ADD_ATTACHMENT_BUTTON" />
+		<execute function="Click" locator1="PGTicket#BROWSE_1" />
+		<execute function="Pause" locator1="5000" />
+		<!--Users will have to click Cancel then Browse again before the test will proceed. -->
+		
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
+		<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\LESA\dependencies\panther tank.txt" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
+		<execute function="SelectWindow" locator1="null" />
+		<execute function="Click" locator1="PGTicket#REPLY_BUTTON" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute function="AssertElementPresent" locator1="PGTicket#COMMENT_FIELD" value1="This is a comment with an attachment." />
+	</command>
+	<tear-down>
+		<execute macro="User#logout" />
+	</tear-down>
+</definition>

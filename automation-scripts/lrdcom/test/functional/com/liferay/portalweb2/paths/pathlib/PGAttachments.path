@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>PGAttachments</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PGAttachments</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>PAGE_NAME</td>
+	<td></td>
+	<td>PGAttachments</td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>BACK_TO_PREVIOUS_PAGE_BUTTON</td>
+	<td>//div[@class='fr']/a[contains(.,'Back to Previous Page')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PAUSED_MESSAGE</td>
+	<td>//div[contains(@id,'messageContainer')]/span[contains(.,'Paused...')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UPLOADING_MESSAGE</td>
+	<td>//div[contains(@id,'messageContainer')]/span[contains(.,'Uploading...')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CLASSIC_UPLOADER_TOGGLE</td>
+	<td>//div[@id='_2_WAR_osbportlet_switchButtonHolder']/a[@id='_2_WAR_osbportlet_classicUploaderButton']|//div[@id='_2_WAR_osbportlet_switchButtonHolder']/a[@id='_2_WAR_osbportlet_regularUploaderButton']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UPLOAD_AREA</td>
+	<td>//div[@class='upload-area']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SELECT_FILE_BUTTON</td>
+	<td>//button[@id='_2_WAR_osbportlet_selectButton']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VISIBILITY_SELECT</td>
+	<td>//div[@class='ctrl-holder']/span/span/span/select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BROWSE_1</td>
+	<td>//div/table/tbody/tr[2]/td/input[@id='_2_WAR_osbportlet_file1']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BROWSE_2</td>
+	<td>//div/table/tbody/tr[3]/td/input[@id='_2_WAR_osbportlet_file2']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BROWSE_3</td>
+	<td>//div/table/tbody/tr[4]/td/input[@id='_2_WAR_osbportlet_file3']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HOTFIX_CHECKBOX_1</td>
+	<td>//input[@id='_2_WAR_osbportlet_hotfix1Checkbox']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HOTFIX_CHECKBOX_2</td>
+	<td>//input[@id='_2_WAR_osbportlet_hotfix2Checkbox']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HOTFIX_CHECKBOX_3</td>
+	<td>//input[@id='_2_WAR_osbportlet_hotfix3Checkbox']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_BUTTON</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_NEED_RESPONSE_FROM_BUTTON</td>
+	<td>//input[@value='Add Need Response From']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL_BUTTON</td>
+	<td>//input[@value='Cancel']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PAUSE_UPLOAD_BUTTON_PNG</td>
+	<td>portal/buttons/pause_upload.png</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RESUME_UPLOAD_BUTTON_PNG</td>
+	<td>portal/buttons/resume_upload.png</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

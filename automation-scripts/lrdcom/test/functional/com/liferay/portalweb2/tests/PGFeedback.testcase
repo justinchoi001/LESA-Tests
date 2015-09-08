@@ -1,0 +1,82 @@
+<definition component-name="support-qa">
+	<property name="testray.main.component.name" value="Support QA" />
+	
+	<var name="account" value="Ameriprise Financial" />
+	<var name="component" value="Document Library" />
+	<var name="liferayURL" property-value="portal.url" />
+	<var name="lesaURL" value="/group/customer" />
+	
+	<set-up>
+		<execute macro="User#login">
+			<var name="userEmailAddress" value="marty.alterman@ampf.com.broken" />
+			<var name="userPassword" value="test" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+	</set-up>
+
+	<command name="ProvideFeedback" priority="5">
+		<execute macro="Ticket#CreateTicket">
+			<var name="account" value="${account}" />
+			<var name="component" value="${component}" />
+			<var name="summary" value="Solution Repo Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+		</execute>
+		
+		<if>
+			<condition function="IsTextEqual#isPartialText" locator1="PGTicket#PRIMARY_ASSIGNEE" value1="Christopher Lui" />
+			<then>
+				<execute macro="User#logoutAndLogin">
+					<var name="liferayURL" value="${liferayURL}" />
+					<var name="userEmailAddress" value="christopher.lui@liferay.com.broken" />
+				<var name="userPassword" value="test" />
+				</execute>
+			</then>
+			<else>
+				<execute macro="User#logoutAndLogin">
+					<var name="liferayURL" value="${liferayURL}" />
+					<var name="userEmailAddress" value="alexander.chau@liferay.com.broken" />
+					<var name="userPassword" value="test" />
+				</execute>
+			</else>
+		</if>
+	
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+			
+		<execute macro="Solution#ProposeSolution">
+			<var name="summary" value="Solution Repo Test" />
+		</execute>
+		
+		<execute macro="User#logoutAndLogin">
+			<var name="liferayURL" value="${liferayURL}" />
+			<var name="userEmailAddress" value="marty.alterman@ampf.com.broken" />
+			<var name="userPassword" value="test" />
+		</execute>
+		
+		
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+		
+		<execute macro="Solution#AcceptSolution" />
+		
+		<execute function="Click" locator1="PGTicket#EDIT_FEEDBACK_BUTTON" />
+		<execute function="Click" locator1="PGFeedback#FINAL_RESOLUTION_SCORE" value1="4" /> 
+		<execute function="Click" locator1="PGFeedback#RESPONSE_TIME_SCORE" value1="4" />
+		<execute function="Click" locator1="PGFeedback#TECHNICAL_PROFICIENCY_SCORE" value1="4" />
+		<execute function="Click" locator1="PGFeedback#PROFESSIONALISM_FRIENDLINESS_SCORE" value1="4" />
+		<execute function="ScrollWebElementIntoView" locator1="PGFeedback#COMMENTS_FIELD" />
+		<execute function="Type" locator1="PGFeedback#COMMENTS_FIELD" value1="This is a comment." />
+		<execute function="Click" locator1="PGFeedback#SAVE_BUTTON" value1="Save" />
+		
+		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+	
+	<tear-down>
+		<execute macro="User#logout" />
+	</tear-down>
+</definition>

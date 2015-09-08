@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>PGAccounts</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PGAccounts</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>PAGE_NAME</td>
+	<td></td>
+	<td>PGAccounts</td>
+</tr>
+<tr>
+	<td>PROJECT_NAME_FIELD</td>
+	<td>//input[@id='_2_WAR_osbportlet_name']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CODE_FIELD</td>
+	<td>//input[@id='_2_WAR_osbportlet_code']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TIER</td>
+	<td>//select[@name='_2_WAR_osbportlet_tiers']</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>RESET_BUTTON</td>
+	<td>//input[@value='Reset']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEARCH_BUTTON</td>
+	<td>//div[@id='toggle_id_account_entry_searchadvanced']/span[2]/span/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RESULTS</td>
+	<td>//tr[@class='portlet-section-body results-row last']/td/a</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

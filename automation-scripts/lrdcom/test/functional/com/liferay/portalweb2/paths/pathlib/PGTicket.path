@@ -1,0 +1,281 @@
+<html>
+<head>
+<title>PGTicket</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PGTicket</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>PAGE_NAME</td>
+	<td></td>
+	<td>PGTicket</td>
+</tr>
+<tr>
+	<td>SUCCESS_MESSAGE</td>
+	<td>//div[@class='portlet-msg-success']</td>
+	<td></td>
+</tr>
+<!--Ticket Statuses -->
+<tr>
+	<td>RESOLUTION</td>
+	<td>//div[@id='_2_WAR_osbportlet_resolutionLabel']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STATUS</td>
+	<td>//div[@id='_2_WAR_osbportlet_statusDisplay']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEVERITY</td>
+	<td>//div[@class='aui-helper-clearfix callout-content']/div/div/span[contains(.,'${key_severity}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ESCALATION_LEVEL</td>
+	<td>//div/input[@name='_2_WAR_osbportlet_escalationLevel']/../span[contains(.,'${key_escalationLevel}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRIMARY_ASSIGNEE</td>
+	<td>//div[@class='callout-a']/div/div/div[contains(.,'Christopher Lui')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDIT_FEEDBACK_BUTTON</td>
+	<td>//input[@value='Edit Feedback']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BACK_TO_PREVIOUS_PAGE_BUTTON</td>
+	<td>//div[@class='fr']/a[contains(.,'Back to Previous Page')]</td>
+	<td></td>
+</tr>
+<!--Buttons -->
+<tr>
+	<td>EDIT_BUTTON</td>
+	<td>//div[@class='button-row']/input[@value='Edit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MANAGE_ATTACHMENTS_BUTTON</td>
+	<td>//div[@class='button-row']/input[@value='Manage Attachments']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MANAGE_LINKS_BUTTON</td>
+	<td>//div[@class='button-row']/input[@value='Manage Links']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ESCALATE_BUTTON</td>
+	<td>//div[@class='button-row']/input[@value='Escalate']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROPOSE_SOLUTION_BUTTON</td>
+	<td>//div[@class='button-row']/input[@value='Propose Solution']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>WATCH_TICKET_BUTTON</td>
+	<td>//div[@class='button-row']/input[@value='Watch']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FORWARD_BUTTON</td>
+	<td>//input[@id='_2_WAR_osbportlet_platCritForwardButton']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CLOSE_TICKET_BUTTON</td>
+	<td>//div[@class='button-row']/input[@value='Close Ticket']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LOG_CALL_BUTTON</td>
+	<td>//div[@class='button-row']/input[@value='Log Call']</td>
+	<td></td>
+</tr>
+<!--Tabs -->
+<tr>
+	<td>PUBLIC</td>
+	<td>//ul[@class='aui-tabview-list']/li[1]/span/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>WORKERS</td>
+	<td>//ul[@class='aui-tabview-list']/li[2]/span/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LIFERAY</td>
+	<td>//ul[@class='aui-tabview-list']/li[3]/span/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ALL_COMMENTS</td>
+	<td>//ul[@class='aui-tabview-list']/li[4]/span/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HISTORY</td>
+	<td>//ul[@class='aui-tabview-list']/li[5]/span/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SOLUTIONS</td>
+	<td>//ul[@class='aui-tabview-list']/li[6]/span/a</td>
+	<td></td>
+</tr>
+<!--Adding Comments -->
+<tr>
+	<td>ADD_COMMENT</td>
+	<td>//a[contains(@id,'_2_WAR_osbportlet')]/span[.='Add Comment']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NEW_COMMENT_FIELD</td>
+	<td>//textarea[@name='_2_WAR_osbportlet_commentBody0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BROWSE_1</td>
+	<td>//input[@id='_2_WAR_osbportlet_file0_1']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BROWSE_2</td>
+	<td>//input[@id='_2_WAR_osbportlet_file0_2']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BROWSE_3</td>
+	<td>//input[@id='_2_WAR_osbportlet_file0_3']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLY_BUTTON</td>
+	<td>//input[@id='_2_WAR_osbportlet_addCommentButton0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_ATTACHMENT_BUTTON</td>
+	<td>//input[@value='Add Attachments']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_AS_DRAFT_BUTTON</td>
+	<td>//input[@value='Save as Draft']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL_BUTTON</td>
+	<td>//input[@value='Cancel']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>COMMENT_FIELD</td>
+	<td>//div[@class='callout-content']</td>
+	<td></td>
+</tr>
+<!--Solutions Repository -->
+<tr>
+	<td>SOLUTION_PROPOSED_TAB</td>
+	<td>//div[@class='solution-confirm-tab']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SOLUTION_YES_BUTTON</td>
+	<td>//div[@class='solution-confirm-answer']/a[@class='btn solution-confirm-btn btn-yes']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SOLUTION_NO_BUTTON</td>
+	<td>//div[@class='solution-confirm-answer']/a[@class='btn solution-confirm-btn btn-no']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SOLUTION_NOT_APPLICABLE_BUTTON</td>
+	<td>//div[@class='solution-confirm-answer']/a[@class='btn solution-confirm-btn style-a btn-not-applicable']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REJECT_REASON</td>
+	<td>//select[@name='_2_WAR_osbportlet_statusReason']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REJECT_EXPLANATION</td>
+	<td>//textarea[@id='_2_WAR_osbportlet_statusMessage']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REJECT_SEND_BUTTON</td>
+	<td>//div[@class='solution-confirm-answer']/input[@value='Send']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REJECT_CANCEL_BUTTON</td>
+	<td>//div[@class='solution-confirm-answer']/input[@value='Cancel']</td>
+	<td></td>
+</tr>
+<!--Forwarding -->
+<tr>
+	<td>YES_BUTTON</td>
+	<td>//form[@id='_2_WAR_osbportlet_forwardFm']/input[@value='1']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NO_BUTTON</td>
+	<td>//form[@id='_2_WAR_osbportlet_forwardFm']/input[@value='0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MAIN_GOAL_FIELD</td>
+	<td>//div[@id='_2_WAR_osbportlet_mainGoalContainer']/textarea</td>
+	<td></td>
+</tr>
+<tr>
+	<td>WORK_DONE_FIELD</td>
+	<td>//div[@id='_2_WAR_osbportlet_workDoneContainer']/textarea</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CUSTOMER_NEXT_STEPS_FIELD</td>
+	<td>//div[@id='_2_WAR_osbportlet_customerNextStepsContainer']/textarea</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NEXT_REGION_NEXT_STEPS_FIELD</td>
+	<td>//textarea[@id='_2_WAR_osbportlet_nextRegionNextSteps']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IFRAME_FORWARD_BUTTON</td>
+	<td>//input[@id='_2_WAR_osbportlet_forwardSubmit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL_BUTTON</td>
+	<td>//input[@id='_2_WAR_osbportlet_forwardCancel']</td>
+	<td></td>
+</tr>
+<!--Ticket Statuses Dropdown-->
+<tr>
+	<td>TICKET_STATUS_DROPDOWN</td>
+	<td>//select[@name='_2_WAR_osbportlet_status']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

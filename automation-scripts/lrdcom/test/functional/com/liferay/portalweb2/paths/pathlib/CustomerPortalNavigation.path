@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>CustomerPortalNavigation</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CustomerPortalNavigation</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>PAGE_NAME</td>
+	<td></td>
+	<td>CustomerPortalNavigation</td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>LESA</td>
+	<td>//div[@id='mainNavigation']/nav/ul/li[4]/a</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

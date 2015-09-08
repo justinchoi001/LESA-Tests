@@ -1,0 +1,212 @@
+<html>
+<head>
+<title>PGHome</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PGHome</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>PAGE_NAME</td>
+	<td></td>
+	<td>PGHome</td>
+</tr>
+<!--Tabs -->
+<tr>
+	<td>TICKETS_TAB</td>
+	<td>//ul[@class='aui-tabview-list']/li/span/a[contains(.,'Tickets')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FEEDBACK_TAB</td>
+	<td>//ul[@class='aui-tabview-list']/li/span/a[contains(.,'Feedback')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACCOUNTS_TAB</td>
+	<td>//ul[@class='aui-tabview-list']/li/span/a[contains(.,'Accounts')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PARTNERS_TAB</td>
+	<td>//ul[@class='aui-tabview-list']/li/span/a[contains(.,'Partners')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MANAGER_DASHBOARD_TAB</td>
+	<td>//ul[@class='aui-tabview-list']/li/span/a[contains(.,'Manager Dashboard')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PREFERENCES_TAB</td>
+	<td>//ul[@class='aui-tabview-list']/li/span/a[contains(.,'Preferences')]</td>
+	<td></td>
+</tr>
+<!-- Create Ticket -->
+<tr>
+	<td>NEW_TICKET</td>
+	<td>//div[@class='add-ticket aui-helper-clearfix']/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MY_OPEN_TICKETS</td>
+	<td>//div[@class='content-column-content left-column']/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NEED_RESPONSE</td>
+	<td>//div[@class='content-column-content middle-column']/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IN_PROGRESS</td>
+	<td>//div[@class='content-column-content right-column']/a</td>
+	<td></td>
+</tr>
+<!-- Search -->
+<tr>
+	<td>BASIC_SEARCH_FIELD</td>
+	<td>//input[@id='_2_WAR_osbportlet_toggle_id_ticket_entry_searchkeywords']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BASIC_SEARCH_BUTTON</td>
+	<td>//div[@class='taglib-search-toggle-basic']/span/span[2]/span/input[@value='Search']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEARCH_BUTTON</td>
+	<td>//div[contains(@class,'advanced')]//input[@value='Search']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADVANCED_SEARCH_TOGGLE</td>
+	<td>//div[@class='toggle_id_ticket_entry_searchtoggle-link']/a[contains(.,'Advanced')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BASIC_SEARCH_TOGGLE</td>
+	<td>//div[@class='toggle_id_ticket_entry_searchtoggle-link']/a[contains(.,'Basic')]</td>
+	<td></td>
+</tr>
+<!-- Advanced Search Options -->
+<tr>
+	<td>ACCOUNT_FIELD</td>
+	<td>//input[@name='_2_WAR_osbportlet_accountEntryName']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONTENT_FIELD</td>
+	<td>//input[@name='_2_WAR_osbportlet_content']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ESCALATION_LEVEL_CHECKBOX</td>
+	<td>//div/label/input[@name='_2_WAR_osbportlet_escalationLevels']/../span[contains(.,'${key_escalationLevel}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CRITICAL_CHECKBOX</td>
+	<td>//div/label/span[contains(.,'Critical')]/../input[@name='_2_WAR_osbportlet_severities']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>INCIDENT_REPORTED_CHECKBOX</td>
+	<td>//div/label/span[contains(.,'Incident Reported')]/../input[@name='_2_WAR_osbportlet_statuses']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ON_HOLD_CHECKBOX</td>
+	<td>//div/label//span[contains(.,'On Hold')]/../input[@value='33005']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SOLUTION_PROPOSED_CHECKBOX</td>
+	<td>//div/label/span[contains(.,'Solution Proposed')]/../input[@name='_2_WAR_osbportlet_statuses']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RESET_BUTTON</td>
+	<td>//div[contains(@class,'advanced')]//input[@value='Reset']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ASSIGNED_TO_CHOOSE_BUTTON</td>
+	<td>//div[@class='content-column-content left-column']/input[@value='Choose']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DATABASE_SEARCH_CHECKBOX</td>
+	<td>//input[@name='_2_WAR_osbportlet_databaseSearch']</td>
+	<td></td>
+</tr>
+<!-- Combined Ticket Summary and Statuses -->
+<tr>
+	<td>OPEN_TICKET</td>
+	<td>//td/a[contains(.,'${key_summary}')]//span/span/div[contains(.,'Incident Reported')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SOLUTION_PROPOSED_TICKET</td>
+	<td>//td[contains(.,'Solution Repo Test')]/a/p[@class='ticket-detail']/../span/span/div[.=' Solution Proposed ']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ON_HOLD_TICKET</td>
+	<td>//td/a[contains(.,'${key_summary}')]//span/span/div[contains(.,'On Hold')]</td>
+	<td></td>
+</tr>
+<!--Basic Search Query Results (Search by Account) -->
+<tr>
+	<td>ACCOUNT_FIELD_FIRST_ROW</td>
+	<td>//tr[@class='portlet-section-body results-row']/td[3]/a/span[contains(.,'${key_accountCode}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACCOUNT_FIELD_SECOND_ROW</td>
+	<td>//tr[@class='portlet-section-alternate results-row alt']/td[3]/a/span[contains(.,'${key_accountCode}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACCOUNT_FIELD_THIRD_ROW</td>
+	<td>//td[@id='_2_WAR_osbportlet_ticketEntriesSearchContainer_col-3_row-3']/a/span[contains(.,'${key_accountCode}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TICKET_SUMMARY_FIRST_ROW</td>
+	<td>//td[@id='_2_WAR_osbportlet_ticketEntriesSearchContainer_col-4_row-1']/a/p</td>
+	<td></td>
+</tr>
+<!--Ticket Statuses -->
+<tr>
+	<td>INCIDENT_REPORTED_FIELD</td>
+	<td>//span[@class='ticket-information']/span/div[contains(.,'Incident Reported')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SOLUTION_PROPOSED_FIELD</td>
+	<td>//span[@class='ticket-information']/span/div[contains(.,'Solution Proposed')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ON_HOLD_FIELD</td>
+	<td>//span[@class='ticket-information']/span/div[contains(.,'On Hold')]</td>
+	<td></td>
+</tr>
+<!--Assignee -->
+<tr>
+	<td>ASSIGNEE_FIELD_FIRST_ROW</td>
+	<td>//tr/td/a/span[@class='ticket-assignee ticket-description']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ASSIGNEE_FIELD_SECOND_ROW</td>
+	<td>//tr/td[@id='_2_WAR_osbportlet_ticketEntriesSearchContainer_col-6_row-2']/a/span</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

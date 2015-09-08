@@ -1,0 +1,178 @@
+<definition component-name="support-qa">
+	<property name="testray.main.component.name" value="Support QA" />
+
+	<var name="account" value="Adelphi University" />
+	<var name="accountP1" value="California Casualty" />
+	<var name="accountCode" value="ADELPHIUNIV" />
+	<var name="accountNameInQuotes"><![CDATA["Adelphi University"]]></var>
+	<var name="component" value="Document Library" />
+	<var name="description" value="This is a test ticket." />
+	<var name="escalationLevel" value="P1" />
+	<var name="otherCSEScreenName" value="marco.abamonga" />
+	<var name="severity" value="Critical" />
+	<var name="summary" value="Support Test" />
+	<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+	<var name="description" value="Support Test Ticket" />
+	<var name="userEmailAddress1" property-value="marketplace.email.address.1" />
+	<var name="userEmailAddress2" property-value="marketplace.email.address.2" />
+	<var name="userEmailAddress3" property-value="marketplace.email.address.3" />
+	<var name="userEmailAddress4" property-value="marketplace.email.address.4" />
+	<var name="userEmailPassword1" property-value="marketplace.email.password.1" />
+	<var name="userEmailPassword2" property-value="marketplace.email.password.2" />
+	<var name="userEmailPassword3" property-value="marketplace.email.password.3" /> 
+	<var name="userEmailPassword4" property-value="marketplace.email.password.4" />
+
+	<var name="liferayURL" property-value="portal.url" />
+	<var name="lesaURL" value="/group/customer" />
+
+	<set-up>
+		<execute macro="User#login">
+			<var name="userEmailAddress" value="${userEmailAddress4}" />
+			<var name="userPassword" value="${userEmailPassword4}" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+
+	</set-up>
+	
+	<command name="BasicSearch" priority="5">
+		<!--
+		<execute macro="Ticket#CreateTicket">
+			<var name="account" value="${account}" />
+			<var name="component" value="${component}" />
+			<var name="summary" value="Support Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+		</execute>
+		
+		<execute function="Click" locator1="PGTicket#BACK_TO_PREVIOUS_PAGE_BUTTON" />
+		
+		<execute function="AssertElementPresent" locator1="PGHome#BASIC_SEARCH_FIELD" /> -->
+		<if>
+			<condition function="IsElementNotPresent" locator1="PGHome#ADVANCED_SEARCH_TOGGLE" value1="Advanced" />
+			<then>
+				<execute function="Click" locator1="PGHome#ADVANCED_SEARCH_TOGGLE" value1="Basic" />
+				<execute function="AssertElementPresent" locator1="PGHome#BASIC_SEARCH_FIELD" />
+			</then>
+		</if>
+		
+		<execute function="Type" locator1="PGHome#BASIC_SEARCH_FIELD" value1="${accountCode}" />
+		<execute function="Click#clickAtAndWait" locator1="PGHome#BASIC_SEARCH_BUTTON" />
+		<execute function="Pause" locator1="5000" />
+		
+		<var name="key_summary" value="${summary}" />
+		<var name="key_accountCode" value="${accountCode}" />
+		<execute function="AssertElementPresent" locator1="PGHome#OPEN_TICKET" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGHome#ACCOUNT_FIELD_FIRST_ROW" value1="${accountCode}" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGHome#ACCOUNT_FIELD_SECOND_ROW" value1="${accountCode}" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGHome#ACCOUNT_FIELD_THIRD_ROW" value1="${accountCode}" />
+	</command>
+	
+	<command name="AdvancedSearch" priority="5">
+		<!--<execute macro="Ticket#CreateTicket">
+			<var name="account" value="${account}" />
+			<var name="component" value="${component}" />
+			<var name="summary" value="Support Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+		</execute>
+		
+		<execute function="Click" locator1="PGTicket#BACK_TO_PREVIOUS_PAGE_BUTTON" />
+		-->
+		<if>
+			<condition function="IsElementNotPresent" locator1="PGHome#BASIC_SEARCH_TOGGLE" value1="Basic" />
+			<then>
+				<execute function="Click#clickAtAndWait" locator1="PGHome#ADVANCED_SEARCH_TOGGLE" value1="Advanced" />
+			</then>
+		</if>
+		<execute function="Click#clickAtAndWait" locator1="PGHome#RESET_BUTTON" value1="Reset" />
+		<var name="accountNameInQuotes"><![CDATA["Adelphi University"]]></var>
+		<execute function="Type" locator1="PGHome#ACCOUNT_FIELD" value1="${accountNameInQuotes}" />
+		
+		<execute function="Check" locator1="PGHome#CRITICAL_CHECKBOX" />
+		<execute function="AssertChecked" locator1="PGHome#CRITICAL_CHECKBOX" />
+	
+		<execute function="ScrollWebElementIntoView" locator1="PGHome#SEARCH_BUTTON" />
+		<execute function="Click" locator1="PGHome#SEARCH_BUTTON" />
+		<execute function="Pause" locator1="5000" />
+		<var name="key_accountCode" value="${accountCode}" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGHome#ACCOUNT_FIELD_FIRST_ROW" value1="${accountCode}" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGHome#ACCOUNT_FIELD_SECOND_ROW" value1="${accountCode}" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGHome#ACCOUNT_FIELD_THIRD_ROW" value1="${accountCode}" />
+		
+		<execute function="ScrollWebElementIntoView" locator1="PGHome#RESET_BUTTON" value1="Reset" />
+		<execute function="Click#clickAtAndWait" locator1="PGHome#RESET_BUTTON" value1="Reset" />
+		
+		<var name="key_severity" value="${severity}" />
+		<var name="key_summary" value="${summary}" />
+		<execute function="DoubleClick" locator1="PGHome#OPEN_TICKET" />
+		<execute function="AssertTextEquals" locator1="PGTicket#SEVERITY" value1="CRITICAL" />
+		
+		<execute function="Click" locator1="PGTicket#BACK_TO_PREVIOUS_PAGE_BUTTON" />
+		
+		<execute macro="Ticket#CreateTicket">
+			<var name="account" value="${accountP1}" />
+			<var name="component" value="${component}" />
+			<var name="summary" value="Support Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+		</execute>
+		<execute function="Click" locator1="PGTicket#BACK_TO_PREVIOUS_PAGE_BUTTON" />
+
+		
+		<if>
+			<condition function="IsElementNotPresent" locator1="PGHome#BASIC_SEARCH_TOGGLE" value1="Basic" />
+			<then>
+				<execute function="Click#clickAtAndWait" locator1="PGHome#ADVANCED_SEARCH_TOGGLE" value1="Advanced" />
+			</then>
+		</if>
+		
+		<!--Search by Escalation Level -->
+		
+		<var name="key_escalationLevel" value="${escalationLevel}" />
+		<execute function="Click" locator1="PGHome#ESCALATION_LEVEL_CHECKBOX" value1="${escalationLevel}" />
+		<execute function="ScrollWebElementIntoView" locator1="PGHome#SEARCH_BUTTON" value1="Search" />
+		<execute function="Click#clickAtAndWait" locator1="PGHome#SEARCH_BUTTON" value1="Search" />
+		
+		<var name="key_severity" value="${severity}" />
+		<var name="key_summary" value="${summary}" />
+		<var name="key_escalationLevel" value="${escalationLevel}" />
+		<execute function="DoubleClick" locator1="PGHome#OPEN_TICKET" />
+		<execute function="AssertTextEquals#assertText" locator1="PGTicket#ESCALATION_LEVEL" value1="P1" />
+		<execute function="Click" locator1="PGTicket#BACK_TO_PREVIOUS_PAGE_BUTTON" />
+		<execute function="Click#clickAtAndWait" locator1="PGHome#RESET_BUTTON" value1="Reset" />
+		
+		<!-- Search by Status -->
+		
+		<execute function="ScrollWebElementIntoView" locator1="PGHome#ON_HOLD_CHECKBOX" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="Click#clickAtAndWait" locator1="PGHome#ON_HOLD_CHECKBOX" />
+		<execute function="AssertChecked" locator1="PGHome#ON_HOLD_CHECKBOX" />
+		<execute function="Pause" locator1="10000" />
+		<execute function="ScrollWebElementIntoView" locator1="PGHome#SEARCH_BUTTON" value1="Search" />
+		<execute function="Click#clickAtAndWait" locator1="PGHome#SEARCH_BUTTON" value1="Search" />
+		<execute function="AssertTextEquals#assertText" locator1="PGHome#ON_HOLD_FIELD" value1="On Hold" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="DoubleClick" locator1="PGHome#ON_HOLD_FIELD" />
+		<execute function="AssertTextEquals#assertText" locator1="PGTicket#STATUS" value1="ON HOLD" />
+		<execute function="Click" locator1="PGTicket#BACK_TO_PREVIOUS_PAGE_BUTTON" />
+		<execute function="Click#clickAtAndWait" locator1="PGHome#RESET_BUTTON" value1="Reset" />
+		
+		<execute function="Click#clickAt" locator1="PGHome#ASSIGNED_TO_CHOOSE_BUTTON" />
+		<execute function="SelectWindow" locator1="title=Support" />
+		<execute function="Type" locator1="PGUserSearch#ASSIGNED_TO_SEARCH_FIELD" value1="Abamonga" />
+		<execute function="Click#clickAtAndWait" locator1="PGUserSearch#ASSIGNED_TO_SEARCH_BUTTON" />
+		
+		<var name="key_otherCSEScreenName" value="${otherCSEScreenName}" />
+		<execute function="AssertTextEquals#assertText" locator1="PGUserSearch#USER_SCREEN_NAME" value1="${otherCSEScreenName}" />
+		<execute function="AssertClickNoError#assertClickNoError" locator1="PGUserSearch#USER_SCREEN_NAME" value1="${otherCSEScreenName}" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="SelectWindow" locator1="null" />-->
+		
+		<execute function="ScrollWebElementIntoView" locator1="PGHome#SEARCH_BUTTON" value1="Search" />
+		<execute function="Click#clickAtAndWait" locator1="PGHome#SEARCH_BUTTON" value1="Search" />
+		<!--<execute function="AssertTextEquals#assertText" locator1="PGHome#ASSIGNEE_FIELD_FIRST_ROW" value1="Marco Abamonga" />-->
+	</command>
+	<tear-down>
+		<execute macro="User#logout" />
+	</tear-down>
+</definition>
