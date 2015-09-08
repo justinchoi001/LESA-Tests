@@ -1,0 +1,160 @@
+<html>
+<head>
+<title>PGCustomerInformation</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PGCustomerInformation</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>PAGE_NAME</td>
+	<td></td>
+	<td>PGCustomerInformation</td>
+</tr>
+<tr>
+	<td>PROJECT_DETAILS_TAB</td>
+	<td>//ul[@class='aui-tabview-list']/li[2]/span/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDIT_CONTACT_BUTTON</td>
+	<td>//div[@id='_2_WAR_osbportlet_sectionDisplay_on-boarding-contact']/div[2]/div/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONTACT_INFORMATION_FIELD</td>
+	<td>//div[@id='_2_WAR_osbportlet_sectionEditDisplay_on-boarding-contact']/div/div[2]/textarea</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDIT_ADVOCACY_SPECIALIST_BUTTON</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDIT_SATISFACTION_METER_BUTTON</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDIT_EXPERIENCE_MANAGER_INFO_BUTTON</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDIT_CALL_LOG_BUTTON</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_CONTACT_BUTTON</td>
+	<td>//div[@id='_2_WAR_osbportlet_sectionEditDisplay_on-boarding-contact']/div[2]/div/input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_ADVOCACY_SPECIALIST_BUTTON</td>
+	<td>//div[@id='_2_WAR_osbportlet_sectionEditDisplay_advocacy-specialist-information']/div[6]/div/input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_ACCOUNT_CALL_BUTTON</td>
+	<td>//div[@id='call-logPanel']/div[2]/div/div[2]/div/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!-- Account Call iframe -->
+<tr>
+	<td>CALL_IFRAME</td>
+	<td>//iframe[@id='_2_WAR_osbportlet_updateAccountCall']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_TYPE</td>
+	<td>//select[@id='_2_WAR_osbportlet_type']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_DATE_MONTH</td>
+	<td>//select[@id='_2_WAR_osbportlet_callDateMonth']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_DATE_DAY</td>
+	<td>//select[@id='_2_WAR_osbportlet_callDateDay']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_DATE_YEAR</td>
+	<td>//select[@id='_2_WAR_osbportlet_callDateYear']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_DATE_HOUR</td>
+	<td>//select[@name='callDateHour']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_DATE_MINUTES</td>
+	<td>//select[@name='callDateMinute']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_DATE_AMPM</td>
+	<td>//select[@name='callDateAmPm']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_LENGTH_HOUR</td>
+	<td>//select[@name='_2_WAR_osbportlet_callLengthHours']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_LENGTH_MINUTES</td>
+	<td>//select[@name='_2_WAR_osbportlet_callLengthMinutes']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_LENGTH_SECONDS</td>
+	<td>//select[@name='_2_WAR_osbportlet_callLengthSeconds']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_SUMMARY_FIELD</td>
+	<td>//div[@class='aui-w85 content-column customer-info']/span/span/span/textarea</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_CLIENTS_PRESENT_FIELD</td>
+	<td>//textarea[@id='_2_WAR_osbportlet_clientsPresent']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_NOTES_FIELD</td>
+	<td>//textarea[@id='_2_WAR_osbportlet_notes']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_ACTION_ITEMS_FIELD</td>
+	<td>//textarea[@id='_2_WAR_osbportlet_actionItems']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_SAVE_BUTTON</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUCCESS_MESSAGE</td>
+	<td>//div[contains(@class,'alert') and contains(@class,'alert-success')]</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

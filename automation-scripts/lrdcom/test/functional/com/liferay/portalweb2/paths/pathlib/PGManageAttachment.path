@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>PGManageAttachment</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PGManageAttachment</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>PAGE_NAME</td>
+	<td></td>
+	<td>PGManageAttachments</td>
+</tr>
+<tr>
+	<td>CLASSIC_UPLOADER_TOGGLE</td>
+	<td>//div[@id='_2_WAR_osbportlet_switchButtonHolder']/a[@id='_2_WAR_osbportlet_classicUploaderButton']|//div[@id='_2_WAR_osbportlet_switchButtonHolder']/a[@id='_2_WAR_osbportlet_regularUploaderButton']</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>UPLOAD_AREA</td>
+	<td>//div[@class='upload-area']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SELECT_FILE_BUTTON</td>
+	<td>//button[@id='_2_WAR_osbportlet_selectButton']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VISIBILITY_SELECT</td>
+	<td>//div[@class='ctrl-holder']/span/span/span/select</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_NEED_RESPONSE_FROM_BUTTON</td>
+	<td>//input[@value='Add Need Response From']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL_BUTTON</td>
+	<td>//input[@value='Cancel']</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<definition component-name="support-qa">
+	<property name="testray.main.component.name" value="Support QA" />
+
+	<var name="accountP1" value="California Casualty" />
+	<var name="account" value="Adelphi University" />
+	<var name="component" value="Security" />
+	<var name="description" value="Support Test Ticket" />
+	<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+ 	<var name="userEmailAddress1" property-value="marketplace.email.address.1" />
+	<var name="userEmailAddress2" property-value="marketplace.email.address.2" />
+	<var name="userEmailAddress3" property-value="marketplace.email.address.3" />
+	<var name="userEmailAddress4" property-value="marketplace.email.address.4" />
+	<var name="userEmailPassword1" property-value="marketplace.email.password.1" />
+	<var name="userEmailPassword2" property-value="marketplace.email.password.2" />
+	<var name="userEmailPassword3" property-value="marketplace.email.password.3" /> 
+	<var name="userEmailPassword4" property-value="marketplace.email.password.4" />
+
+	<var name="liferayURL" property-value="portal.url" />
+	<var name="lesaURL" value="/group/customer" />
+
+	<set-up>
+		<execute macro="User#login">
+			<var name="userEmailAddress" value="${userEmailAddress2}" />
+			<var name="userPassword" value="${userEmailPassword2}" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+
+	</set-up>
+
+	<command name="CloseTicket" priority="5">
+		<execute macro="Ticket#CreateTicket">
+			<var name="account" value="${account}" />
+			<var name="component" value="${component}" />
+			<var name="summary" value="Support Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+			<var name="description" value="Support Test Ticket" />
+		</execute>
+		
+		<execute macro="Ticket#CloseTicket">
+			<var name="resolution" value="Duplicate" />
+			<var name="comment" value="Closing this ticket as a duplicate. This question was answered by another CSE in another ticket." />
+		</execute>
+	</command>
+		
+	<command name="Forwarding" priority="5">
+		<var name="cse" value="Christopher Lui" />
+		
+		<execute macro="User#logoutAndLogin">
+			<var name="userEmailAddress" value="marty.alterman@ampf.com.broken" />
+			<var name="userPassword" value="test" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+		
+		<execute macro="Ticket#CreateTicket">
+			<var name="account" value="Ameriprise Financial" />
+			<var name="component" value="${component}" />
+			<var name="summary" value="Forwarding Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+		</execute>
+		
+		<if>
+			<condition function="IsTextEqual#isPartialText" locator1="PGTicket#PRIMARY_ASSIGNEE" value1="Christopher Lui" />
+			<then>
+				<execute macro="User#logoutAndLogin">
+					<var name="liferayURL" value="${liferayURL}" />
+					<var name="userEmailAddress" value="christopher.lui@liferay.com.broken" />
+				<var name="userPassword" value="test" />
+				</execute>
+			</then>
+			<else>
+				<execute macro="User#logoutAndLogin">
+					<var name="liferayURL" value="${liferayURL}" />
+					<var name="userEmailAddress" value="alexander.chau@liferay.com.broken" />
+					<var name="userPassword" value="test" />
+				</execute>
+			</else>
+		</if>
+		
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+		
+		<execute macro="Ticket#ForwardTicket">
+			<var name="summary" value="Forwarding Test" />
+		</execute>
+	</command>
+	
+	<tear-down>
+		<execute macro="User#logout" />
+	</tear-down>
+</definition>

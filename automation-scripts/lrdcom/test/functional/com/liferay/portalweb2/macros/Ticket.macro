@@ -1,0 +1,111 @@
+<definition>
+	<command name="CreateTicket">
+		<execute function="Click" locator1="PGHome#NEW_TICKET" />
+		<if>
+			<condition function="IsElementPresent" locator1="PGAddAccount#ACCOUNT" />
+		<then>
+			<execute function="Select" locator1="PGAddAccount#ACCOUNT" value1="${account}" />
+			<execute function="Click" locator1="PGAddAccount#CHOOSE_PORTAL_PRODUCTION" />
+		</then>
+		<else>
+			<execute function="Click" locator1="PGAddAccount#CHOOSE_PORTAL_PRODUCTION" />
+		</else>
+		</if>
+		
+		<if>
+			<condition function="IsElementPresent" locator1="PGAddAccount#SELECT" />
+			<then>
+				<execute function="Click" locator1="PGAddAccount#SELECT" />
+				<execute function="Click" locator1="PGAddAccount#CONFIRM_BUTTON_1" />
+				<execute function="Select" locator1="PGAddAccount#SELECT_COMPONENT" value1="${component}" />
+				<execute function="Click" locator1="PGAddAccount#CONTINUE_BUTTON" />
+				<execute function="Type" locator1="PGAddTicket#SUMMARY_FIELD" value1="${summary}" />
+				<execute function="Select" locator1="PGAddTicket#SYSTEM_STATUS_DROPDOWN" value1="${systemStatus}" />
+				<execute function="Type" locator1="PGAddTicket#DESCRIPTION_FIELD" value1="${description}" />
+				<execute function="Select" locator1="PGAddTicket#PRIMARY_BROWSER" value1="Firefox 20+" />
+				<execute function="Click" locator1="PGAddTicket#PORTAL_EXT_CHECKBOX" />
+				<execute function="Click" locator1="PGAddTicket#PATCH_LEVEL_CHECKBOX" />
+				<execute function="Click" locator1="PGAddTicket#SUBMIT_BUTTON" />
+				<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+			</then>
+			<else>
+				<execute function="Click" locator1="PGAddAccount#CONTINUE_WITHOUT_ADDING" />
+				<execute function="Click" locator1="PGAddAccount#CONFIRM_BUTTON_1" />
+				<execute function="Select" locator1="PGAddAccount#SELECT_COMPONENT" value1="${component}" />
+				<execute function="Click" locator1="PGAddAccount#CONTINUE_BUTTON" />
+				<execute function="Type" locator1="PGAddTicket#SUMMARY_FIELD" value1="${summary}" />
+				<execute function="Select" locator1="PGAddTicket#SYSTEM_STATUS_DROPDOWN" value1="${systemStatus}" />
+				<execute function="Type" locator1="PGAddTicket#DESCRIPTION_FIELD" value1="${description}" />
+				<execute function="Select" locator1="PGAddTicket#VERSION" value1="6.2 EE" />
+				<execute function="Select" locator1="PGAddTicket#APPLICATION_SERVER" value1="Weblogic 12c" />
+				<execute function="Select" locator1="PGAddTicket#DATABASE" value1="Oracle 11.2" />
+				<execute function="Select" locator1="PGAddTicket#OPERATING_SYSTEM" value1="Ubuntu 12" />
+				<execute function="Select" locator1="PGAddTicket#JAVA_VIRTUAL_MACHINE" value1="Java 6" />
+				<execute function="Select" locator1="PGAddTicket#PRIMARY_BROWSER" value1="Firefox 20+" />
+				<execute function="Click" locator1="PGAddTicket#UPLOAD_NEW_PORTAL_EXT" />
+				<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
+				<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\LESA\dependencies\portal-ext.properties" />
+				<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
+				<execute function="Pause" locator1="5000" />
+				<execute function="Click" locator1="PGAddTicket#UPLOAD_NEW_PATCH_LEVEL" />
+				<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
+				<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\LESA\dependencies\patchinfo.txt" />
+				<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
+				<execute function="Pause" locator1="5000" />
+				<execute function="Click" locator1="PGAddTicket#SUBMIT_BUTTON" />
+				<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+			</else>
+		</if>
+	</command>
+	
+
+	<command name="CloseTicket">
+		<execute function="Click" locator1="PGTicket#CLOSE_TICKET_BUTTON" />
+		<execute function="SelectWindow" locator1="title=Support" />
+		<execute function="Select" locator1="Resolution#RESOLUTION_DROPDOWN" value1="${resolution}" />
+		<execute function="Type" locator1="Resolution#COMMENT_FIELD" value1="${comment}" />
+		<execute function="AssertClickNoError" locator1="Resolution#CLOSE_TICKET_BUTTON" value1="Close Ticket"/>
+		<execute function="SelectWindow" locator1="null" />
+		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute function="AssertTextEquals" locator1="PGTicket#STATUS" value1="CLOSED" />
+		<execute function="AssertTextEquals" locator1="PGTicket#RESOLUTION" value1="DUPLICATE" />
+	</command>
+
+	<command name="ForwardTicket">
+		<var name="key_summary" value="${summary}" />
+
+		<execute function="Click" locator1="PGHome#MY_OPEN_TICKETS" />
+
+		<if>
+			<condition function="IsElementNotPresent" locator1="PGHome#BASIC_SEARCH_TOGGLE" value1="Basic" />
+			<then>
+				<execute function="Click#clickAtAndWait" locator1="PGHome#ADVANCED_SEARCH_TOGGLE" value1="Advanced" />
+			</then>
+		</if>
+		
+		<execute function="Type" locator1="PGHome#ACCOUNT_FIELD" value1="Ameriprise Financial" />
+		<execute function="Type" locator1="PGHome#CONTENT_FIELD" value1="Forwarding Test" />
+		<execute function="Click" locator1="PGHome#CRITICAL_CHECKBOX" />
+		<execute function="Click" locator1="PGHome#INCIDENT_REPORTED_CHECKBOX" />
+		<execute function="AssertChecked" locator1="PGHome#CRITICAL_CHECKBOX" />
+		<execute function="ScrollWebElementIntoView" locator1="PGHome#SEARCH_BUTTON" />
+		<execute function="Click" locator1="PGHome#SEARCH_BUTTON" value1="Search" />
+		
+		<execute function="DoubleClick" locator1="PGHome#OPEN_TICKET" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="Click" locator1="PGTicket#STATUS" value1="INCIDENT REPORTED" />
+		<execute function="Select" locator1="PGTicket#TICKET_STATUS_DROPDOWN" value1="Engineer Analyzing" />
+		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute function="AssertTextEquals" locator1="PGTicket#STATUS" value1="ENGINEER ANALYZING" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="ScrollWebElementIntoView" locator1="PGTicket#FORWARD_BUTTON" />
+		<execute function="Click" locator1="PGTicket#FORWARD_BUTTON" />
+		<execute function="Click" locator1="PGTicket#YES_BUTTON" />
+		<execute function="Type" locator1="PGTicket#MAIN_GOAL_FIELD" value1="This is the main goal: Drink water" />
+		<execute function="Type" locator1="PGTicket#WORK_DONE_FIELD" value1="This is the work done field: buy cups" />
+		<execute function="Type" locator1="PGTicket#CUSTOMER_NEXT_STEPS_FIELD" value1="Customer's next steps: buy straws" />
+		<execute function="Type" locator1="PGTicket#NEXT_REGION_NEXT_STEPS_FIELD" value1="This is the next region field: buy water" />
+		<execute function="Click" locator1="PGTicket#IFRAME_FORWARD_BUTTON" />
+		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+</definition>

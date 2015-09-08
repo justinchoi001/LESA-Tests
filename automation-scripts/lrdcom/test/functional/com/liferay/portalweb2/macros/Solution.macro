@@ -1,0 +1,123 @@
+<definition>		
+	<command name="ProposeSolution">
+		<var name="key_summary" value="${summary}" />
+		
+		<execute function="Click" locator1="PGHome#MY_OPEN_TICKETS" />
+
+		<if>
+			<condition function="IsElementNotPresent" locator1="PGHome#BASIC_SEARCH_TOGGLE" value1="Basic" />
+			<then>
+				<execute function="Click#clickAtAndWait" locator1="PGHome#ADVANCED_SEARCH_TOGGLE" value1="Advanced" />
+			</then>
+		</if>
+		
+		<execute function="Type" locator1="PGHome#ACCOUNT_FIELD" value1="${account}" />
+		<execute function="Type" locator1="PGHome#CONTENT_FIELD" value1="Solution Repo Test" />
+		<execute function="Click" locator1="PGHome#CRITICAL_CHECKBOX" />
+		<execute function="Click" locator1="PGHome#INCIDENT_REPORTED_CHECKBOX" />
+		<execute function="AssertChecked" locator1="PGHome#CRITICAL_CHECKBOX" />
+		<execute function="ScrollWebElementIntoView" locator1="PGHome#SEARCH_BUTTON" />
+		<execute function="Click" locator1="PGHome#SEARCH_BUTTON" value1="Search" />
+
+		<execute function="DoubleClick" locator1="PGHome#OPEN_TICKET" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="ScrollWebElementIntoView" locator1="PGTicket#PROPOSE_SOLUTION_BUTTON" />
+		<execute function="Click" locator1="PGTicket#PROPOSE_SOLUTION_BUTTON" />
+	
+		<execute function="SelectWindow" locator1="title=Support" />
+		<execute function="Type" locator1="SolutionsRepo#SOLUTION_SUMMARY" value1="This is a solution." />
+		<execute function="ScrollWebElementIntoView" locator1="SolutionsRepo#ISSUE_SUMMARY_TOGGLE" value1="Customer's description does NOT accurately capture the issue" />
+		<execute function="Select" locator1="SolutionsRepo#ISSUE_SUMMARY_TOGGLE" value1="Customer's description does NOT accurately capture the issue." />
+		<execute function="Type" locator1="SolutionsRepo#ISSUE_SUMMARY" value1="This is a summary." />
+		<execute function="Click" locator1="SolutionsRepo#BROWSE_BUTTON"  />
+		<execute function="Pause" locator1="5000" />
+
+		<!--Users will have to click Cancel then Browse again before the test will proceed. -->
+		
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
+		<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\LESA\dependencies\solution.xml" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
+		<execute function="SelectWindow" locator1="title=Support" />
+		<execute function="ClickNoError" locator1="SolutionsRepo#SEND_BUTTON" />
+		<execute function="SelectWindow" locator1="null" />
+		<execute function="AssertTextEquals" locator1="PGTicket#STATUS" value1="SOLUTION PROPOSED" />
+	</command>
+
+	<command name="AcceptSolution">
+		<execute function="Click" locator1="PGHome#NEED_RESPONSE" />
+		<if>
+			<condition function="IsElementNotPresent" locator1="PGHome#BASIC_SEARCH_TOGGLE" value1="Basic" />
+			<then>
+				<execute function="Click#clickAtAndWait" locator1="PGHome#ADVANCED_SEARCH_TOGGLE" value1="Advanced" />
+			</then>
+		</if>
+		<execute function="Pause" locator1="5000" />
+		<execute function="ScrollWebElementIntoView" locator1="PGHome#SOLUTION_PROPOSED_TICKET" />
+		<execute function="DoubleClick" locator1="PGHome#SOLUTION_PROPOSED_TICKET" />
+		<execute function="Pause" locator1="5000" />
+		
+		<if>
+			<condition function="IsElementPresent" locator1="PGTicket#SOLUTION_PROPOSED_TAB" />
+			<then>
+				<execute function="Click" locator1="PGTicket#SOLUTION_PROPOSED_TAB" />
+			</then>
+			<else>
+				<execute function="AssertElementPresent" locator1="PGTicket#SOLUTION_YES_BUTTON" />
+				<execute function="AssertElementPresent" locator1="PGTicket#SOLUTION_NO_BUTTON" />
+				<execute function="AssertElementPresent" locator1="PGTicket#SOLUTION_NOT_APPLICABLE_BUTTON" />
+			</else>
+		</if>
+		
+		<execute function="Click" locator1="PGTicket#SOLUTION_YES_BUTTON" />
+		
+		<if>
+			<condition function="IsElementPresent" locator1="PGTicket#SOLUTION_PROPOSED_TAB" />
+			<then>
+				<execute function="Click" locator1="PGTicket#SOLUTION_PROPOSED_TAB" />
+			</then>
+			<else>
+				<execute function="AssertElementPresent" locator1="PGTicket#SOLUTION_YES_BUTTON" />
+				<execute function="AssertElementPresent" locator1="PGTicket#SOLUTION_NO_BUTTON" />
+				<execute function="AssertElementPresent" locator1="PGTicket#SOLUTION_NOT_APPLICABLE_BUTTON" />
+			</else>
+		</if>
+		
+		<execute function="Click" locator1="PGTicket#SOLUTION_YES_BUTTON" />
+		<execute function="AssertTextEquals" locator1="PGTicket#STATUS" value1="CLOSED" />
+		<execute function="AssertTextEquals" locator1="PGTicket#RESOLUTION" value1="COMPLETED" />
+	</command>
+
+	<command name="rejectSolution">
+		
+		<execute function="Click#clickAtAndWait" locator1="PGHome#NEED_RESPONSE" />
+		<if>
+			<condition function="IsElementNotPresent" locator1="PGHome#BASIC_SEARCH_TOGGLE" value1="Basic" />
+			<then>
+				<execute function="Click#clickAtAndWait" locator1="PGHome#ADVANCED_SEARCH_TOGGLE" value1="Advanced" />
+			</then>
+		</if>
+		<execute function="Pause" locator1="5000" />
+		
+		<execute function="DoubleClick" locator1="PGHome#SOLUTION_PROPOSED_TICKET" />
+		<execute function="Pause" locator1="5000" />
+		
+		<if>
+			<condition function="IsElementPresent" locator1="PGTicket#SOLUTION_PROPOSED_TAB" />
+			<then>
+				<execute function="Click#clickAtAndWait" locator1="PGTicket#SOLUTION_PROPOSED_TAB" />
+			</then>
+			<else>
+				<execute function="AssertElementPresent" locator1="PGTicket#SOLUTION_YES_BUTTON" />
+				<execute function="AssertElementPresent" locator1="PGTicket#SOLUTION_NO_BUTTON" />
+				<execute function="AssertElementPresent" locator1="PGTicket#SOLUTION_NOT_APPLICABLE_BUTTON" />
+			</else>
+		</if>
+		
+		<execute function="Click" locator1="PGTicket#SOLUTION_NO_BUTTON" />
+		<execute function="Select" locator1="PGTicket#REJECT_REASON" value1="The fix did not deploy." />
+		<execute function="Type" locator1="PGTicket#REJECT_EXPLANATION" value1="Plugin not registering" />
+		<execute function="Click" locator1="PGTicket#REJECT_SEND_BUTTON" />
+		<execute function="AssertTextEquals" locator1="PGTicket#STATUS" value1="INVESTIGATING" />
+		<execute function="AssertTextEquals" locator1="PGTicket#RESOLUTION" value1="N/A" />
+	</command>
+</definition>

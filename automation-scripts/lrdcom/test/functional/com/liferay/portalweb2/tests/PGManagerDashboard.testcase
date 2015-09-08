@@ -1,0 +1,38 @@
+<definition component-name="support-qa">
+	<property name="testray.main.component.name" value="Support QA" />
+
+	<var name="cse" value="Brian Suh" />
+	<var name="liferayURL" property-value="portal.url" />
+	<var name="lesaURL" value="/group/customer" />
+	
+	<set-up>
+		<execute macro="User#login">
+			<var name="userEmailAddress" value="matthew.chin@liferay.com.broken" />
+			<var name="userPassword" value="test" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+	</set-up>
+	
+	<command name="ChangeStatus" priority="3">
+		<execute function="Click" locator1="PGHome#MANAGER_DASHBOARD_TAB" />
+		<execute function="AssertElementPresent" locator1="PGManagerDashboard#TEAM_TABLE_TITLE" /> 
+		
+		<if>
+			<condition function="IsElementPresent" locator1="PGManagerDashboard#CSE_STATUS_IN" value1="In" />
+			<then>
+				<execute function="ScrollWebElementIntoView" locator1="PGManagerDashboard#CSE_STATUS_ON_PTO" value1="On PTO" />
+				<execute function="Click#clickNoMouseOver" locator1="PGManagerDashboard#CSE_STATUS_ON_PTO" value1="On PTO" />
+				<execute function="AssertTextEquals" locator1="PGManagerDashboard#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+			</then>
+		</if>
+
+	</command>
+	
+	<tear-down>
+		<execute macro="User#logout" />
+	</tear-down>
+
+</definition>

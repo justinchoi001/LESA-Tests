@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>PGGlobalServices</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PGGlobalServices</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>PAGE_NAME</td>
+	<td></td>
+	<td>PGGlobalServices</td>
+</tr>
+<tr>
+	<td>GLOBAL_SERVICES_TAB</td>
+	<td>//ul[@class='aui-tabview-list']/li[3]/span/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_PROJECT_BUTTON</td>
+	<td>//input[@value='Add Project']</td>
+	<td></td>
+</tr>
+<!-- Project iFrame -->
+<tr>
+	<td>PROJECT_IFRAME</td>
+	<td>//iframe[@id='_2_WAR_osbportlet_updateAccountProject']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROJECT_NAME_FIELD</td>
+	<td>//input[@name='_2_WAR_osbportlet_name']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CLIENT_CONTACTS_FIELD</td>
+	<td>//textarea[@id='_2_WAR_osbportlet_field--11']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LIFERAY_CONTACTS_FIELD</td>
+	<td>//textarea[@id='_2_WAR_osbportlet_field--12']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE_OF_PROJECT_FIELD</td>
+	<td>//textarea[@id='_2_WAR_osbportlet_field--13']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GENERAL_NOTES_FIELD</td>
+	<td>//textarea[@id='_2_WAR_osbportlet_field--14']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEBRIEF_FIELD</td>
+	<td>//textarea[@id='_2_WAR_osbportlet_field--15']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_BUTTON</td>
+	<td>//form[@id='_2_WAR_osbportlet_fm']/div/div[7]/div/input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL_BUTTON</td>
+	<td>//form[@id='_2_WAR_osbportlet_fm']/div/div[7]/div/input[@value='Cancel']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

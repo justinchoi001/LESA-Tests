@@ -1,0 +1,5 @@
+<definition>
+	<command name="goToLESA">
+		<execute function="Click" locator1="CustomerPortalNavigation#LESA" />
+	</command>
+</definition>

@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>PGFeedback</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PGFeedback</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>PAGE_NAME</td>
+	<td></td>
+	<td>PGFeedback</td>
+</tr>
+<tr>
+	<td>FINAL_RESOLUTION_SCORE</td>
+	<td>//div[@class='callout-a']/div/div[contains(.,' How satisfied are you with the final resolution of this issue? * ')]/../span/span/span/input[@name='_2_WAR_osbportlet_rating1' and @value='4']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RESPONSE_TIME_SCORE</td>
+	<td>//div[@class='callout-a']/div/div[contains(.,'How satisfied are you with the response time of your Support Specialist? *')]/../span/span/span/input[@name='_2_WAR_osbportlet_rating2' and @value='4']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TECHNICAL_PROFICIENCY_SCORE</td>
+	<td>//div[@class='callout-a']/div/div[contains(.,'From a technical standpoint, how proficient was your Support Specialist in handling this issue? *')]/../span/span/span/input[@name='_2_WAR_osbportlet_rating3' and @value='4']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROFESSIONALISM_FRIENDLINESS_SCORE</td>
+	<td>//div[@class='callout-a']/div/div[contains(.,'How satisfied are you with the professionalism and friendliness of your Support Specialist?*')]/../span/span/span/input[@name='_2_WAR_osbportlet_rating4' and @value='4']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>COMMENTS_FIELD</td>
+	<td>//textarea[@name='_2_WAR_osbportlet_comments']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_BUTTON</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

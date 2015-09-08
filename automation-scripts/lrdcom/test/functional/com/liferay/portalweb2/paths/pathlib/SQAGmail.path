@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>SQAGmail</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">SQAGmail</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>SQA_GMAIL_HTML_MODE_MAIL_TABLE_MESSAGE_TITLE</td>
+	<td>//form[@method='POST']//table[2]/tbody/tr[contains(.,'[SUPPORT]')]/td[3]/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SQA_GMAIL_HTML_MESSAGE_TICKET_NUMBER</td>
+	<td>//tr//td/div[@class='msg']/div/div/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SQA_GMAIL_HTML_MESSAGE_TICKET_SEVERITY</td>
+	<td>//tr//td/div[@class='msg']/div/div/div[3]/div[2]/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SQA_GMAIL_HTML_MESSAGE_TICKET_SUMMARY</td>
+	<td>//tr//td/div[@class='msg']/div/div[2]/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SQA_GMAIL_HTML_MESSAGE_TICKET_STATUS</td>
+	<td>//tr//td/div[@class='msg']/div/div/div[3]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SQA_GMAIL_HTML_MODE_MESSAGE_TITLE</td>
+	<td>//tr[contains(.,'${key_accountCode}')]//h2/font/b</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

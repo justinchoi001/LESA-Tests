@@ -1,0 +1,118 @@
+<definition component-name="support-qa">
+	<property name="testray.main.component.name" value="Support QA" />
+
+	<var name="account" value="California Casualty" />
+	<var name="component" value="Document Library" />
+	<var name="userEmailAddress1" property-value="marketplace.email.address.1" />
+	<var name="userEmailAddress2" property-value="marketplace.email.address.2" />
+	<var name="userEmailAddress3" property-value="marketplace.email.address.3" />
+	<var name="userEmailAddress4" property-value="marketplace.email.address.4" />
+	<var name="userEmailPassword1" property-value="marketplace.email.password.1" />
+	<var name="userEmailPassword2" property-value="marketplace.email.password.2" />
+	<var name="userEmailPassword3" property-value="marketplace.email.password.3" /> 
+	<var name="userEmailPassword4" property-value="marketplace.email.password.4" />
+
+	
+	<var name="liferayURL" property-value="portal.url" />
+	<var name="lesaURL" value="/group/customer" />
+
+	<set-up>
+		<execute macro="User#login">
+			<var name="userEmailAddress" value="${userEmailAddress1}" />
+			<var name="userPassword" value="${userEmailPassword1}" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+
+	</set-up>
+	<command name="AcceptSolution" priority="5">
+		<execute macro="Ticket#CreateTicket">
+			<var name="account" value="${account}" />
+			<var name="component" value="${component}" />
+			<var name="description" value="Solution Repo Test Ticket" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+			<var name="summary" value="Solution Repo Test" />
+		</execute>
+
+		<execute macro="User#logoutAndLogin">
+			<var name="liferayURL" value="${liferayURL}" />
+			<var name="userEmailAddress" value="${userEmailAddress3}" />
+			<var name="userPassword" value="${userEmailPassword3}" />
+		</execute>
+	
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+		
+		<execute macro="Solution#ProposeSolution">
+			<var name="account" value="California Casualty" />
+			<var name="summary" value="Solution Repo Test" />
+		</execute>
+		
+		<execute macro="User#logoutAndLogin">
+			<var name="liferayURL" value="${liferayURL}" />
+			<var name="userEmailAddress" value="${userEmailAddress1}" />
+			<var name="userPassword" value="${userEmailPassword1}" />
+		</execute>
+	
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+		
+		<execute macro="Solution#AcceptSolution" />
+		
+		<execute function="Click" locator1="PGTicket#EDIT_FEEDBACK_BUTTON" />
+		<execute function="Click" locator1="PGFeedback#FINAL_RESOLUTION_SCORE" value1="4" /> 
+		<execute function="Click" locator1="PGFeedback#RESPONSE_TIME_SCORE" value1="4" />
+		<execute function="Click" locator1="PGFeedback#TECHNICAL_PROFICIENCY_SCORE" value1="4" />
+		<execute function="Click" locator1="PGFeedback#PROFESSIONALISM_FRIENDLINESS_SCORE" value1="4" />
+		<execute function="ScrollWebElementIntoView" locator1="PGFeedback#COMMENTS_FIELD" />
+		<execute function="Type" locator1="PGFeedback#COMMENTS_FIELD" value1="This is a comment." />
+		<execute function="Click" locator1="PGFeedback#SAVE_BUTTON" value1="Save" />
+		
+		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+	
+	<command name="RejectSolution" priority="5">
+		
+		<execute macro="Ticket#CreateTicket">
+			<var name="account" value="${account}" />
+			<var name="component" value="${component}" />
+			<var name="description" value="Solution Repo Test Ticket" />
+			<var name="summary" value="Solution Repo Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+		</execute>
+		
+		<execute macro="User#logoutAndLogin">
+			<var name="liferayURL" value="${liferayURL}" />
+			<var name="userEmailAddress" value="${userEmailAddress3}" />
+			<var name="userPassword" value="${userEmailPassword3}" />
+		</execute>
+		
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+		
+		<execute macro="Solution#ProposeSolution">
+			<var name="summary" value="Solution Repo Test" />
+		</execute>
+		
+		<execute macro="User#logoutAndLogin">
+			<var name="liferayURL" value="${liferayURL}" />
+			<var name="userEmailAddress" value="${userEmailAddress1}" />
+			<var name="userPassword" value="${userEmailPassword1}" />
+		</execute>
+		
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+		
+		<execute macro="Solution#rejectSolution" />	
+	</command>
+	
+	<tear-down>
+		<execute macro="User#logout" />
+	</tear-down>
+</definition>

@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>PGAddAccount</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PGAddAccount</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>PAGE_NAME</td>
+	<td></td>
+	<td>PGAddAccount</td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACCOUNT</td>
+	<td>//select[@name='_2_WAR_osbportlet_accountEntryId']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CHOOSE_PORTAL_PRODUCTION</td>
+	<td>//td[contains(.,'Portal Production')]/../td/input[@value='Choose']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CHOOSE_SOCIAL_OFFICE</td>
+	<td>//td[contains(.,'Social Office')]/../td/input[@value='Choose']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONFIRM_BUTTON_1</td>
+	<td>//td[contains(.,'Portal Production')]/../td/input[@value='Confirm']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONFIRM_BUTTON_2</td>
+	<td>//td[contains(.,'Social Office')]/../td/input[@value='Confirm']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SELECT</td>
+	<td>//tr[@class='account-environments']/td/table/tbody/tr[4]/td[2]/input[@value='Select']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONTINUE_WITHOUT_ADDING</td>
+	<td>//tr[@class='account-environments']/td/div/span/input[@value='Continue Without Adding']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_BUTTON</td>
+	<td>//tr[@class='account-environments']/td/div/span/input[@value='Add']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SELECT_COMPONENT</td>
+	<td>//select[@name='_2_WAR_osbportlet_component']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONTINUE_BUTTON</td>
+	<td>//input[@id='_2_WAR_osbportlet_submitButton']</td>
+	<td></td>
+</tr>
+<!---->
+</tbody>
+</table>
+</body>
+</html>
