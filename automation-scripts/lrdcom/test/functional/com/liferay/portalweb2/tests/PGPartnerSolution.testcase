@@ -67,6 +67,7 @@
 		<execute function="Click" locator1="PGFeedback#FINAL_RESOLUTION_SCORE" value1="4" /> 
 		<execute function="Click" locator1="PGFeedback#RESPONSE_TIME_SCORE" value1="4" />
 		<execute function="Click" locator1="PGFeedback#TECHNICAL_PROFICIENCY_SCORE" value1="4" />
+		<execute function="ScrollWebElementIntoView" locator1="PGFeedback#PROFESSIONALISM_FRIENDLINESS_SCORE" />
 		<execute function="Click" locator1="PGFeedback#PROFESSIONALISM_FRIENDLINESS_SCORE" value1="4" />
 		<execute function="ScrollWebElementIntoView" locator1="PGFeedback#COMMENTS_FIELD" />
 		<execute function="Type" locator1="PGFeedback#COMMENTS_FIELD" value1="This is a comment." />

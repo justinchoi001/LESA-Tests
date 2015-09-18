@@ -5,11 +5,13 @@
 	<var name="component" value="Document Library" />
 	<var name="liferayURL" property-value="portal.url" />
 	<var name="lesaURL" value="/group/customer" />
+	<var name="platinumUserEmailAddress" property-value="email.address.2" />
+	<var name="platinumUserEmailPassword" property-value="email.password.2" />
 	
 	<set-up>
 		<execute macro="User#login">
-			<var name="userEmailAddress" value="marty.alterman@ampf.com.broken" />
-			<var name="userPassword" value="test" />
+			<var name="userEmailAddress" value="${platinumUserEmailAddress}" />
+			<var name="userPassword" value="${platinumUserEmailPassword}" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />
@@ -53,8 +55,8 @@
 		
 		<execute macro="User#logoutAndLogin">
 			<var name="liferayURL" value="${liferayURL}" />
-			<var name="userEmailAddress" value="marty.alterman@ampf.com.broken" />
-			<var name="userPassword" value="test" />
+			<var name="userEmailAddress" value="${platinumUserEmailAddress}" />
+			<var name="userPassword" value="${platinumUserEmailPassword}" />
 		</execute>
 		
 		
@@ -68,6 +70,7 @@
 		<execute function="Click" locator1="PGFeedback#FINAL_RESOLUTION_SCORE" value1="4" /> 
 		<execute function="Click" locator1="PGFeedback#RESPONSE_TIME_SCORE" value1="4" />
 		<execute function="Click" locator1="PGFeedback#TECHNICAL_PROFICIENCY_SCORE" value1="4" />
+		<execute function="ScrollWebElementIntoView" locator1="PGFeedback#PROFESSIONALISM_FRIENDLINESS_SCORE" value1="4" />
 		<execute function="Click" locator1="PGFeedback#PROFESSIONALISM_FRIENDLINESS_SCORE" value1="4" />
 		<execute function="ScrollWebElementIntoView" locator1="PGFeedback#COMMENTS_FIELD" />
 		<execute function="Type" locator1="PGFeedback#COMMENTS_FIELD" value1="This is a comment." />

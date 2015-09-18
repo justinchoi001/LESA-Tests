@@ -2,13 +2,15 @@
 	<property name="testray.main.component.name" value="Support QA" />
 
 	<var name="cse" value="Brian Suh" />
+	<var name="userEmailAddress1" property-value="email.address.1" />
+	<var name="userEmailPassword1" property-value="email.password.1" />	
 	<var name="liferayURL" property-value="portal.url" />
 	<var name="lesaURL" value="/group/customer" />
 	
 	<set-up>
 		<execute macro="User#login">
-			<var name="userEmailAddress" value="matthew.chin@liferay.com.broken" />
-			<var name="userPassword" value="test" />
+			<var name="userEmailAddress" value="${userEmailAddress1}" />
+			<var name="userPassword" value="${userEmailPassword1}" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />

@@ -4,6 +4,7 @@
 	<var name="accountP1" value="California Casualty" />
 	<var name="account" value="Adelphi University" />
 	<var name="component" value="Security" />
+	<var name="cse" value="Christopher Lui" />
 	<var name="description" value="Support Test Ticket" />
 	<var name="systemStatus" value="Completely Inoperable/Shutdown" />
  	<var name="userEmailAddress1" property-value="marketplace.email.address.1" />
@@ -14,6 +15,8 @@
 	<var name="userEmailPassword2" property-value="marketplace.email.password.2" />
 	<var name="userEmailPassword3" property-value="marketplace.email.password.3" /> 
 	<var name="userEmailPassword4" property-value="marketplace.email.password.4" />
+	<var name="platinumUserEmailAddress" property-value="email.address.2" />
+	<var name="platinumUserEmailPassword" property-value="email.password.2" />
 
 	<var name="liferayURL" property-value="portal.url" />
 	<var name="lesaURL" value="/group/customer" />
@@ -46,11 +49,11 @@
 	</command>
 		
 	<command name="Forwarding" priority="5">
-		<var name="cse" value="Christopher Lui" />
+		<var name="key_cse" value="${cse}" />
 		
 		<execute macro="User#logoutAndLogin">
-			<var name="userEmailAddress" value="marty.alterman@ampf.com.broken" />
-			<var name="userPassword" value="test" />
+			<var name="userEmailAddress" value="${platinumUserEmailAddress}" />
+			<var name="userPassword" value="${platinumUserEmailPassword}" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />
@@ -65,7 +68,8 @@
 		</execute>
 		
 		<if>
-			<condition function="IsTextEqual#isPartialText" locator1="PGTicket#PRIMARY_ASSIGNEE" value1="Christopher Lui" />
+			<equals arg1="${cse}" arg2="Christopher Lui" />
+			<!--<condition function="IsTextEqual#isPartialText" locator1="PGTicket#PRIMARY_ASSIGNEE" value1="Christopher Lui" />-->
 			<then>
 				<execute macro="User#logoutAndLogin">
 					<var name="liferayURL" value="${liferayURL}" />
