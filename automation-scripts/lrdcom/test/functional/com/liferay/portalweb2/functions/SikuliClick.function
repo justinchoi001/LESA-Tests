@@ -8,10 +8,4 @@
 
 		<execute selenium="assertLiferayErrors" />
 	</command>
-	
-	<command name="sikuliClickNoError">
-		<execute selenium="sikuliClick" />
-
-		<execute argument1="2000" selenium="pause" />
-	</command>
 </definition>
