@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>CPOSBAdminSalesAddOrder</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CPOSBAdminSalesAddOrder</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>CURRENCY</td>
+	<td>//select[@name='_1_WAR_osbportlet_currencyEntryId']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NEXT_BUTTON</td>
+	<td>//input[@value='Next']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACCOUNT</td>
+	<td>//select[@name='_1_WAR_osbportlet_accountEntryId']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PURCHASE_ORDER</td>
+	<td>//input[@name='_1_WAR_osbportlet_purchaseOrderKey']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>START_MONTH</td>
+	<td>//select[@name='_1_WAR_osbportlet_startDateMonth']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>START_DAY</td>
+	<td>//select[@name='_1_WAR_osbportlet_startDateDay']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>START_YEAR</td>
+	<td>//select[@name='_1_WAR_osbportlet_startDateYear']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTUAL_PRICE</td>
+	<td>//input[@name='_1_WAR_osbportlet_actualPrice']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_BUTTON</td>
+	<td>//input[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_OFFERING_BUTTON</td>
+	<td>//input[@value='Add Offering']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RECALCULATE_BUTTON</td>
+	<td>//input[@value='Recalculate']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SELECT_NO_CPU_CORES</td>
+	<td>//select[@name='_1_WAR_osbportlet_processorCoresAllowed_59068291']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>QUANTITY_FIELD</td>
+	<td>//input[@name='_1_WAR_osbportlet_quantity_59068291']</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

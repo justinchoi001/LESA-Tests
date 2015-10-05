@@ -8,11 +8,6 @@
 <tr><td rowspan="1" colspan="3">PGUserSearch</td></tr>
 </thead>
 <tbody>
-<tr>
-	<td>PAGE_NAME</td>
-	<td></td>
-	<td>PGUserSearch</td>
-</tr>
 <!--Assigned to Search Window -->
 <tr>
 	<td>ASSIGNED_TO_SEARCH_FIELD</td>

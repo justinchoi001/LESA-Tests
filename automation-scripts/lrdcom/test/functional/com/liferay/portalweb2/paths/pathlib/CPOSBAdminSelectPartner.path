@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>CPOSBAdminSelectPartner</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CPOSBAdminSelectPartner</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>SUCCESS_MESSAGE</td>
+	<td>//div[@class='portlet-msg-success']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEARCH_FIELD</td>
+	<td>//input[@name='_1_WAR_osbportlet_keywords']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEARCH_BUTTON</td>
+	<td>//input[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_PARTNER_BUTTON</td>
+	<td>//input[@value='Add Partner']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEARCH_CONTAINER_FIRST_ROW</td>
+	<td>//td[@headers='_1_WAR_osbportlet_partnerEntriesSearchContainer_col-code']/a[contains(.,'${key_partnerName}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

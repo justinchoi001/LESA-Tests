@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>LicenseManagementPortal</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LicenseManagementPortal</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Top Level tabs-->
+<tr>
+	<td>PORTAL_TAB</td>
+	<td>//span/a[contains(.,'Portal')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>APP_TAB</td>
+	<td>//span/a[contains(.,'App')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>GENERATE_NEW_LICENSE</td>
+	<td>//a/div/div/div[contains(.,'Generate New License')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Search fields-->
+<tr>
+	<td>ACCOUNT</td>
+	<td>//input[@name='_4_WAR_osbportlet_accountEntryName']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME</td>
+	<td>//input[@name='_4_WAR_osbportlet_licenseKeySetName']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OWNER</td>
+	<td>//input[@name='_4_WAR_osbportlet_owner']</td>
+	<td></td>
+</tr>
+<!--License Type-->
+<tr>
+	<td>PORTAL_NON_PRODUCTION_LICENSE_CHECKBOX</td>
+	<td>//input[@value='44983727']</td>
+	<td></td>
+</tr>
+<!--Product-->
+<tr>
+	<td>PORTAL_NON_PRODUCTION_PRODUCT_CHECKBOX</td>
+	<td>//input[@value='5968274']</td>
+	<td></td>
+</tr>
+<!--Product Version-->
+</tbody>
+</table>
+</body>
+</html>

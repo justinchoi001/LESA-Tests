@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>CPOSBAdminSalesOrders</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CPOSBAdminSalesOrders</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUCCESS_MESSAGE</td>
+	<td>//div[@class='portlet-msg-success']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEARCH_FIELD</td>
+	<td>//input[@name='_1_WAR_osbportlet_keywords']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEARCH_BUTTON</td>
+	<td>//input[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_ORDER_BUTTON</td>
+	<td>//input[@value='Add Order']</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

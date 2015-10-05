@@ -9,11 +9,6 @@
 </thead>
 <tbody>
 <tr>
-	<td>PAGE_NAME</td>
-	<td></td>
-	<td>PGFeedback</td>
-</tr>
-<tr>
 	<td>FINAL_RESOLUTION_SCORE</td>
 	<td>//div[@class='callout-a']/div/div[contains(.,' How satisfied are you with the final resolution of this issue? * ')]/../span/span/span/input[@name='_2_WAR_osbportlet_rating1' and @value='4']</td>
 	<td></td>
