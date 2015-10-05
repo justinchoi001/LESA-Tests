@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>CPOSBAdminSalesOfferings</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CPOSBAdminSalesOfferings</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRODUCT</td>
+	<td>//select[@name='_1_WAR_osbportlet_productEntryIds']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUPPORT</td>
+	<td>//select[@name='_1_WAR_osbportlet_supportResponseIds']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CURRENCY</td>
+	<td>//select[@name='_1_WAR_osbportlet_currencyEntryIds']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEARCH_BUTTON</td>
+	<td>//input[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_OFFERING_BUTTON</td>
+	<td>//input[@value='Add Offering']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

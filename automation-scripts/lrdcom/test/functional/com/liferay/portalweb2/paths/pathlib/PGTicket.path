@@ -9,11 +9,6 @@
 </thead>
 <tbody>
 <tr>
-	<td>PAGE_NAME</td>
-	<td></td>
-	<td>PGTicket</td>
-</tr>
-<tr>
 	<td>SUCCESS_MESSAGE</td>
 	<td>//div[@class='portlet-msg-success']</td>
 	<td></td>
@@ -46,7 +41,7 @@
 </tr>
 <tr>
 	<td>PRIMARY_ASSIGNEE</td>
-	<td>//div[@class='callout-a']/div/div/div[contains(.,'Christopher Lui')]</td>
+	<td>//div[@class='callout-a']/div/div/div[contains(.,'${key_cse1}')]|//div[@class='callout-a']/div/div/div[contains(.,'${key_cse2}')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -57,6 +52,57 @@
 <tr>
 	<td>BACK_TO_PREVIOUS_PAGE_BUTTON</td>
 	<td>//div[@class='fr']/a[contains(.,'Back to Previous Page')]</td>
+	<td></td>
+</tr>
+<!--Edit Ticket Fields -->
+<tr>
+	<td>SUBJECT_FIELD</td>
+	<td>//input[@name='_2_WAR_osbportlet_subject']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STATUS_DROPDOWN</td>
+	<td>//select[@name='_2_WAR_osbportlet_status']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEVERITY_DROPDOWN</td>
+	<td>//select[@name='_2_WAR_osbportlet_severity']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RESOLUTION_DROPDOWN</td>
+	<td>//select[@name='_2_WAR_osbportlet_resolution']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ESCALATION_LEVEL_DROPDOWN</td>
+	<td>//select[@name='_2_WAR_osbportlet_escalationLevel']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUPPORT_REGION_DROPDOWN</td>
+	<td>//select[@name='_2_WAR_osbportlet_supportRegionId']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>COMPONENT_DROPDOWN</td>
+	<td>//select[@name='_2_WAR_osbportlet_component']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUBCOMPONENT_DROPDOWN</td>
+	<td>//select[@name='_2_WAR_osbportlet_subcomponent']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DESCRIPTION</td>
+	<td>//textarea[@name='_2_WAR_osbportlet_description']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_BUTTON</td>
+	<td>//input[@type='submit']</td>
 	<td></td>
 </tr>
 <!--Buttons -->

@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>LicenseManagementPortalSelectEnv</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LicenseManagementPortalSelectEnv</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACCOUNT</td>
+	<td>//select[@name='_4_WAR_osbportlet_accountEntryId']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LIFERAY_VERSION</td>
+	<td>//select[@name='_4_WAR_osbportlet_productVersion']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRODUCT</td>
+	<td>//select[@name='_4_WAR_osbportlet_productEntryId']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE</td>
+	<td>//select[@name='_4_WAR_osbportlet_licenseEntryId']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>START_DATE_MONTH</td>
+	<td>//select[@class='aui-datepicker-month']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>START_DATE_DAY</td>
+	<td>//select[@class='aui-datepicker-day']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>START_DATE_YEAR</td>
+	<td>//select[@class='aui-datepicker-year']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LIFETIME</td>
+	<td>//td[contains(.,'${key_lifetime}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CHOOSE_BUTTON</td>
+	<td>//input[@value='Choose']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

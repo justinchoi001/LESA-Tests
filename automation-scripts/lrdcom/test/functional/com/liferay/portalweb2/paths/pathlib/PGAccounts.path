@@ -9,11 +9,6 @@
 </thead>
 <tbody>
 <tr>
-	<td>PAGE_NAME</td>
-	<td></td>
-	<td>PGAccounts</td>
-</tr>
-<tr>
 	<td>PROJECT_NAME_FIELD</td>
 	<td>//input[@id='_2_WAR_osbportlet_name']</td>
 	<td></td>

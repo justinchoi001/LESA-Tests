@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>LicenseManagementPortalAddServer</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LicenseManagementPortalAddServer</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>BACK_TO_PREVIOUS_PAGE</td>
+	<td>//div/a[contains(.,'Back to Previous Page')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME</td>
+	<td>//input[@name='_4_WAR_osbportlet_name']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OWNER</td>
+	<td>//input[@name='_4_WAR_osbportlet_owner']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DESCRIPTION</td>
+	<td>//input[@name='_4_WAR_osbportlet_description']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MAXIMUM_CONNECTIONS</td>
+	<td>//select[@name='_4_WAR_osbportlet_maxHttpSessions']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HOST_NAME</td>
+	<td>//input[@name='_4_WAR_osbportlet_hostName0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IP_ADDRESSES</td>
+	<td>//textarea[@name='_4_WAR_osbportlet_ipAddresses0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MAC_ADDRESSES</td>
+	<td>//textarea[@name='_4_WAR_osbportlet_macAddresses0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_NEW_HOST</td>
+	<td>//button[@class='add-row aui-buttonitem-content aui-buttonitem aui-state-default aui-buttonitem-icon-only aui-toolbar-first aui-toolbar-item']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GENERATE_BUTTON</td>
+	<td>//input[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL_BUTTON</td>
+	<td>//input[@value='Cancel']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

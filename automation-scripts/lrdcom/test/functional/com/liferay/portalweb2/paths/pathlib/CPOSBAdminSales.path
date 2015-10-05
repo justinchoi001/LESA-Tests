@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>CPOSBAdminSales</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CPOSBAdminSales</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUCCESS_MESSAGE</td>
+	<td>//div[@class='portlet-msg-success']</td>
+	<td></td>
+</tr>
+<!--Top Level Tabs -->
+<tr>
+	<td>ORDERS</td>
+	<td>//a[contains(.,'Orders')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OFFERINGS</td>
+	<td>//a[contains(.,'Offerings')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUPPORT_RESPONSES</td>
+	<td>//a[contains(.,'Support Responses')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRODUCTS</td>
+	<td>//a[contains(.,'Products')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LICENSES</td>
+	<td>//a[contains(.,'Licenses')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CURRENCIES</td>
+	<td>//a[contains(.,'Currencies')]</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

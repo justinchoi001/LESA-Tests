@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>LicenseManagementKeyManagement</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LicenseManagementKeyManagement</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUCCESS_MESSAGE</td>
+	<td>//div[@class='portlet-msg-success']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BACK_TO_PREVIOUS_PAGE</td>
+	<td>//div/a[contains(.,'Back to Previous Page')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DOWNLOAD_LICENSE_FILE</td>
+	<td>//a/span[contains(.,'Download License File')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MOVE_LICENSE</td>
+	<td>//a/span[contains(.,'Move License')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEACTIVATE</td>
+	<td>//a/span[contains(.,'Deactivate')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SELECT_MONTH</td>
+	<td>//select[@class='aui-datepicker-month']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SELECT_DAY</td>
+	<td>//select[@class='aui-datepicker-day']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SELECT_YEAR</td>
+	<td>//select[@class='aui-datepicker-year']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DURATION</td>
+	<td>//select[@class='aui-field-input aui-field-input-select aui-field-input-menu']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RENEW_BUTTON</td>
+	<td>//a[contains(.,'Renew')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_NEW_LICENSE_KEY</td>
+	<td>//input[@value='Add New License Key']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MERGE_LICENSES</td>
+	<td>//input[@value='Merge Licenses']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL</td>
+	<td>//input[@value='Cancel']</td>
+	<td></td>
+</tr>
+<!--License information-->
+<tr>
+	<td>ACTIVE_STATUS</td>
+	<td>//div/span/span[contains(.,'Active')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXPIRED_STATUS</td>
+	<td>//div/span/span[contains(.,'Expired')]</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

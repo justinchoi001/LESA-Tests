@@ -9,11 +9,6 @@
 </thead>
 <tbody>
 <tr>
-	<td>PAGE_NAME</td>
-	<td></td>
-	<td>PGCustomerInformation</td>
-</tr>
-<tr>
 	<td>PROJECT_DETAILS_TAB</td>
 	<td>//ul[@class='aui-tabview-list']/li[2]/span/a</td>
 	<td></td>
@@ -30,22 +25,22 @@
 </tr>
 <tr>
 	<td>EDIT_ADVOCACY_SPECIALIST_BUTTON</td>
-	<td></td>
+	<td>//div[@id='_2_WAR_osbportlet_sectionDisplay_advocacy-specialist-information']/div/div/input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>EDIT_SATISFACTION_METER_BUTTON</td>
-	<td></td>
+	<td>//div[@id='satisfaction-meterPanel']/div[2]/div/div/div/div/input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>EDIT_EXPERIENCE_MANAGER_INFO_BUTTON</td>
-	<td></td>
+	<td>//div[@id='_2_WAR_osbportlet_sectionDisplay_experience-manager-information']/div/div/input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>EDIT_CALL_LOG_BUTTON</td>
-	<td></td>
+	<td>//tr[@class='account-calls']/td/div/div/div/input</td>
 	<td></td>
 </tr>
 <tr>

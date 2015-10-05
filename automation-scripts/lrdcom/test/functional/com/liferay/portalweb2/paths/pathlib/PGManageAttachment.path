@@ -9,11 +9,6 @@
 </thead>
 <tbody>
 <tr>
-	<td>PAGE_NAME</td>
-	<td></td>
-	<td>PGManageAttachments</td>
-</tr>
-<tr>
 	<td>CLASSIC_UPLOADER_TOGGLE</td>
 	<td>//div[@id='_2_WAR_osbportlet_switchButtonHolder']/a[@id='_2_WAR_osbportlet_classicUploaderButton']|//div[@id='_2_WAR_osbportlet_switchButtonHolder']/a[@id='_2_WAR_osbportlet_regularUploaderButton']</td>
 	<td></td>

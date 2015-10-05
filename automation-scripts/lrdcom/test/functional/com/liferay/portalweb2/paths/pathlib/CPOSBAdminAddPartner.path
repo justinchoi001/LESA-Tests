@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>CPOSBAdminAddPartner</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CPOSBAdminAddPartner</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>CODE_FIELD</td>
+	<td>//input[@name='_1_WAR_osbportlet_code']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADDITIONAL_NOTES</td>
+	<td>//textarea[@name='_1_WAR_osbportlet_notes']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUPPORT_REGION_DROPDOWN</td>
+	<td>//select[@name='_1_WAR_osbportlet_supportRegionId']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEL_NUMBER_FIELD</td>
+	<td>//input[@name='_1_WAR_osbportlet_phoneNumber0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEL_EXT_FIELD</td>
+	<td>//input[@name='_1_WAR_osbportlet_phoneExtension0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STREET_1</td>
+	<td>//input[@name='_1_WAR_osbportlet_addressStreet1_0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STREET_2</td>
+	<td>//input[@name='_1_WAR_osbportlet_addressStreet2_0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STREET_3</td>
+	<td>//input[@name='_1_WAR_osbportlet_addressStreet3_0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>COUNTRY</td>
+	<td>//select[@name='_1_WAR_osbportlet_addressCountryId0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REGION</td>
+	<td>//select[@name='_1_WAR_osbportlet_addressRegionId0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>POSTAL_CODE_FIELD</td>
+	<td>//input[@name='_1_WAR_osbportlet_addressZip0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CITY</td>
+	<td>//input[@name='_1_WAR_osbportlet_addressCity0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRIMARY_ADDRESS_RADIO_BUTTON</td>
+	<td>//input[@name='_1_WAR_osbportlet_addressPrimary']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRIMARY_TEL_RADIO_BUTTON</td>
+	<td>//input[@name='_1_WAR_osbportlet_phonePrimary']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_BUTTON</td>
+	<td>//input[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL_BUTTON</td>
+	<td>//input[@value='Cancel']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
