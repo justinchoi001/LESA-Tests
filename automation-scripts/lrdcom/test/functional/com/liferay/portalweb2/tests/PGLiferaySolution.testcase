@@ -5,7 +5,6 @@
 	<var name="component" value="Document Library" />
 	<var name="cse" value="Christopher Lui" />
 	<var name="description" value="Solution Repo Test Ticket" />
-	<var name="liferayURL" property-value="portal.url" />
 	<var name="lesaURL" value="/group/customer" />
 	<var name="platinumUserEmailAddress" property-value="email.address.2" />
 	<var name="platinumUserEmailPassword" property-value="email.password.2" />
