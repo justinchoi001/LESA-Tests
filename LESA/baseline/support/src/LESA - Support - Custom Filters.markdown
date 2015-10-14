@@ -26,14 +26,14 @@ This test is designed to test the custom filters. Users will design a custom fil
 1. Click the LESA button    
 <a href="#CreateATicket" name="CreateATicket">Create A Ticket</a>
 1. Click New Ticket
-1. Select an account
+1. Select an account.
 1. Click Portal Production
-1. Click the Continue Without Adding button
-1. Click Create Ticket
+1. Click the Continue Without Adding button.
+1. Select "Document Library" from the Component drop down.
+1. Click Continue.
 1. Enter in the <b>Provide a summary</b> field: Customer Basic Test
-1. Select Document Library from the Component drop down
 1. Select <b>System Status</b>: Completely Inoperable / Shutdown    
-1. Enter: "This is a customer test" in the Description
+1. Enter in the <b>Description</b> field: Liferay CSE filter test
 1. Select the following:    
 	(a) **Liferay Version**:	 6.2 EE    
 	(b) **Application Server**:	Weblogic 12c    
@@ -43,10 +43,8 @@ This test is designed to test the custom filters. Users will design a custom fil
 	(f) **Primary Browser:**		Firefox 20+
 1. Click Upload New in the Portal-ext section
 1. Upload a .txt file
-1. Flag the "This portal-ext is current" check box if it is not already flagged
 1. Click Upload New in the Patch Level section
 1. Upload a .txt file
-1. Flag the "This patch level is current" check box if it is not already flagged
 1. Click the Submit button
 1. Assert that the system redirects to the newly created ticket.
 1. Click Back to Previous Page
@@ -66,6 +64,7 @@ This test is designed to test the custom filters. Users will design a custom fil
 1. Click the plus sign next to Custom Filters
 1. Enter in the name field: filter1
 1. Select Public in the Visibility drop down.
+1. Check the Database Search button.
 1. Click the Add New Filter button.
 1. Assert that filter1 displays in the Custom Filters drop down.
 1. Assert that the Permalink displays.
@@ -80,6 +79,10 @@ This test is designed to test the custom filters. Users will design a custom fil
 	(b) Document Library    
 	(c) WebLogic 12c    
 	(d) Oracle 11.2    
+1. Click the Export button.
+1. Click "Ticket Details"
+1. Assert that users can download the filter results as a CSV file.    
+![customer-filter02](../images/custom-filter02.jpg)    
 <a href="#DeleteAFilter" name="DeleteAFilter">Delete A Filter</a>
 1. Click the Delete icon.
 1. Click the OK button.
