@@ -30,16 +30,19 @@ This test is designed to have users test the feedback feature. Customers will su
 	(a) **Email Address:**	${customer email address}.broken    
 	(b) **Password:**	test
 1. Click Sign In
-1. Click Menu > User Profile
-1. Click Support    
+1. Click Menu > Customer Portal
+1. Click LESA    
 <a href="#OpenATicket" name="OpenATicket">Open A Ticket</a>
 1. Click New Ticket
-1. Select Customer Account from the drop down
-1. Click Portal Production
-1. Click Continue Without Adding
-1. Click Create Ticket
-1. Enter Customer Feedback Test in the Subject field
-1. Select Unstable with Periodic Interruptions from the System Status field
+1. Select an Account from the drop down
+1. Click Choose next to Portal Production
+1. Click Continue Without Adding.
+1. Click Confirm.
+1. Select a Document Library from the Component drop down.
+1. Click Continue
+1. Enter Customer Feedback Test in the Summary field.
+1. Select **Unstable with Periodic Interruptions** from the System Status field
+1. Enter "This is the description for the feedback test."
 1. Select the following:    
 	(a) **Liferay Version**:	 6.2 EE    
 	(b) **Application Server**:	Weblogic 12c    
@@ -53,17 +56,8 @@ This test is designed to have users test the feedback feature. Customers will su
 1. Click Upload New in the Patch Level section
 1. Upload a .txt file
 1. Flag the "This patch level is current" check box if it is not already flagged
-1. Select Document Library from the Component drop down
-1. Enter "this is a customer feedback test" in the Description text area
-1. Click Save
-1. Click the created ticket in the Support page
-1. Assert the following:    
-	(a) **Status:**		Incident Reported    
-	(b) **Severity:**	Major    
-	(c) **Resolution:**	N/A    
-	(d) **Escalation Level:**	P1
-1. Assert that the ticket has been assigned to Liferay Partner
-1. Remember the ticket number (e.g. IHG-57)
+1. Click Submit
+1. Assert that the system redirects to the new ticket page.
 1. Click Menu > Sign Out
 1. Assert that the user has been signed out    
 <a href="#SignInAsPartner" name="SignInAsPartner">Sign In as the Partner</a>
@@ -72,10 +66,10 @@ This test is designed to have users test the feedback feature. Customers will su
 	(a) **Email Address:**	${parter email account}.broken    
 	(b) **Password:**	test
 1. Click Sign In
-1. Click Menu > User Profile
-1. Click Support
+1. Click Menu > Customer Portal
+1. Click LESA
 1. Click My Open Tickets
-1. Assert the ticket displays in the results (e.g. IHG-57)    
+1. Assert the new ticket displays in the results    
 <a href="#ResolveTheTicket" name="ResolveTheTicket">Resolve The Ticket</a>
 1. Click the newly created ticket's link
 1. Assert the Proposed Solution button displays
@@ -91,8 +85,8 @@ This test is designed to have users test the feedback feature. Customers will su
 	(a) **Email Address:**	${customer account}.broken    
 	(b) **Password:**	test
 1. Click Sign In
-1. Click Menu > User Profile
-1. Click Support
+1. Click Menu > Customer Portal
+1. Click LESA
 1. Click the newly created ticket's link in the results field
 1. Assert the Solutions Repository solution pop-up displays
 1. Click Yes to accept the pre-production resolution
@@ -109,10 +103,9 @@ This test is designed to have users test the feedback feature. Customers will su
 	(a) **Email Address:**	${partner email address}.broken    
 	(b) **Password:**	test
 1. Click Sign In
-1. Click Menu > User Profile
-1. Click Support
-1. Enter the ticket name in the Basic Search field
-1. Click Search
+1. Click Menu > Customer Portal
+1. Click LESA
+1. Navigate to the newly closed ticket.
 1. Assert that the Ticket Feedback section displays
 1. Click Menu > Sign Out    
 <a href="#AssertLiferayCSEsCanSeeFeedback" name="AssertLiferayCSEsCanSeeFeedback">Assert Liferay CSEs Can See Feedback</a>
@@ -121,8 +114,8 @@ This test is designed to have users test the feedback feature. Customers will su
 	(a) **Email Address:**	${liferay engineer email account}.broken    
 	(b) **Password:**	test
 1. Click Sign In
-1. Click Menu > User Profile
-1. Click Support
+1. Click 1. Click Menu > Customer Portal
+1. Click LESA
 1. Enter the ticket name in the Basic Search field
 1. Click Search
 1. Assert that the Ticket Feedback section displays
