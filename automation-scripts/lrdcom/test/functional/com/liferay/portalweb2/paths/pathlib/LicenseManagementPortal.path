@@ -55,6 +55,11 @@
 	<td>//input[@name='_4_WAR_osbportlet_owner']</td>
 	<td></td>
 </tr>
+<tr>
+	<td>ACTIVE_STATUS</td>
+	<td>//select[@name='_4_WAR_osbportlet_active']</td>
+	<td></td>
+</tr>
 <!--License Type-->
 <tr>
 	<td>PORTAL_NON_PRODUCTION_LICENSE_CHECKBOX</td>
@@ -68,6 +73,16 @@
 	<td></td>
 </tr>
 <!--Product Version-->
+<tr>
+	<td>SEARCH_BUTTON</td>
+	<td>//div[@id='toggle_id_license_key_searchadvanced']/span[2]/span/input[@value='Search']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACCOUNT_FIRST_ROW</td>
+	<td>//td/a/span[contains(.,'${key_account}')]</td>
+	<td></td>
+</tr>
 </tbody>
 </table>
 </body>

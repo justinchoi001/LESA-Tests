@@ -74,19 +74,29 @@
 	<td></td>
 </tr>
 <tr>
+	<td>DEACTIVATE_LICENSE</td>
+	<td>//a/span[contains(.,'Deactivate')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTIVATE_LICENSE</td>
+	<td>//a/span[contains(.,'Activate')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>CANCEL</td>
 	<td>//input[@value='Cancel']</td>
 	<td></td>
 </tr>
 <!--License information-->
 <tr>
-	<td>ACTIVE_STATUS</td>
-	<td>//div/span/span[contains(.,'Active')]</td>
+	<td>KEY_STATUS</td>
+	<td>//div/span/span[contains(.,'Active')]|//div/span/span[contains(.,'Expired')]|//div/span/span[contains(.,'Inactive')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>EXPIRED_STATUS</td>
-	<td>//div/span/span[contains(.,'Expired')]</td>
+	<td>DEACTIVATED_LICENSE_HEADER</td>
+	<td>//div[@id='_4_WAR_osbportlet_inactiveLicenses']/div/div/span[contains(.,'Deactivated Licenses')]</td>
 	<td></td>
 </tr>
 </tbody>
