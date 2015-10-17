@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>CPOSBAdminAccountManagement</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CPOSBAdminAccountManagement</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUCCESS_MESSAGE</td>
+	<td>//div[@class='portlet-msg-success']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BUSINESS_ACCOUNT_NAME_FIELD</td>
+	<td>//input[@name='_1_WAR_osbportlet_corpEntryName']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROJECT_NAME_FIELD</td>
+	<td>//input[@name='_1_WAR_osbportlet_name']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CODE_FIELD</td>
+	<td>//input[@name='_1_WAR_osbportlet_code']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GROUP_DROPDOWN</td>
+	<td>//select[@name='_1_WAR_osbportlet_type']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>INDUSTRY_DROPDOWN</td>
+	<td>//select[@name='_1_WAR_osbportlet_industry']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SELECT_PARTNER_BUTTON</td>
+	<td>//span[@id='_1_WAR_osbportlet_partnerEntryCode']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REMOVE_PARTNER_BUTTON</td>
+	<td>//input[@id='_1_WAR_osbportlet_removePartnerEntryButton']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PARTNER_MANAGED_SUPPORT_CHECKBOX</td>
+	<td>//input[@name='_1_WAR_osbportlet_partnerManagedSupportCheckbox']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TIER</td>
+	<td>//select[@name='_1_WAR_osbportlet_tier']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MAXIMUM_CONTACTS</td>
+	<td>//input[@name='_1_WAR_osbportlet_maxCustomers']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SPECIAL_INSTRUCTIONS</td>
+	<td>//textarea[@name='_1_WAR_osbportlet_instructions']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADDITIONAL_NOTES</td>
+	<td>//textarea[@name='_1_WAR_osbportlet_notes']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADDRESS_FIELD</td>
+	<td>//input[@name='_1_WAR_osbportlet_street1']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>COUNTRY</td>
+	<td>//select[@name='_1_WAR_osbportlet_countryId']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STATE_PROVINCE</td>
+	<td>//select[@name='_1_WAR_osbportlet_regionId']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CITY</td>
+	<td>//input[@name='_1_WAR_osbportlet_city']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>POSTAL_CODE</td>
+	<td>//input[@name='_1_WAR_osbportlet_zip']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_BUTTON</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL_BUTTON</td>
+	<td>//input[@value='Cancel']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ASSIGN_WORKERS_BUTTON</td>
+	<td>//input[@value='Assign Workers']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ASSIGN_CUSTOMERS_BUTTON</td>
+	<td>//input[@value='Assign Customers']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VIEW_ORDERS_BUTTON</td>
+	<td>//input[@value='View Orders']</td>
+	<td></td>
+</tr>
+<!--Lower tabs -->
+<tr>
+	<td>OFFERINGS_TAB</td>
+	<td>//li/span/a[contains(.,'Offerings')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ENVIRONMENT_DETAILS</td>
+	<td>//li/span/a[contains(.,'Environment Details')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUPPORT_REGIONS</td>
+	<td>//li/span/a[contains(.,'Support Regions')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_SUPPORT_REGION_BUTTON</td>
+	<td>//input[@value='Add Support Region']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

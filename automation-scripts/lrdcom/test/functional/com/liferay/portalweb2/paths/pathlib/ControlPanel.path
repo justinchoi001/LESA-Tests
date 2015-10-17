@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>ControlPanel</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ControlPanel</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>OSB_ADMIN</td>
+	<td>//a[contains(@id,'_160_portlet_1_WAR_osbportlet')]</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
