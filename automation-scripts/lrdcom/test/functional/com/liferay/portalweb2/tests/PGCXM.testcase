@@ -3,18 +3,10 @@
 
 	<var name="account" value="Florida Virtual Campus" />
 	<var name="code" value="floridavc" />
-	<var name="userEmailAddress1" property-value="marketplace.email.address.1" />
-	<var name="userEmailAddress2" property-value="marketplace.email.address.2" />
-	<var name="userEmailAddress3" property-value="marketplace.email.address.3" />
-	<var name="userEmailAddress4" property-value="marketplace.email.address.4" />
 	<var name="userEmailAddress5" property-value="marketplace.email.address.5" />
-	<var name="userEmailPassword1" property-value="marketplace.email.password.1" />
-	<var name="userEmailPassword2" property-value="marketplace.email.password.2" />
-	<var name="userEmailPassword3" property-value="marketplace.email.password.3" /> 
-	<var name="userEmailPassword4" property-value="marketplace.email.password.4" />
 	<var name="userEmailPassword5" property-value="marketplace.email.password.5" />
-	
-	
+
+
 	<var name="liferayURL" property-value="portal.url" />
 	<var name="lesaURL" value="/group/customer" />
 
@@ -35,15 +27,15 @@
 		<execute function="Type" locator1="PGAccounts#PROJECT_NAME_FIELD" value1="${account}" />
 		<execute function="Type" locator1="PGAccounts#CODE_FIELD" value1="${code}" />
 		<execute function="Click" locator1="PGAccounts#SEARCH_BUTTON" />
-		
+
 		<execute function="Click" locator1="PGAccounts#RESULTS" />
-		
+
 		<execute function="Click" locator1="PGCustomerInformation#PROJECT_DETAILS_TAB" />
-		
+
 		<execute function="Click" locator1="PGCustomerInformation#EDIT_CONTACT_BUTTON" />
 		<execute function="Type" locator1="PGCustomerInformation#CONTACT_INFORMATION_FIELD" value1="123 Main Street, Anytown, ME 20001" />
 		<execute function="Click" locator1="PGCustomerInformation#SAVE_CONTACT_BUTTON" />
-		
+
 		<execute function="Click" locator1="PGCustomerInformation#ADD_ACCOUNT_CALL_BUTTON" />
 		<execute function="SelectFrame" locator1="PGCustomerInformation#CALL_IFRAME" />
 		<execute function="Select" locator1="PGCustomerInformation#CALL_TYPE" value1="Incoming" />
@@ -59,17 +51,17 @@
 		<execute function="Click" locator1="PGCustomerInformation#CALL_SAVE_BUTTON" />
 		<execute function="SelectFrame" value1="relative=top" />
 	</command>
-	
+
 	<command name="AddGSProject" priority="4">
 		<execute function="Click" locator1="PGHome#ACCOUNTS_TAB" />
 		<execute function="Type" locator1="PGAccounts#PROJECT_NAME_FIELD" value1="${account}" />
 		<execute function="Type" locator1="PGAccounts#CODE_FIELD" value1="${code}" />
 		<execute function="Click" locator1="PGAccounts#SEARCH_BUTTON" />
-		
+
 		<execute function="Click" locator1="PGAccounts#RESULTS" />
-		
+
 		<execute function="Click" locator1="PGGlobalServices#GLOBAL_SERVICES_TAB" />
-		
+
 		<execute function="Click" locator1="PGGlobalServices#ADD_PROJECT_BUTTON" />
 		<execute function="SelectFrame" locator1="PGGlobalServices#PROJECT_IFRAME" />
 		<execute function="Type" locator1="PGGlobalServices#PROJECT_NAME_FIELD" value1="Mexican Slayride" />
@@ -79,6 +71,7 @@
 		<execute function="Click" locator1="PGGlobalServices#SAVE_BUTTON" />
 		<execute function="SelectFrame" value1="relative=top" />
 	</command>
+
 	<tear-down>
 		<execute macro="User#logout" />
 	</tear-down>

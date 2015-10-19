@@ -1,10 +1,12 @@
 <definition component-name="support-qa">
 	<property name="testray.main.component.name" value="Support QA" />
-	
+
 	<var name="account" value="Ameriprise Financial" />
 	<var name="component" value="Document Library" />
-	<var name="cse" value="Christopher Lui" />
+	<var name="cse1" value="Alex Chau" />
+	<var name="cse2" value="Christopher Lui" />
 	<var name="description" value="Solution Repo Test Ticket" />
+	<var name="liferayURL" property-value="portal.url" />
 	<var name="lesaURL" value="/group/customer" />
 	<var name="platinumUserEmailAddress" property-value="email.address.2" />
 	<var name="platinumUserEmailPassword" property-value="email.password.2" />
@@ -21,8 +23,9 @@
 	</set-up>
 
 	<command name="AcceptSolution" priority="5">
-		<var name="key_cse" value="${cse}" />
-	
+		<var name="key_cse1" value="${cse1}" />
+		<var name="key_cse2" value="${cse2}" />
+
 		<execute macro="Ticket#CreateTicket">
 			<var name="account" value="${account}" />
 			<var name="component" value="${component}" />
@@ -30,47 +33,47 @@
 			<var name="summary" value="Solution Repo Test" />
 			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
 		</execute>
-		
+
 		<if>
-			<condition function="IsTextEqual#isPartialText" locator1="PGTicket#PRIMARY_ASSIGNEE" value1="Christopher Lui" />
+			<condition function="IsTextEqual#isPartialText" locator1="PGTicket#PRIMARY_ASSIGNEE" value1="${cse1}" />
 			<then>
 				<execute macro="User#logoutAndLogin">
 					<var name="liferayURL" value="${liferayURL}" />
-					<var name="userEmailAddress" value="christopher.lui@liferay.com.broken" />
+					<var name="userEmailAddress" value="alexander.chau@liferay.com.broken" />
 				<var name="userPassword" value="test" />
 				</execute>
 			</then>
 			<else>
 				<execute macro="User#logoutAndLogin">
 					<var name="liferayURL" value="${liferayURL}" />
-					<var name="userEmailAddress" value="alexander.chau@liferay.com.broken" />
+					<var name="userEmailAddress" value="christopher.lui@liferay.com.broken" />
 					<var name="userPassword" value="test" />
 				</execute>
 			</else>
 		</if>
-	
+
 		<execute function="Open" locator1="${lesaURL}" />
 
 		<execute macro="GoToLESA#goToLESA" />
-			
+
 		<execute macro="Solution#ProposeSolution">
 			<var name="summary" value="Solution Repo Test" />
 		</execute>
-		
+
 		<execute macro="User#logoutAndLogin">
 			<var name="liferayURL" value="${liferayURL}" />
 			<var name="userEmailAddress" value="${platinumUserEmailAddress}" />
 			<var name="userPassword" value="${platinumUserEmailPassword}" />
 		</execute>
-		
-		
+
+
 		<execute function="Open" locator1="${lesaURL}" />
 
 		<execute macro="GoToLESA#goToLESA" />
-		
+
 		<execute macro="Solution#AcceptSolution" />
 	</command>
-	
+
 	<tear-down>
 		<execute macro="User#logout" />
 	</tear-down>

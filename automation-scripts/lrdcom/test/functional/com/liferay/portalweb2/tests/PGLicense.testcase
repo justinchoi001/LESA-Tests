@@ -1,0 +1,158 @@
+<definition component-name="support-qa">
+	<property name="testray.main.component.name" value="Support QA" />
+
+	<!-- run with gradle -->
+	<var name="licenseManagement" value="/web/justin.choi/license" />
+
+	<set-up>
+		<execute macro="User#login">
+			<var name="userEmailAddress" value="justin.choi@liferay.com.broken" />
+			<var name="userPassword" value="test" />
+		</execute>
+
+		<execute function="Open" locator1="${licenseManagement}" />
+	</set-up>
+
+	<command name="GenerateNewLicense" priority="5">
+		<!--Run the OSB tests: add an account, an offering, and an order first. -->
+
+		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortal#GENERATE_NEW_LICENSE" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#ACCOUNT" value1="ACME Portal" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#LIFERAY_VERSION" value1="6.1 GA3" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#PRODUCT" value1="Portal Non-Production" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#TYPE" value1="Portal Non-Production (Production)" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_MONTH" value1="September" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_DAY" value1="10" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_YEAR" value1="2015" />
+		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortalSelectEnv#CHOOSE_BUTTON" />
+		<execute function="Type" locator1="LicenseManagementPortalAddServer#HOST_NAME" value1="liferay123" />
+		<execute function="Type" locator1="LicenseManagementPortalAddServer#IP_ADDRESSES" value1="192.168.1.15" />
+		<execute function="Click" locator1="LicenseManagementPortalAddServer#GENERATE_BUTTON" />
+		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute function="ClickNoError" locator1="LicenseManagementKeyManagement#DOWNLOAD_LICENSE_FILE" />
+	</command>
+
+	<command name="GenerateTrialLicense" priority="5">
+		<!--Run the OSB tests: add an account, an offering, and an order first. -->
+
+		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortal#GENERATE_NEW_LICENSE" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#ACCOUNT" value1="Liferay Trial" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#LIFERAY_VERSION" value1="6.1 GA3" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#PRODUCT" value1="Portal Development" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#TYPE" value1="Portal Developer (Developer)" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_MONTH" value1="September" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_DAY" value1="10" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_YEAR" value1="2015" />
+		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortalSelectEnv#CHOOSE_BUTTON" />
+		<execute function="Select" locator1="LicenseManagementPortalAddServer#MAXIMUM_CONNECTIONS" value1="6" />
+		<execute function="Click" locator1="LicenseManagementPortalAddServer#GENERATE_BUTTON" />
+		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute function="ClickNoError" locator1="LicenseManagementKeyManagement#DOWNLOAD_LICENSE_FILE" />
+	</command>
+
+	<command name="RenewLicense" priority="5">
+		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortal#GENERATE_NEW_LICENSE" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#ACCOUNT" value1="Liferay Trial" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#LIFERAY_VERSION" value1="6.1 GA3" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#PRODUCT" value1="Portal Development" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#TYPE" value1="Portal Developer (Developer)" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_MONTH" value1="September" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_DAY" value1="10" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_YEAR" value1="2014" />
+		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortalSelectEnv#CHOOSE_BUTTON" />
+		<execute function="Select" locator1="LicenseManagementPortalAddServer#MAXIMUM_CONNECTIONS" value1="6" />
+		<execute function="Click" locator1="LicenseManagementPortalAddServer#GENERATE_BUTTON" />
+		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#KEY_STATUS" value1="Expired" />
+		<execute function="Select" locator1="LicenseManagementKeyManagement#SELECT_MONTH" value1="September" />
+		<execute function="Select" locator1="LicenseManagementKeyManagement#SELECT_DAY" value1="29" />
+		<execute function="Select" locator1="LicenseManagementKeyManagement#SELECT_YEAR" value1="2015" />
+		<execute function="Select" locator1="LicenseManagementKeyManagement#DURATION" value1="30 Days" />
+		<execute function="Click" locator1="LicenseManagementKeyManagement#RENEW_BUTTON" />
+		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#KEY_STATUS" value1="Active" />
+		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+	
+	<command name="DeactivateLicense" priority="5">
+		<!--Run the OSB tests: add an account, an offering, an order, and generate license first. -->
+		<var name="key_account" value="ACME" />
+
+		<execute function="Type" locator1="LicenseManagementPortal#ACCOUNT" value1="ACME" />
+		<!--<execute function="Select" locator1="LicenseManagementPortal#ACTIVE_STATUS" value1="True" />-->
+		<execute function="ScrollWebElementIntoView" locator1="LicenseManagementPortal#SEARCH_BUTTON" value1="Search" />
+		<execute function="DoubleClick" locator1="LicenseManagementPortal#SEARCH_BUTTON" value1="Search" />
+		
+
+		<execute function="ScrollWebElementIntoView" locator1="LicenseManagementPortal#ACCOUNT_FIRST_ROW" />
+		<execute function="Click" locator1="LicenseManagementPortal#ACCOUNT_FIRST_ROW" />
+		
+		<execute function="ClickNoError" locator1="LicenseManagementKeyManagement#DEACTIVATE" />
+		<execute function="Confirm" value1="Are you sure you want to deactivate this license key?" />
+		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute function="AssertElementPresent" locator1="LicenseManagementKeyManagement#DEACTIVATED_LICENSE_HEADER" />
+		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#KEY_STATUS" value1="Inactive" />
+	</command>
+	
+	<command name="moveLicense" priority="5" >
+		<!--Run the OSB tests: add an account, an offering, two orders off the same offering, and generate a license first. -->
+		<var name="key_account" value="ACME" />
+		<var name="key_product" value="${product}" />
+		<var name="key_lifetime" value="${lifetime}" />
+
+		<execute function="Click" locator1="MainMenu#MAIN_MENU_ICON" />
+		<execute function="Click#clickAtAndWait" locator1="MainMenu#CONTROL_PANEL" />
+		<execute function="Click" locator1="ControlPanel#OSB_ADMIN" />
+
+		<execute function="Click" locator1="CPOSBAdminAccounts#SALES_TAB" />
+		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminSalesOrders#ADD_ORDER_BUTTON" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#CURRENCY" value1="USD" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#NEXT_BUTTON" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#ACCOUNT" value1="ACME Portal" />
+		<execute function="Type" locator1="CPOSBAdminSalesAddOrder#ACTUAL_PRICE" value1="99,999" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#ADD_OFFERING_BUTTON" />
+
+		<execute function="SelectWindow" locator1="title=Control Panel" />
+		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_PRODUCT" value1="Portal Non-Production" />
+		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_SUPPORT" value1="Americas English Gold" />
+		<execute function="Click" locator1="CPOSBAdminSelectOffering#SEARCH_BUTTON" />
+		<execute function="ClickNoError" locator1="CPOSBAdminSelectOffering#SELECTED_OFFERING" />
+		<execute function="SelectWindow" locator1="null" />
+
+		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#SELECT_NO_CPU_CORES" value1="3" />
+		<execute function="Type" locator1="CPOSBAdminSalesAddOrder#QUANTITY_FIELD" value1="3" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#SAVE_BUTTON" />
+
+		<execute function="AssertTextEquals" locator1="CPOSBAdminSalesOrders#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+
+		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminSalesOrders#ADD_ORDER_BUTTON" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#CURRENCY" value1="USD" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#NEXT_BUTTON" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#ACCOUNT" value1="ACME Portal" />
+		<execute function="Type" locator1="CPOSBAdminSalesAddOrder#ACTUAL_PRICE" value1="99,999" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#ADD_OFFERING_BUTTON" />
+
+		<execute function="SelectWindow" locator1="title=Control Panel" />
+		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_PRODUCT" value1="Portal Non-Production" />
+		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_SUPPORT" value1="Americas English Gold" />
+		<execute function="Click" locator1="CPOSBAdminSelectOffering#SEARCH_BUTTON" />
+		<execute function="ClickNoError" locator1="CPOSBAdminSelectOffering#SELECTED_OFFERING" />
+		<execute function="SelectWindow" locator1="null" />
+
+		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#SELECT_NO_CPU_CORES" value1="3" />
+		<execute function="Type" locator1="CPOSBAdminSalesAddOrder#QUANTITY_FIELD" value1="2" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#SAVE_BUTTON" />
+
+		<execute function="AssertTextEquals" locator1="CPOSBAdminSalesOrders#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+
+		<execute function="Open" locator1="${licenseManagement}" />
+
+		<execute function="Type" locator1="LicenseManagementPortal#ACCOUNT" value1="ACME" />
+		<!--<execute function="Select" locator1="LicenseManagementPortal#ACTIVE_STATUS" value1="True" />-->
+		<execute function="ScrollWebElementIntoView" locator1="LicenseManagementPortal#SEARCH_BUTTON" value1="Search" />
+		<execute function="DoubleClick" locator1="LicenseManagementPortal#SEARCH_BUTTON" value1="Search" />
+	</command>
+	<!--
+	<tear-down>
+		<execute macro="User#logout" />
+	</tear-down>-->
+</definition>
