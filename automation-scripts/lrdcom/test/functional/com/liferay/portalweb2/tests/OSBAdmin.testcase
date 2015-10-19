@@ -1,0 +1,201 @@
+<definition component-name="support-qa">
+	<property name="testray.main.component.name" value="Support QA" />
+
+	<var name="liferayURL" property-value="portal.url" />
+	<var name="lesaURL" value="/group/customer" />
+	<var name="partnerName" value="Slacker" />
+	<var name="lifetime" value="90 Days" />
+	<var name="product" value="Portal Non-Production" />
+	<var name="currency" value="USD" />
+
+	<set-up>
+		<execute macro="User#login">
+			<var name="userEmailAddress" value="justin.choi@liferay.com.broken" />
+			<var name="userPassword" value="test" />
+		</execute>
+
+		<!--<execute function="Open" locator1="${lesaURL}" />-->
+
+		<execute function="Click" locator1="MainMenu#MAIN_MENU_ICON" />
+		<execute function="Click#clickAtAndWait" locator1="MainMenu#CONTROL_PANEL" />
+		<execute function="Click" locator1="ControlPanel#OSB_ADMIN" />
+
+	</set-up>
+
+	<command name="addAccount" priority="5" >
+		
+		<execute macro="OSB#addAccount">
+			<var name="businessAccountName" value="ACME" />
+			<var name="projectName" value="ACME Portal" />
+			<var name="code" value="ACMEPORTAL" />
+			<var name="accountType" value="Group" />
+			<var name="industry" value="Manufacturing" />
+			<var name="tier" value="Premier" />
+			<var name="noOfContacts" value="10" />
+			<var name="specialInstructions" value="none" />
+			<var name="additionalNotes" value="This is a test" />
+			<var name="customerAddress" value="123 Main Street" />
+			<var name="customerCountry" value="United States" />
+			<var name="customerProvince" value="Maine" />
+			<var name="customerZip" value="04330" />
+			<var name="customerCity" value="Augusta" />
+		</execute>
+	</command>
+
+	<command name="addPartner" priority="5" >
+		<execute macro="OSB#addPartner">
+			<var name="partnerName" value="Slacker Tech" />
+			<var name="partnerAdditionalNotes" value="Contact Jim Henderson for Sales. Do not contact Frank Oz." />
+			<var name="partnerSupportRegion" value="US" />
+			<var name="partnerTelNo" value="1-877-752-2537" />
+			<var name="partnerAddress" value="123 Main Street" />
+			<var name="partnerCountry" value="United States" />
+			<var name="partnerRegion" value="Louisiana" />
+			<var name="partnerCity" value="Baton Rouge" />
+			<var name="partnerPostalCode" value="70801" />
+		</execute>
+	</command>
+
+
+	<command name="addPartnerManagedAccount" priority="5">
+		<!--
+		<execute macro="OSB#addPartner">
+			<var name="partnerName" value="Slacker" />
+			<var name="partnerAdditionalNotes" value="Contact Jim Henderson for Sales. Do not contact Frank Oz." />
+			<var name="partnerSupportRegion" value="US" />
+			<var name="partnerTelNo" value="1-877-752-2537" />
+			<var name="partnerAddress" value="123 Main Street" />
+			<var name="partnerCountry" value="United States" />
+			<var name="partnerRegion" value="Louisiana" />
+			<var name="partnerCity" value="Baton Rouge" />
+			<var name="partnerPostalCode" value="70801" />
+		</execute> -->
+
+		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminAccounts#ADD_ACCOUNT_BUTTON" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#BUSINESS_ACCOUNT_NAME_FIELD" value1="Cyberdyne" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#PROJECT_NAME_FIELD" value1="Skynet" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#CODE_FIELD" value1="SKYNET" />
+		<execute function="Select" locator1="CPOSBAdminAddAccount#GROUP_DROPDOWN" value1="Group" />
+		<execute function="Select" locator1="CPOSBAdminAddAccount#INDUSTRY_DROPDOWN" value1="Technology" />
+		<execute function="Click" locator1="CPOSBAdminAddAccount#SELECT_PARTNER_BUTTON" />
+
+		<execute function="SelectWindow" locator1="title=Control Panel" />
+		<execute function="Type" locator1="CPOSBAdminSelectPartner#SEARCH_FIELD" value1="${partnerName}" />
+		<execute function="Click" locator1="CPOSBAdminSelectPartner#SEARCH_BUTTON" />
+
+		<var name="key_partnerName" value="${partnerName}" />
+		<execute function="ClickNoError" locator1="CPOSBAdminSelectPartner#SEARCH_CONTAINER_FIRST_ROW" />
+		<execute function="SelectWindow" locator1="null" />
+		<execute function="Click" locator1="CPOSBAdminAddAccount#PARTNER_MANAGED_SUPPORT_CHECKBOX" />
+		<execute function="Select" locator1="CPOSBAdminAddAccount#TIER" value1="Premier" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#MAXIMUM_CONTACTS" value1="10" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#SPECIAL_INSTRUCTIONS" value1="none" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#ADDITIONAL_NOTES" value1="This is a test." />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#ADDRESS_FIELD" value1="123 Main Street" />
+		<execute function="Select" locator1="CPOSBAdminAddAccount#COUNTRY" value1="United States" />
+		<execute function="Select" locator1="CPOSBAdminAddAccount#STATE_PROVINCE" value1="Maine" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#POSTAL_CODE" value1="04330" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#CITY" value1="Augusta" />
+		<execute function="Click" locator1="CPOSBAdminAddAccount#SAVE_BUTTON" value1="Save" />
+
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAccounts#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+
+	<command name="addOffering" priority="5">
+		<execute function="Click" locator1="CPOSBAdminAccounts#SALES_TAB" />
+		<execute function="Click" locator1="CPOSBAdminSales#OFFERINGS" />
+		<execute function="Click" locator1="CPOSBAdminSalesOfferings#ADD_OFFERING_BUTTON" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOffering#PRODUCT_DROPDOWN" value1="Portal Non-Production" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOffering#LICENSE_LIFETIME_DROPDOWN" value1="90 Days" />
+		<execute function="Type" locator1="CPOSBAdminSalesAddOffering#SERVERS_FIELD" value1="3" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOffering#SUPPORT_DROPDOWN" value1="Americas English Gold" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOffering#SUPPORT_LIFETIME_DROPDOWN" value1="90 Days" />
+		<execute function="Type" locator1="CPOSBAdminSalesAddOffering#SUPPORTED_SERVERS" value1="3" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOffering#UNLIMITED_SUPPORT_TICKETS_CHECKBOX" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOffering#CURRENCY" value1="USD" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOffering#SAVE_BUTTON" />
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAccounts#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+
+	<command name="addOrder" priority="5">
+		<var name="key_product" value="${product}" />
+		<var name="key_lifetime" value="${lifetime}" />
+
+		<execute function="Click" locator1="CPOSBAdminAccounts#SALES_TAB" />
+		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminSalesOrders#ADD_ORDER_BUTTON" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#CURRENCY" value1="USD" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#NEXT_BUTTON" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#ACCOUNT" value1="ACME Portal" />
+		<execute function="Type" locator1="CPOSBAdminSalesAddOrder#ACTUAL_PRICE" value1="99,999" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#ADD_OFFERING_BUTTON" />
+
+		<execute function="SelectWindow" locator1="title=Control Panel" />
+		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_PRODUCT" value1="Portal Non-Production" />
+		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_SUPPORT" value1="Americas English Gold" />
+		<execute function="Click" locator1="CPOSBAdminSelectOffering#SEARCH_BUTTON" />
+		<execute function="ClickNoError" locator1="CPOSBAdminSelectOffering#SELECTED_OFFERING" />
+		<execute function="SelectWindow" locator1="null" />
+
+		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#SELECT_NO_CPU_CORES" value1="3" />
+		<execute function="Type" locator1="CPOSBAdminSalesAddOrder#QUANTITY_FIELD" value1="3" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#SAVE_BUTTON" />
+
+		<execute function="AssertTextEquals" locator1="CPOSBAdminSalesOrders#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+
+
+	<command name="advancedSearch" priority="4">
+		<execute function="Type" locator1="CPOSBAdminAccounts#CODE_FIELD" value1="ACMEPORTAL" />
+		<execute function="Select" locator1="CPOSBAdminAccounts#INDUSTRY" value1="Telecommunications" />
+		<execute function="Select" locator1="CPOSBAdminAccounts#SUPPORT_LEVEL" value1="Americas English Gold" />
+		<execute function="Select" locator1="CPOSBAdminAccounts#TIER" value1="Premier" />
+		<execute function="ScrollWebElementIntoView" locator1="CPOSBAdminAccounts#SEARCH_BUTTON" value1="Search" />
+		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminAccounts#SEARCH_BUTTON" value1="Search" />
+		<execute function="ScrollWebElementIntoView" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_CODE_FIRST_ROW" value1="ACMEPORTAL" />
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_PROJECT_NAME_FIRST_ROW" value1="ACME Portal" />
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_CODE_FIRST_ROW" value1="ACMEPORTAL" />
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_HIGHEST_SUPPORT_LEVEL" value1="Gold" />
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_TIER_FIRST_ROW" value1="Premier" />
+		<execute function="Pause" locator1="5000" />
+	</command>
+
+	<command name="assignCustomer" priority="5">
+		<execute macro="OSB#advancedSearch">
+			<var name="code" value="ACMEPORTAL" />
+			<var name="highestSupportLevel" value="Gold" />
+			<var name="industry" value="Telecommunications" />
+			<var name="projectName" value="ACME Portal" />
+			<var name="supportLevel" value="Americas English Gold" />
+			<var name="tier" value="Premier" />
+		</execute>
+	
+		<execute macro="OSB#assignCustomer">
+			<var name="code" value="ACMEPORTAL" />
+			<var name="customerFirstName" value="Erin" />
+			<var name="customerLastName" value="White" />
+			<var name="customerRole" value="Developer" />
+		</execute>
+	</command> 
+	
+	<command name="assignWorker" priority="5">
+		<execute macro="OSB#advancedSearch">
+			<var name="code" value="ACMEPORTAL" />
+			<var name="highestSupportLevel" value="Gold" />
+			<var name="industry" value="Telecommunications" />
+			<var name="projectName" value="ACME Portal" />
+			<var name="supportLevel" value="Americas English Gold" />
+			<var name="tier" value="Premier" />
+		</execute>
+	
+		<execute macro="OSB#assignCustomer">
+			<var name="code" value="ACMEPORTAL" />
+			<var name="workerFirstName" value="Kevin" />
+			<var name="workerLastName" value="Hoshi" />
+			<var name="workerRole" value="Advocacy Specialist" />
+		</execute>
+	</command>
+	
+	<tear-down>
+		<execute macro="User#logout" />
+	</tear-down>
+</definition>
