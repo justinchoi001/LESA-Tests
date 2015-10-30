@@ -118,7 +118,7 @@
 		</while>
 	</command>
 
-	
+
 
 	<command name="viewMail">
 		<var name="key_gmailAssetType" value="${gmailAssetType}" />

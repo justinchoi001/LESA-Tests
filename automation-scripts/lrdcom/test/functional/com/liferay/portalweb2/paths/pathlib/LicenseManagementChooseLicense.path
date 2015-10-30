@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>LicenseManagementChooseLicense</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LicenseManagementChooseLicense</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>BACK_TO_PREVIOUS_PAGE</td>
+	<td>//a[contains(.,'Back to Previous Page')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CHOOSE_NEW_LICENSE</td>
+	<td>//td[contains(.,'Portal Non-Production')]/../td/a/input[@value='Choose']</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,8 +1,8 @@
 <definition component-name="support-qa">
 	<property name="testray.main.component.name" value="Support QA" />
 
-	<var name="liferayURL" property-value="portal.url" />
-	<var name="lesaURL" value="/group/customer" />
+	<!-- Run with Gradle, not ant -->
+
 	<var name="partnerName" value="Slacker" />
 	<var name="lifetime" value="90 Days" />
 	<var name="product" value="Portal Non-Production" />
@@ -133,7 +133,7 @@
 		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_PRODUCT" value1="Portal Non-Production" />
 		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_SUPPORT" value1="Americas English Gold" />
 		<execute function="Click" locator1="CPOSBAdminSelectOffering#SEARCH_BUTTON" />
-		<execute function="ClickNoError" locator1="CPOSBAdminSelectOffering#SELECTED_OFFERING" />
+		<execute function="ClickNoError" locator1="CPOSBAdminSelectOffering#SELECTED_OFFERING" value1="90 Days" />
 		<execute function="SelectWindow" locator1="null" />
 
 		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#SELECT_NO_CPU_CORES" value1="3" />

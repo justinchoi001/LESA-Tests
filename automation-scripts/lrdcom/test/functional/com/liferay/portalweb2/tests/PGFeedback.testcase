@@ -1,19 +1,19 @@
 <definition component-name="support-qa">
 	<property name="testray.main.component.name" value="Support QA" />
 
+	<!--Run with gradle, not ant -->
+
 	<var name="account" value="Ameriprise Financial" />
 	<var name="component" value="Document Library" />
 	<var name="cse1" value="Alex Chau" />
 	<var name="cse2" value="Christopher Lui" />
-	<var name="liferayURL" property-value="portal.url" />
+	
 	<var name="lesaURL" value="/group/customer" />
-	<var name="platinumUserEmailAddress" property-value="email.address.2" />
-	<var name="platinumUserEmailPassword" property-value="email.password.2" />
 
 	<set-up>
 		<execute macro="User#login">
-			<var name="userEmailAddress" value="${platinumUserEmailAddress}" />
-			<var name="userPassword" value="${platinumUserEmailPassword}" />
+			<var method="TestPropsUtil#get('email.address.2')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('email.password.2')" name="userPassword" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />
@@ -61,8 +61,8 @@
 
 		<execute macro="User#logoutAndLogin">
 			<var name="liferayURL" value="${liferayURL}" />
-			<var name="userEmailAddress" value="${platinumUserEmailAddress}" />
-			<var name="userPassword" value="${platinumUserEmailPassword}" />
+			<var method="TestPropsUtil#get('email.address.2')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('email.password.2')" name="userPassword" />
 		</execute>
 
 
@@ -85,7 +85,7 @@
 		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 	</command>
 
-	<tear-down>
+	<!--<tear-down>
 		<execute macro="User#logout" />
-	</tear-down>
+	</tear-down>-->
 </definition>
