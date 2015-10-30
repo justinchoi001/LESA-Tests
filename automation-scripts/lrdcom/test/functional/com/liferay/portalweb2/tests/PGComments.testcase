@@ -2,7 +2,7 @@
 	<property name="testray.main.component.name" value="Support QA" />
 
 	<!--Run with gradle, not ant -->
-	<var name="accountP1" value="California Casualty" />
+
 	<var name="account" value="Adelphi University" />
 	<var name="component" value="Document Library" />
 	<var name="description" value="Support Test Ticket" />

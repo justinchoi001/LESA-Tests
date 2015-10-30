@@ -1,0 +1,18 @@
+<definition>	
+	<command name="GenerateNewLicense">
+		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortal#GENERATE_NEW_LICENSE" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#ACCOUNT" value1="${account}" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#LIFERAY_VERSION" value1="${portalVersion}" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#PRODUCT" value1="Portal Non-Production" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#TYPE" value1="Portal Non-Production (Production)" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_MONTH" value1="${startMonth}" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_DAY" value1="${startDate}" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_YEAR" value1="${startYear}" />
+		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortalSelectEnv#CHOOSE_BUTTON" />
+		<execute function="Type" locator1="LicenseManagementPortalAddServer#HOST_NAME" value1="${hostName}" />
+		<execute function="Type" locator1="LicenseManagementPortalAddServer#IP_ADDRESSES" value1="${ipAddress}" />
+		<execute function="Click" locator1="LicenseManagementPortalAddServer#GENERATE_BUTTON" />
+		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute function="ClickNoError" locator1="LicenseManagementKeyManagement#DOWNLOAD_LICENSE_FILE" />
+	</command>
+</definition>

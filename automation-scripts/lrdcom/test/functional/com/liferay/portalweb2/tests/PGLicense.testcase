@@ -3,6 +3,7 @@
 
 	<!-- run with gradle -->
 	<var name="licenseManagement" value="/web/justin.choi/license" />
+	<var name="lifetime" value="90 Days" />
 
 	<set-up>
 		<execute macro="User#login">
@@ -93,8 +94,9 @@
 		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#KEY_STATUS" value1="Inactive" />
 	</command>
 	
-	<command name="moveLicense" priority="5" >
+	<command name="moveLicense" priority="5">
 		<!--Run the OSB tests: add an account, an offering, two orders off the same offering, and generate a license first. -->
+		<var name="lifetime" value="90 Days" />
 		<var name="key_account" value="ACME" />
 		<var name="key_product" value="${product}" />
 		<var name="key_lifetime" value="${lifetime}" />
@@ -103,53 +105,48 @@
 		<execute function="Click#clickAtAndWait" locator1="MainMenu#CONTROL_PANEL" />
 		<execute function="Click" locator1="ControlPanel#OSB_ADMIN" />
 
-		<execute function="Click" locator1="CPOSBAdminAccounts#SALES_TAB" />
-		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminSalesOrders#ADD_ORDER_BUTTON" />
-		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#CURRENCY" value1="USD" />
-		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#NEXT_BUTTON" />
-		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#ACCOUNT" value1="ACME Portal" />
-		<execute function="Type" locator1="CPOSBAdminSalesAddOrder#ACTUAL_PRICE" value1="99,999" />
-		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#ADD_OFFERING_BUTTON" />
 
-		<execute function="SelectWindow" locator1="title=Control Panel" />
-		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_PRODUCT" value1="Portal Non-Production" />
-		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_SUPPORT" value1="Americas English Gold" />
-		<execute function="Click" locator1="CPOSBAdminSelectOffering#SEARCH_BUTTON" />
-		<execute function="ClickNoError" locator1="CPOSBAdminSelectOffering#SELECTED_OFFERING" />
-		<execute function="SelectWindow" locator1="null" />
-
-		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#SELECT_NO_CPU_CORES" value1="3" />
-		<execute function="Type" locator1="CPOSBAdminSalesAddOrder#QUANTITY_FIELD" value1="3" />
-		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#SAVE_BUTTON" />
-
-		<execute function="AssertTextEquals" locator1="CPOSBAdminSalesOrders#SUCCESS_MESSAGE" value1="Your request completed successfully." />
-
-		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminSalesOrders#ADD_ORDER_BUTTON" />
-		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#CURRENCY" value1="USD" />
-		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#NEXT_BUTTON" />
-		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#ACCOUNT" value1="ACME Portal" />
-		<execute function="Type" locator1="CPOSBAdminSalesAddOrder#ACTUAL_PRICE" value1="99,999" />
-		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#ADD_OFFERING_BUTTON" />
-
-		<execute function="SelectWindow" locator1="title=Control Panel" />
-		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_PRODUCT" value1="Portal Non-Production" />
-		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_SUPPORT" value1="Americas English Gold" />
-		<execute function="Click" locator1="CPOSBAdminSelectOffering#SEARCH_BUTTON" />
-		<execute function="ClickNoError" locator1="CPOSBAdminSelectOffering#SELECTED_OFFERING" />
-		<execute function="SelectWindow" locator1="null" />
-
-		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#SELECT_NO_CPU_CORES" value1="3" />
-		<execute function="Type" locator1="CPOSBAdminSalesAddOrder#QUANTITY_FIELD" value1="2" />
-		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#SAVE_BUTTON" />
-
-		<execute function="AssertTextEquals" locator1="CPOSBAdminSalesOrders#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute macro="OSB#addOrder"> 
+			<var name="currency" value="USD" />
+			<var name="account" value="ACME Portal" />
+			<var name="price" value="99,999" />
+			<var name="lifetime" value="15 Months" />
+			<var name="product" value="Portal Non-Production" />
+			<var name="support" value="Americas English Gold" />
+			<var name="noOfCores" value="3" />
+			<var name="quantity" value="2" />
+		</execute>
+		
+		<execute macro="OSB#addOrder"> 
+			<var name="currency" value="USD" />
+			<var name="account" value="ACME Portal" />
+			<var name="price" value="99,999" />
+			<var name="lifetime" value="90 Days" />
+			<var name="product" value="Portal Non-Production" />
+			<var name="support" value="Americas English Gold" />
+			<var name="noOfCores" value="3" />
+			<var name="quantity" value="3" />
+		</execute>
 
 		<execute function="Open" locator1="${licenseManagement}" />
+		
+		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortal#GENERATE_NEW_LICENSE" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#ACCOUNT" value1="ACME Portal" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#LIFERAY_VERSION" value1="6.1 GA3" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#PRODUCT" value1="Portal Non-Production" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#TYPE" value1="Portal Non-Production (Production)" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_MONTH" value1="September" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_DAY" value1="10" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_YEAR" value1="2015" />
+		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortalSelectEnv#CHOOSE_BUTTON" />
+		<execute function="Type" locator1="LicenseManagementPortalAddServer#HOST_NAME" value1="liferay123" />
+		<execute function="Type" locator1="LicenseManagementPortalAddServer#IP_ADDRESSES" value1="192.168.1.16" />
+		<execute function="Click" locator1="LicenseManagementPortalAddServer#GENERATE_BUTTON" />
+		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 
-		<execute function="Type" locator1="LicenseManagementPortal#ACCOUNT" value1="ACME" />
-		<!--<execute function="Select" locator1="LicenseManagementPortal#ACTIVE_STATUS" value1="True" />-->
-		<execute function="ScrollWebElementIntoView" locator1="LicenseManagementPortal#SEARCH_BUTTON" value1="Search" />
-		<execute function="DoubleClick" locator1="LicenseManagementPortal#SEARCH_BUTTON" value1="Search" />
+		<execute function="ClickNoError" locator1="LicenseManagementKeyManagement#MOVE_LICENSE" />
+		<execute function="Click" locator1="LicenseManagementChooseLicense#CHOOSE_NEW_LICENSE" />
+		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 	</command>
 	<!--
 	<tear-down>

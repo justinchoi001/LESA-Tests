@@ -1,20 +1,21 @@
 <definition component-name="support-qa">
 	<property name="testray.main.component.name" value="Support QA" />
 
+	<!-- Run with gradle, not ant-->
+
 	<var name="account" value="Ameriprise Financial" />
 	<var name="component" value="Document Library" />
 	<var name="cse1" value="Alex Chau" />
 	<var name="cse2" value="Christopher Lui" />
 	<var name="description" value="Solution Repo Test Ticket" />
-	<var name="liferayURL" property-value="portal.url" />
+	
 	<var name="lesaURL" value="/group/customer" />
-	<var name="platinumUserEmailAddress" property-value="email.address.2" />
-	<var name="platinumUserEmailPassword" property-value="email.password.2" />
+	
 
 	<set-up>
 		<execute macro="User#login">
-			<var name="userEmailAddress" value="${platinumUserEmailAddress}" />
-			<var name="userPassword" value="${platinumUserEmailPassword}" />
+			<var method="TestPropsUtil#get('email.address.2')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('email.password.2')" name="userPassword" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />
@@ -57,13 +58,14 @@
 		<execute macro="GoToLESA#goToLESA" />
 
 		<execute macro="Solution#ProposeSolution">
+			<var name="account" value="Ameriprise Financial" />
 			<var name="summary" value="Solution Repo Test" />
 		</execute>
 
 		<execute macro="User#logoutAndLogin">
 			<var name="liferayURL" value="${liferayURL}" />
-			<var name="userEmailAddress" value="${platinumUserEmailAddress}" />
-			<var name="userPassword" value="${platinumUserEmailPassword}" />
+			<var method="TestPropsUtil#get('email.address.2')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('email.password.2')" name="userPassword" />
 		</execute>
 
 

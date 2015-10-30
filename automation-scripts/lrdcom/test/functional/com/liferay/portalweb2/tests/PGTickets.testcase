@@ -3,7 +3,6 @@
 
 	<!--Run with gradle, not ant. -->
 
-	<var name="accountP1" value="California Casualty" />
 	<var name="component" value="Security" />
 	<var name="cse1" value="Alex Chau" />
 	<var name="cse2" value="Christopher Lui" />
@@ -94,7 +93,8 @@
 	<command name="ForwardTicket" priority="5">
 		<var name="key_cse1" value="${cse1}" />
 		<var name="key_cse2" value="${cse2}" />
-
+		
+		
 		<execute macro="User#logoutAndLogin">
 			<var method="TestPropsUtil#get('email.address.2')" name="userEmailAddress" />
 			<var method="TestPropsUtil#get('email.password.2')" name="userPassword" />
@@ -107,6 +107,7 @@
 		<execute macro="Ticket#CreateTicket">
 			<var name="account" value="Ameriprise Financial" />
 			<var name="component" value="${component}" />
+			<var name="description" value="Support Test Ticket" />
 			<var name="summary" value="Forwarding Test" />
 			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
 		</execute>

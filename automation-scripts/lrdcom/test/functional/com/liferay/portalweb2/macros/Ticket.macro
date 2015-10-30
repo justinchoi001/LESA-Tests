@@ -11,7 +11,7 @@
 			<execute function="Click" locator1="PGAddAccount#CHOOSE_PORTAL_PRODUCTION" />
 		</else>
 		</if>
-		
+
 		<if>
 			<condition function="IsElementPresent" locator1="PGAddAccount#SELECT" />
 			<then>
@@ -57,14 +57,14 @@
 			</else>
 		</if>
 	</command>
-	
+
 
 	<command name="CloseTicket">
 		<execute function="Click" locator1="PGTicket#CLOSE_TICKET_BUTTON" />
 		<execute function="SelectWindow" locator1="title=Support" />
 		<execute function="Select" locator1="Resolution#RESOLUTION_DROPDOWN" value1="${resolution}" />
 		<execute function="Type" locator1="Resolution#COMMENT_FIELD" value1="${comment}" />
-		<execute function="AssertClickNoError" locator1="Resolution#CLOSE_TICKET_BUTTON" value1="Close Ticket"/>
+		<execute function="AssertClickNoError" locator1="Resolution#CLOSE_TICKET_BUTTON" value1="Close Ticket" />
 		<execute function="SelectWindow" locator1="null" />
 		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 		<execute function="AssertTextEquals" locator1="PGTicket#STATUS" value1="CLOSED" />
@@ -82,7 +82,7 @@
 				<execute function="Click#clickAtAndWait" locator1="PGHome#ADVANCED_SEARCH_TOGGLE" value1="Advanced" />
 			</then>
 		</if>
-		
+
 		<execute function="Type" locator1="PGHome#ACCOUNT_FIELD" value1="Ameriprise Financial" />
 		<execute function="Type" locator1="PGHome#CONTENT_FIELD" value1="Forwarding Test" />
 		<execute function="Click" locator1="PGHome#CRITICAL_CHECKBOX" />
@@ -90,7 +90,7 @@
 		<execute function="AssertChecked" locator1="PGHome#CRITICAL_CHECKBOX" />
 		<execute function="ScrollWebElementIntoView" locator1="PGHome#SEARCH_BUTTON" />
 		<execute function="Click" locator1="PGHome#SEARCH_BUTTON" value1="Search" />
-		
+
 		<execute function="DoubleClick" locator1="PGHome#OPEN_TICKET" />
 		<execute function="Pause" locator1="5000" />
 		<execute function="Click" locator1="PGTicket#STATUS" value1="INCIDENT REPORTED" />
