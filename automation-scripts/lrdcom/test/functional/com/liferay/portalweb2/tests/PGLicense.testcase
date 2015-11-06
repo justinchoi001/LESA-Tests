@@ -96,7 +96,7 @@
 	
 	<command name="moveLicense" priority="5">
 		<!--Run the OSB tests: add an account, an offering, two orders off the same offering, and generate a license first. -->
-		<var name="lifetime" value="90 Days" />
+
 		<var name="key_account" value="ACME" />
 		<var name="key_product" value="${product}" />
 		<var name="key_lifetime" value="${lifetime}" />

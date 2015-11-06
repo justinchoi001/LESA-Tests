@@ -118,6 +118,9 @@
 	</command>
 
 	<command name="addOrder" priority="5">
+		<var name="lifetime" value="90 Days" />
+		<var name="product" value="Portal Non-Production" />
+		
 		<var name="key_product" value="${product}" />
 		<var name="key_lifetime" value="${lifetime}" />
 
@@ -133,7 +136,8 @@
 		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_PRODUCT" value1="Portal Non-Production" />
 		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_SUPPORT" value1="Americas English Gold" />
 		<execute function="Click" locator1="CPOSBAdminSelectOffering#SEARCH_BUTTON" />
-		<execute function="ClickNoError" locator1="CPOSBAdminSelectOffering#SELECTED_OFFERING" value1="90 Days" />
+		<!--<execute function="ClickNoError" locator1="CPOSBAdminSelectOffering#90_DAYS_LIFETIME" value1="90 Days" />-->
+		<execute function="ClickNoError" locator1="CPOSBAdminSelectOffering#SELECTED_OFFERING" />
 		<execute function="SelectWindow" locator1="null" />
 
 		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#SELECT_NO_CPU_CORES" value1="3" />

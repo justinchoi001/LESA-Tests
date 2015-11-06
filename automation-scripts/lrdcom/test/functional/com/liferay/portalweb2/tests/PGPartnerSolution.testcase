@@ -3,7 +3,6 @@
 
 	<!-- Run with gradle, not ant-->
 
-	<var name="account" value="California Casualty" />
 	<var name="component" value="Document Library" />
 	<var name="lesaURL" value="/group/customer" />
 
@@ -20,7 +19,7 @@
 	</set-up>
 	<command name="AcceptSolution" priority="5">
 		<execute macro="Ticket#CreateTicket">
-			<var name="account" value="${account}" />
+			<var method="TestPropsUtil#get('account.3')" name="account" />
 			<var name="component" value="${component}" />
 			<var name="description" value="Solution Repo Test Ticket" />
 			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
@@ -38,7 +37,7 @@
 		<execute macro="GoToLESA#goToLESA" />
 
 		<execute macro="Solution#ProposeSolution">
-			<var name="account" value="California Casualty" />
+			<var method="TestPropsUtil#get('account.3')" name="account" />
 			<var name="summary" value="Solution Repo Test" />
 		</execute>
 
@@ -69,7 +68,7 @@
 	<command name="RejectSolution" priority="5">
 
 		<execute macro="Ticket#CreateTicket">
-			<var name="account" value="${account}" />
+			<var method="TestPropsUtil#get('account.3')" name="account" />
 			<var name="component" value="${component}" />
 			<var name="description" value="Solution Repo Test Ticket" />
 			<var name="summary" value="Solution Repo Test" />
@@ -87,7 +86,7 @@
 		<execute macro="GoToLESA#goToLESA" />
 
 		<execute macro="Solution#ProposeSolution">
-			<var name="account" value="California Casualty" />
+			<var method="TestPropsUtil#get('account.3')" name="account" />
 			<var name="summary" value="Solution Repo Test" />
 		</execute>
 
