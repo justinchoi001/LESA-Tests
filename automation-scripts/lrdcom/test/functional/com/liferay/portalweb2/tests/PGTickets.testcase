@@ -24,7 +24,7 @@
 	</set-up>
 
 	<command name="CloseTicket" priority="5">
-		<var name="account" value="Adelphi University" />
+		<var method="TestPropsUtil#get('account.1')" name="account" />
 		
 		<execute macro="Ticket#CreateTicket">
 			<var name="account" value="${account}" />
@@ -40,8 +40,30 @@
 		</execute>
 	</command>
 
+	<command name="CreateSOTicket" priority="5">
+		<execute macro="User#logoutAndLogin">
+			<var name="liferayURL" value="${liferayURL}" />
+			<var method="TestPropsUtil#get('marketplace.email.address.4')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('marketplace.email.password.4')" name="userPassword" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+		
+		<execute macro="Ticket#CreateSOTicket">
+			<var method="TestPropsUtil#get('account.4')" name="SOaccount" />
+		
+			<var name="browser" value="Firefox 20+" />
+			<var name="component" value="Social Office" />
+			<var name="description" value="Social Office Test Ticket. This is different than portal." />
+			<var name="summary" value="Social Office test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+		</execute>
+	</command>
+	
 	<command name="EditTicket" priority="4">
-		<var name="account" value="Adelphi University" />
+		<var method="TestPropsUtil#get('account.1')" name="account" />
 		<var name="key_summary" value="${summary}" />
 		
 		<execute macro="Ticket#CreateTicket">
@@ -105,7 +127,7 @@
 		<execute macro="GoToLESA#goToLESA" />
 
 		<execute macro="Ticket#CreateTicket">
-			<var name="account" value="Ameriprise Financial" />
+			<var method="TestPropsUtil#get('account.2')" name="account" />
 			<var name="component" value="${component}" />
 			<var name="description" value="Support Test Ticket" />
 			<var name="summary" value="Forwarding Test" />

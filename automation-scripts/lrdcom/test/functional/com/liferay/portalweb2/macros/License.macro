@@ -3,8 +3,8 @@
 		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortal#GENERATE_NEW_LICENSE" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#ACCOUNT" value1="${account}" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#LIFERAY_VERSION" value1="${portalVersion}" />
-		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#PRODUCT" value1="Portal Non-Production" />
-		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#TYPE" value1="Portal Non-Production (Production)" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#PRODUCT" value1="${product}" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#TYPE" value1="${type}" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_MONTH" value1="${startMonth}" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_DAY" value1="${startDate}" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_YEAR" value1="${startYear}" />

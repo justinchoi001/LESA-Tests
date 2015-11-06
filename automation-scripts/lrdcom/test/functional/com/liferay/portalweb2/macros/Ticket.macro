@@ -57,7 +57,55 @@
 			</else>
 		</if>
 	</command>
+	
+	<command name="CreateSOTicket">
+						
+		<var name="SOaccount" value="${SOaccount}" />
+		<var name="component" value="Social Office" />
+		<var name="systemStatus" value="Completely Inoperable/Shutdown" />
 
+		<execute function="Click" locator1="PGHome#NEW_TICKET" />
+		<if>
+			<condition function="IsElementPresent" locator1="PGAddAccount#ACCOUNT" />
+			<then>
+				<execute function="Select" locator1="PGAddAccount#ACCOUNT" value1="${SOaccount}" />
+				<execute function="Click" locator1="PGAddAccount#CHOOSE_SOCIAL_OFFICE" />
+			</then>
+			<else>
+				<execute function="Click" locator1="PGAddAccount#CHOOSE_SOCIAL_OFFICE" />
+			</else>
+		</if>
+
+		<execute function="Click" locator1="PGAddAccount#CONTINUE_WITHOUT_ADDING" />
+		<execute function="Click" locator1="PGAddAccount#CONFIRM_BUTTON_2" />
+		<execute function="Type" locator1="PGAddTicket#SUMMARY_FIELD" value1="Social Office Test" />
+		<execute function="Select" locator1="PGAddTicket#SYSTEM_STATUS_DROPDOWN" value1="${systemStatus}" />
+		<execute function="Type" locator1="PGAddTicket#DESCRIPTION_FIELD" value1="${description}" />
+		<execute function="Select" locator1="PGAddTicket#VERSION" value1="3.1.1" />
+		<execute function="Select" locator1="PGAddTicket#APPLICATION_SERVER" value1="Weblogic 12c" />
+		<execute function="Select" locator1="PGAddTicket#DATABASE" value1="Oracle 11.2" />
+		<execute function="Select" locator1="PGAddTicket#OPERATING_SYSTEM" value1="Ubuntu 12" />
+		<execute function="Select" locator1="PGAddTicket#JAVA_VIRTUAL_MACHINE" value1="Java 6" />
+		<execute function="Select" locator1="PGAddTicket#PRIMARY_BROWSER" value1="${browser}" />
+		<execute function="Click" locator1="PGAddTicket#UPLOAD_SOCIAL_OFFICE_PLUGIN" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
+		<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\Social Office EE.lpkg" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="Click" locator1="PGAddTicket#UPLOAD_NEW_PORTAL_EXT" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
+		<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\LESA\dependencies\portal-ext.properties" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
+		<execute function="SelectWindow" locator1="null" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="Click" locator1="PGAddTicket#UPLOAD_NEW_PATCH_LEVEL" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
+		<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\LESA\dependencies\patchinfo.txt" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
+		<execute function="SelectWindow" locator1="null" />
+		<execute function="Click" locator1="PGAddTicket#SUBMIT_BUTTON" />
+		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
 
 	<command name="CloseTicket">
 		<execute function="Click" locator1="PGTicket#CLOSE_TICKET_BUTTON" />

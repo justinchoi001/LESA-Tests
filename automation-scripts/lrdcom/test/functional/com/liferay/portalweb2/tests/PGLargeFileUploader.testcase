@@ -3,7 +3,6 @@
 
 	<!-- Run with gradle, not ant-->
 	
-	<var name="account" value="Adelphi University" />
 	<var name="component" value="Document Library" />
 	<var name="description" value="Support Test Ticket" />
 	<var name="systemStatus" value="Completely Inoperable/Shutdown" />
@@ -23,7 +22,7 @@
 
 	<command name="UploadLargeFile" priority="5">
 		<execute macro="Ticket#CreateTicket">
-			<var name="account" value="${account}" />
+			<var method="TestPropsUtil#get('account.1')" name="account" />
 			<var name="component" value="${component}" />
 			<var name="summary" value="Support Test" />
 			<var name="systemStatus" value="${systemStatus}" />
