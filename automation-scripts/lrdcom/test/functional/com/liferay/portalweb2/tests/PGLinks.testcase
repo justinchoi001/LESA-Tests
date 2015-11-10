@@ -1,0 +1,30 @@
+<definition component-name="support-qa">
+	<property name="testray.main.component.name" value="Support QA" />
+	
+	<!--Run with gradle, not ant -->
+	
+	<var name="lesaURL" value="/group/customer" />
+
+	<set-up>
+		<execute macro="User#login">
+			<var method="TestPropsUtil#get('marketplace.email.address.4')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('marketplace.email.password.4')" name="userPassword" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+	</set-up>
+	
+	<command name="AddLinks" priority="3">
+		<execute function="Click" locator1="PGHome#IN_PROGRESS" />
+		<execute function="Click#clickAtAndWait" locator1="PGHome#IN_PROGRESS_TICKET_NAME_1" />
+		<execute function="Click" locator1="PGTicket#MANAGE_LINKS_BUTTON" /> 
+		
+		<execute function="Type" locator1="PGLinks#URL_1" value1="http://www.google.com" />
+		<execute function="Type" locator1="PGLinks#URL_2" value1="http://www.support-kb.liferay.com" />
+		<execute function="Select" locator1="PGLinks#VISIBILITY_DROPDOWN" value1="Liferay" />
+		<execute function="Click" locator1="PGLinks#SAVE_BUTTON" />
+		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+</definition>

@@ -195,6 +195,12 @@
 	<td>//span[@class='ticket-information']/span/div[contains(.,'On Hold')]</td>
 	<td></td>
 </tr>
+<!--In Progress Ticket Statuses-->
+<tr>
+	<td>IN_PROGRESS_TICKET_NAME_1</td>
+	<td>//tr/td[@id='_2_WAR_osbportlet_ticketEntriesSearchContainer_col-3_row-1']/a</td>
+	<td></td>
+</tr>
 <!--Assignee -->
 <tr>
 	<td>ASSIGNEE_FIELD_FIRST_ROW</td>
