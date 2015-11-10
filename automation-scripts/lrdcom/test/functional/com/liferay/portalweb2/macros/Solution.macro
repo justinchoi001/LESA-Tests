@@ -15,7 +15,8 @@
 		<execute function="Type" locator1="PGHome#CONTENT_FIELD" value1="Solution Repo Test" />
 		<execute function="Click" locator1="PGHome#CRITICAL_CHECKBOX" />
 		<execute function="Click" locator1="PGHome#INCIDENT_REPORTED_CHECKBOX" />
-		<execute function="AssertChecked" locator1="PGHome#CRITICAL_CHECKBOX" />
+		<execute function="Click" locator1="PGHome#CRITICAL_CHECKBOX" />
+		<execute function="Click" locator1="PGHome#DATABASE_SEARCH_CHECKBOX" />
 		<execute function="ScrollWebElementIntoView" locator1="PGHome#SEARCH_BUTTON" />
 		<execute function="Click" locator1="PGHome#SEARCH_BUTTON" value1="Search" />
 
