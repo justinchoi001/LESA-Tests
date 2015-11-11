@@ -1,0 +1,126 @@
+<definition>
+	<command name="addAccount">
+		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminAccounts#ADD_ACCOUNT_BUTTON" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#BUSINESS_ACCOUNT_NAME_FIELD" value1="${businessAccountName}" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#PROJECT_NAME_FIELD" value1="${projectName}" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#CODE_FIELD" value1="${code}" />
+		<execute function="Select" locator1="CPOSBAdminAddAccount#GROUP_DROPDOWN" value1="${accountType}" />
+		<execute function="Select" locator1="CPOSBAdminAddAccount#INDUSTRY_DROPDOWN" value1="${industry}" />
+		<execute function="Select" locator1="CPOSBAdminAddAccount#TIER" value1="${tier}" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#MAXIMUM_CONTACTS" value1="${noOfContacts}" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#SPECIAL_INSTRUCTIONS" value1="${specialInstructions}" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#ADDITIONAL_NOTES" value1="${additionalNotes}" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#ADDRESS_FIELD" value1="${customerAddress}" />
+		<execute function="Select" locator1="CPOSBAdminAddAccount#COUNTRY" value1="${customerCountry}" />
+		<execute function="Select" locator1="CPOSBAdminAddAccount#STATE_PROVINCE" value1="${customerProvince}" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#POSTAL_CODE" value1="${customerZip}" />
+		<execute function="Type" locator1="CPOSBAdminAddAccount#CITY" value1="${customerCity}" />
+		<execute function="Click" locator1="CPOSBAdminAddAccount#SAVE_BUTTON" value1="Save" />
+
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAccounts#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+
+	<command name="addOffering">
+		<execute function="Click" locator1="CPOSBAdminAccounts#SALES_TAB" />
+		<execute function="Click" locator1="CPOSBAdminSales#OFFERINGS" />
+		<execute function="Click" locator1="CPOSBAdminSalesOfferings#ADD_OFFERING_BUTTON" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOffering#PRODUCT_DROPDOWN" value1="${product}" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOffering#LICENSE_LIFETIME_DROPDOWN" value1="${lifetime}" />
+		<execute function="Type" locator1="CPOSBAdminSalesAddOffering#SERVERS_FIELD" value1="${noOfServers}" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOffering#SUPPORT_DROPDOWN" value1="${support}" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOffering#SUPPORT_LIFETIME_DROPDOWN" value1="${lifetime}" />
+		<execute function="Type" locator1="CPOSBAdminSalesAddOffering#SUPPORTED_SERVERS" value1="${noOfServers}" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOffering#UNLIMITED_SUPPORT_TICKETS_CHECKBOX" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOffering#CURRENCY" value1="${currency}" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOffering#SAVE_BUTTON" />
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAccounts#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+
+	<command name="addOrder">
+		<var name="key_product" value="${product}" />
+		<var name="key_lifetime" value="${lifetime}" />
+
+		<execute function="Click" locator1="CPOSBAdminAccounts#SALES_TAB" />
+		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminSalesOrders#ADD_ORDER_BUTTON" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#CURRENCY" value1="${currency}" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#NEXT_BUTTON" />
+		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#ACCOUNT" value1="${account}" />
+		<execute function="Type" locator1="CPOSBAdminSalesAddOrder#ACTUAL_PRICE" value1="${price}" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#ADD_OFFERING_BUTTON" />
+
+		<execute function="SelectWindow" locator1="title=Control Panel" />
+		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_PRODUCT" value1="${product}" />
+		<execute function="Select" locator1="CPOSBAdminSelectOffering#SELECT_SUPPORT" value1="${support}" />
+		<execute function="Click" locator1="CPOSBAdminSelectOffering#SEARCH_BUTTON" />
+		<execute function="ClickNoError" locator1="CPOSBAdminSelectOffering#SELECTED_OFFERING" value1="${lifetime}" />
+		<execute function="SelectWindow" locator1="null" />
+
+		<execute function="Select" locator1="CPOSBAdminSalesAddOrder#SELECT_NO_CPU_CORES" value1="${noOfCores}" />
+		<execute function="Type" locator1="CPOSBAdminSalesAddOrder#QUANTITY_FIELD" value1="${quantity}" />
+		<execute function="Click" locator1="CPOSBAdminSalesAddOrder#SAVE_BUTTON" />
+
+		<execute function="AssertTextEquals" locator1="CPOSBAdminSalesOrders#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+
+	<command name="addPartner">
+		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminAccounts#PARTNERS_TAB" />
+		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminPartners#ADD_PARTNER_BUTTON" />
+		<execute function="Type" locator1="CPOSBAdminAddPartner#CODE_FIELD" value1="${partnerName}" />
+		<execute function="Type" locator1="CPOSBAdminAddPartner#ADDITIONAL_NOTES" value1="${partnerAdditionalNotes}" />
+		<execute function="Select" locator1="CPOSBAdminAddPartner#SUPPORT_REGION_DROPDOWN" value1="${partnerSupportRegion}" />
+		<execute function="Type" locator1="CPOSBAdminAddPartner#TEL_NUMBER_FIELD" value1="${partnerTelNo}" />
+		<execute function="Click" locator1="CPOSBAdminAddPartner#PRIMARY_TEL_RADIO_BUTTON" />
+		<execute function="Type" locator1="CPOSBAdminAddPartner#STREET_1" value1="${partnerAddress}" />
+		<execute function="Select" locator1="CPOSBAdminAddPartner#COUNTRY" value1="${partnerCountry}" />
+		<execute function="Select" locator1="CPOSBAdminAddPartner#REGION" value1="${partnerRegion}" />
+		<execute function="Type" locator1="CPOSBAdminAddPartner#POSTAL_CODE_FIELD" value1="${partnerPostalCode}" />
+		<execute function="Type" locator1="CPOSBAdminAddPartner#CITY" value1="${partnerCity}" />
+		<execute function="Click" locator1="CPOSBAdminAddPartner#SAVE_BUTTON" value1="Save" />
+
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAccounts#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+
+	<command name="advancedSearch">
+		<execute function="Type" locator1="CPOSBAdminAccounts#CODE_FIELD" value1="${code}" />
+		<execute function="Select" locator1="CPOSBAdminAccounts#INDUSTRY" value1="${industry}" />
+		<execute function="Select" locator1="CPOSBAdminAccounts#SUPPORT_LEVEL" value1="${supportLevel}" />
+		<execute function="Select" locator1="CPOSBAdminAccounts#TIER" value1="${tier}" />
+		<execute function="ScrollWebElementIntoView" locator1="CPOSBAdminAccounts#SEARCH_BUTTON" value1="Search" />
+		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminAccounts#SEARCH_BUTTON" value1="Search" />
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_PROJECT_NAME_FIRST_ROW" value1="${projectName}" />
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_CODE_FIRST_ROW" value1="${code}" />
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_HIGHEST_SUPPORT_LEVEL" value1="${highestSupportLevel}" />
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_TIER_FIRST_ROW" value1="${tier}" />
+		<execute function="Pause" locator1="5000" />
+	</command>
+
+	<command name="assignCustomer">
+		<execute function="ScrollWebElementIntoView" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_CODE_FIRST_ROW" value1="${code}" />
+		<execute function="Click" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_CODE_FIRST_ROW" value1="${code}" />
+		<execute function="Click" locator1="CPOSBAdminAccountManagement#ASSIGN_CUSTOMERS_BUTTON" />
+		<execute function="Click" locator1="CPOSBAdminAddAssignees#AVAILABLE_TAB" />
+		<execute function="Type" locator1="CPOSBAdminAddAssignees#FIRST_NAME_FIELD" value1="${customerFirstName}" />
+		<execute function="Type" locator1="CPOSBAdminAddAssignees#LAST_NAME_FIELD" value1="${customerLastName}" />
+		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminAddAssignees#SEARCH_BUTTON" />
+		<execute function="Check" locator1="CPOSBAdminAddAssignees#CHECKBOX" />
+		<execute function="Select" locator1="CPOSBAdminAddAssignees#ROLE_DROPDOWN" value1="${customerRole}" />
+		<execute function="Click" locator1="CPOSBAdminAddAssignees#UPDATE_ASSOCIATIONS_BUTTON" />
+
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAddAssignees#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+	
+	<command name="assignWorker">
+		<execute function="ScrollWebElementIntoView" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_CODE_FIRST_ROW" value1="${code}" />
+		<execute function="Click" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_CODE_FIRST_ROW" value1="${code]" />
+		<execute function="Click" locator1="CPOSBAdminAccountManagement#ASSIGN_WORKERS_BUTTON" />
+		<execute function="Click" locator1="CPOSBAdminAddAssignees#AVAILABLE_TAB" />
+		<execute function="Type" locator1="CPOSBAdminAddAssignees#FIRST_NAME_FIELD" value1="${workerFirstName}" />
+		<execute function="Type" locator1="CPOSBAdminAddAssignees#LAST_NAME_FIELD" value1="${workerLastName}" />
+		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminAddAssignees#SEARCH_BUTTON" />
+		<execute function="Check" locator1="CPOSBAdminAddAssignees#CHECKBOX" />
+		<execute function="Select" locator1="CPOSBAdminAddAssignees#ROLE_DROPDOWN" value1="${workerRole}" />
+		<execute function="Click" locator1="CPOSBAdminAddAssignees#UPDATE_ASSOCIATIONS_BUTTON" />
+		
+		<execute function="AssertTextEquals" locator1="CPOSBAdminAddAssignees#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+</definition>
