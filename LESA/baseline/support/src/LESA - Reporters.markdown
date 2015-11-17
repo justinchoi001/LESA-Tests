@@ -1,7 +1,7 @@
 LESA - Reporters
 =================
 
-This test is to assert that only customer developers can be chosen as ticket reporters. Sometimes, Liferay CSEs will create on behalf of customers and then change the reporter to a customer. Previously, the list of customer developers as potential ticket reporters included account watchers. Because account watchers have no permissions to create tickets, it made no sense to include them in this list.
+This test is to assert that only customer developers can be chosen as ticket reporters. Sometimes, Liferay CSEs will create on behalf of customers and then change the reporter to a customer. Previously, the list of customer developers as potential ticket reporters included account watchers. Because account watchers have no permissions to create tickets, it made no sense to include them in this list. For partner managed accounts, partner developers are also included in the list of ticket reporters.
 
 #### Road Map: ####
 1. [Sign In As Liferay CSE](#SignInAsLiferayCSE)
