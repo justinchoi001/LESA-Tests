@@ -26,12 +26,13 @@ This test is designed to test the
 1. Click the LESA button    
 <a href="#CreateATicket" name="CreateATicket">Create A Ticket</a>
 1. Click New Ticket
-1. Select an account
+1. Select an account 
 1. Click Portal Production
 1. Click the Continue Without Adding button
-1. Click Create Ticket
-1. Enter in the <b>Provide a summary</b> field: Customer Basic Test
+1. Click Confirm next to Portal Production
 1. Select Document Library from the Component drop down
+1. Click Continue
+1. Enter in the <b>Provide a summary</b> field: Customer Basic Test
 1. Select <b>System Status</b>: Completely Inoperable / Shutdown    
 1. Enter: "This is a customer test" in the Description
 1. Select the following:    
