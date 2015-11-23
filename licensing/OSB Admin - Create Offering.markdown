@@ -17,7 +17,7 @@ This test is designed to have users add an offering. An offering is a combinatio
 1. Select **Non-Production** from the Product list.
 1. Select **Americas English Gold** from the Support List.
 1. Click Search.
-1. Assert that only Non-Production products display in the Product columnn.
+1. Assert that only Non-Production products display in the Product column.
 1. Assert that only Americas English Gold Support display in the Support column.
 1. Assert that only USD displays in the Currency column.
 1. Click the Add Offering button.
