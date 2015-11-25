@@ -1,4 +1,4 @@
-<definition>	
+<definition>
 	<command name="GenerateNewLicense">
 		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortal#GENERATE_NEW_LICENSE" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#ACCOUNT" value1="${account}" />

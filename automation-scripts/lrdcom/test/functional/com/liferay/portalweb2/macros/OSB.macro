@@ -108,7 +108,7 @@
 
 		<execute function="AssertTextEquals" locator1="CPOSBAdminAddAssignees#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 	</command>
-	
+
 	<command name="assignWorker">
 		<execute function="ScrollWebElementIntoView" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_CODE_FIRST_ROW" value1="${code}" />
 		<execute function="Click" locator1="CPOSBAdminAccounts#ACCOUNT_TABLE_CODE_FIRST_ROW" value1="${code]" />
@@ -120,7 +120,7 @@
 		<execute function="Check" locator1="CPOSBAdminAddAssignees#CHECKBOX" />
 		<execute function="Select" locator1="CPOSBAdminAddAssignees#ROLE_DROPDOWN" value1="${workerRole}" />
 		<execute function="Click" locator1="CPOSBAdminAddAssignees#UPDATE_ASSOCIATIONS_BUTTON" />
-		
+
 		<execute function="AssertTextEquals" locator1="CPOSBAdminAddAssignees#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 	</command>
 </definition>

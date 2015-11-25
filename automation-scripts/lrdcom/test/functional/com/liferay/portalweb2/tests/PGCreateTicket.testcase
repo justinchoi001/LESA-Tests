@@ -1,14 +1,14 @@
 <definition component-name="support-qa">
 	<property name="testray.main.component.name" value="Support QA" />
-	
+
 	<!--Run with gradle, not ant -->
-	
+
 	<var name="lesaURL" value="/group/customer" />
 
 	<set-up>
 		<execute macro="User#login">
-			<var method="TestPropsUtil#get('marketplace.email.address.4')" name="userEmailAddress" />
-			<var method="TestPropsUtil#get('marketplace.email.password.4')" name="userPassword" />
+			<var method="TestPropsUtil#get('marketplace.email.address.3')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('marketplace.email.password.3')" name="userPassword" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />
@@ -25,12 +25,12 @@
 		<var name="summary" value="Support Test" />
 		<var name="systemStatus" value="Completely Inoperable/Shutdown" />
 		<var name="description" value="Support Test Ticket" />
-		
+
 		<execute function="Click" locator1="PGHome#NEW_TICKET" />
 		<if>
 			<condition function="IsElementPresent" locator1="PGAddAccount#ACCOUNT" />
 		<then>
-			<execute function="Select" locator1="PGAddAccount#ACCOUNT" value1="${account}" />
+			<execute function="Select" locator1="PGAddAccount#ACCOUNT" value1="${accountP1}" />
 			<execute function="Click" locator1="PGAddAccount#CHOOSE_PORTAL_PRODUCTION" />
 		</then>
 		<else>
@@ -85,14 +85,19 @@
 
 		<execute function="Click" locator1="PGTicket#MANAGE_ATTACHMENTS_BUTTON" />
 		<execute function="Click" locator1="PGAttachments#CLASSIC_UPLOADER_TOGGLE" />
+
+		<!--
 		<execute function="Click" locator1="PGAttachments#BROWSE_1" />
 		<execute function="Pause" locator1="5000" />-->
 		<!--Users will have to click Cancel then Browse again before the test will proceed. -->
 
-		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
+		<!--<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
 		<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\LESA\dependencies\panther tank.txt" />
 		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
-		<execute function="SelectWindow" locator1="null" />
+		<execute function="SelectWindow" locator1="null" /> -->
+
+		<execute function="UploadCommonFile" locator1="PGAttachments#BROWSE_1" value1="panther tank.txt" />
+
 		<execute function="Click" locator1="PGAttachments#SAVE_BUTTON" />
 		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 
@@ -111,7 +116,7 @@
 
 <!--
 	<command name="CreateClusteringTicket" priority="5">
-		
+
 	</command>
 -->
 
