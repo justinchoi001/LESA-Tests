@@ -41,7 +41,7 @@
 </tr>
 <tr>
 	<td>PRIMARY_ASSIGNEE</td>
-	<td>//div[@class='callout-a']/div/div/div[contains(.,'${key_cse1}')]|//div[@class='callout-a']/div/div/div[contains(.,'${key_cse2}')]</td>
+	<td>//div[@class='callout-a']/div/div[2]/div[contains(.,'${key_cse1}')]|//div[@class='callout-a']/div/div[2]/div[contains(.,'${key_cse2}')]</td>
 	<td></td>
 </tr>
 <tr>

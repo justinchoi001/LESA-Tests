@@ -3,13 +3,14 @@
 
 	<!--Run with gradle, not ant. -->
 
+	<var name="browser" value="Firefox 20+" />
 	<var name="component" value="Security" />
 	<var name="cse1" value="Alex Chau" />
 	<var name="cse2" value="Christopher Lui" />
 	<var name="description" value="Support Test Ticket" />
 	<var name="summary" value="Support Test" />
 	<var name="systemStatus" value="Completely Inoperable/Shutdown" />
-	
+
 	<var name="lesaURL" value="/group/customer" />
 
 	<set-up>
@@ -25,9 +26,10 @@
 
 	<command name="CloseTicket" priority="5">
 		<var method="TestPropsUtil#get('account.1')" name="account" />
-		
+
 		<execute macro="Ticket#CreateTicket">
 			<var name="account" value="${account}" />
+			<var name="browser" value="${browser}" />
 			<var name="component" value="${component}" />
 			<var name="summary" value="Support Test" />
 			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
@@ -37,6 +39,27 @@
 		<execute macro="Ticket#CloseTicket">
 			<var name="resolution" value="Duplicate" />
 			<var name="comment" value="Closing this ticket as a duplicate. This question was answered by another CSE in another ticket." />
+		</execute>
+	</command>
+
+	<command name="CreateP1Ticket" priority="5">
+		<execute macro="User#logoutAndLogin">
+			<var name="liferayURL" value="${liferayURL}" />
+			<var method="TestPropsUtil#get('marketplace.email.address.1')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('marketplace.email.password.1')" name="userPassword" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+
+		<execute macro="Ticket#CreateTicket">
+			<var method="TestPropsUtil#get('account.3')" name="account" />
+			<var name="browser" value="Firefox 20+" />
+			<var name="component" value="${component}" />
+			<var name="description" value="${description}" />
+			<var name="summary" value="${summary}" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
 		</execute>
 	</command>
 
@@ -50,10 +73,9 @@
 		<execute function="Open" locator1="${lesaURL}" />
 
 		<execute macro="GoToLESA#goToLESA" />
-		
+
 		<execute macro="Ticket#CreateSOTicket">
 			<var method="TestPropsUtil#get('account.4')" name="SOaccount" />
-		
 			<var name="browser" value="Firefox 20+" />
 			<var name="component" value="Social Office" />
 			<var name="description" value="Social Office Test Ticket. This is different than portal." />
@@ -61,13 +83,14 @@
 			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
 		</execute>
 	</command>
-	
+
 	<command name="EditTicket" priority="4">
 		<var method="TestPropsUtil#get('account.1')" name="account" />
 		<var name="key_summary" value="${summary}" />
-		
+
 		<execute macro="Ticket#CreateTicket">
 			<var name="account" value="${account}" />
+			<var name="browser" value="${browser}" />
 			<var name="component" value="${component}" />
 			<var name="summary" value="Support Test" />
 			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
@@ -75,8 +98,8 @@
 		</execute>
 
 		<execute macro="User#logoutAndLogin">
-			<var method="TestPropsUtil#get('marketplace.email.address.4')" name="userEmailAddress" />
-			<var method="TestPropsUtil#get('marketplace.email.password.4')" name="userPassword" />
+			<var method="TestPropsUtil#get('email.address.1')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('email.password.1')" name="userPassword" />
 
 		</execute>
 
@@ -84,7 +107,6 @@
 
 		<execute macro="GoToLESA#goToLESA" />
 
-		<execute function="Click" locator1="PGHome#NEED_RESPONSE" />
 		<if>
 			<condition function="IsElementNotPresent" locator1="PGHome#BASIC_SEARCH_TOGGLE" value1="Basic" />
 			<then>
@@ -94,7 +116,7 @@
 
 		<execute function="Type" locator1="PGHome#ACCOUNT_FIELD" value1="${account}" />
 		<execute function="Type" locator1="PGHome#CONTENT_FIELD" value1="Support Test" />
-		<execute function="Select" locator1="PGHome#SELECT_ASSIGNEE" value1="Me" />
+		<execute function="Click" locator1="PGHome#DATABASE_SEARCH_CHECKBOX" />
 		<execute function="ScrollWebElementIntoView" locator1="PGHome#SEARCH_BUTTON" />
 		<execute function="Click" locator1="PGHome#SEARCH_BUTTON" value1="Search" />
 
@@ -113,10 +135,13 @@
 	</command>
 
 	<command name="ForwardTicket" priority="5">
+		<var name="cse1" value="Alex Chau" />
+		<var name="cse2" value="Christopher Lui" />
+
 		<var name="key_cse1" value="${cse1}" />
 		<var name="key_cse2" value="${cse2}" />
-		
-		
+
+
 		<execute macro="User#logoutAndLogin">
 			<var method="TestPropsUtil#get('email.address.2')" name="userEmailAddress" />
 			<var method="TestPropsUtil#get('email.password.2')" name="userPassword" />
@@ -128,6 +153,7 @@
 
 		<execute macro="Ticket#CreateTicket">
 			<var method="TestPropsUtil#get('account.2')" name="account" />
+			<var name="browser" value="${browser}" />
 			<var name="component" value="${component}" />
 			<var name="description" value="Support Test Ticket" />
 			<var name="summary" value="Forwarding Test" />
@@ -157,6 +183,7 @@
 		<execute macro="GoToLESA#goToLESA" />
 
 		<execute macro="Ticket#ForwardTicket">
+			<var method="TestPropsUtil#get('account.2')" name="account" />
 			<var name="summary" value="Forwarding Test" />
 		</execute>
 	</command>
@@ -164,4 +191,5 @@
 	<tear-down>
 		<execute macro="User#logout" />
 	</tear-down>  -->
+
 </definition>
