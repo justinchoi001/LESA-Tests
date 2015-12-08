@@ -1,19 +1,13 @@
 <definition component-name="support-qa">
 	<property name="testray.main.component.name" value="Support QA" />
 
-	<var name="account" value="Florida Virtual Campus" />
 	<var name="code" value="floridavc" />
-	<var name="userEmailAddress5" property-value="marketplace.email.address.5" />
-	<var name="userEmailPassword5" property-value="marketplace.email.password.5" />
-
-
-	<var name="liferayURL" property-value="portal.url" />
 	<var name="lesaURL" value="/group/customer" />
 
 	<set-up>
 		<execute macro="User#login">
-			<var name="userEmailAddress" value="${userEmailAddress5}" />
-			<var name="userPassword" value="${userEmailPassword5}" />
+			<var method="TestPropsUtil#get('marketplace.email.address.5')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('marketplace.email.password.5')" name="userPassword" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />
@@ -23,6 +17,8 @@
 	</set-up>
 
 	<command name="UpdateCustomerInformation" priority="5">
+		<var method="TestPropsUtil#get('account.5')" name="account" />
+		
 		<execute function="Click" locator1="PGHome#ACCOUNTS_TAB" />
 		<execute function="Type" locator1="PGAccounts#PROJECT_NAME_FIELD" value1="${account}" />
 		<execute function="Type" locator1="PGAccounts#CODE_FIELD" value1="${code}" />
@@ -53,6 +49,8 @@
 	</command>
 
 	<command name="AddGSProject" priority="4">
+		<var method="TestPropsUtil#get('account.5')" name="account" />
+		
 		<execute function="Click" locator1="PGHome#ACCOUNTS_TAB" />
 		<execute function="Type" locator1="PGAccounts#PROJECT_NAME_FIELD" value1="${account}" />
 		<execute function="Type" locator1="PGAccounts#CODE_FIELD" value1="${code}" />
