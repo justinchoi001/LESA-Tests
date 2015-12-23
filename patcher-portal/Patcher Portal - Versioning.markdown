@@ -4,14 +4,12 @@ Patcher Portal - Versioning
 ####Prerequisites: ####
 
 * Patcher Portal credentials
-* VPN credentials
-* CISCO VPN Client
 
 ####Description: ####
 This test is designed to have the user create a fix and then create a new version of the fix. Once a new version has been created, the user will assert that it will be built automatically. The user will then verify that the new version is included in an existing build. The user will do the same for a build.
 
 ####Test Steps: ####
-1. Navigate to https://lrdcom-vm-37
+1. Navigate to Patcher Staging
 1. Sign in as administrator.
 1. Click the Fixes tab.
 1. Click the Create Fix button.
