@@ -4,8 +4,6 @@ Patcher Portal - Resolving Build Conflicts
 ####Prerequisites: ####
 
 * Patcher Portal credentials
-* VPN credentials
-* CISCO VPN Client
 
 ####Description: ####
 This test is designed to have the user resolve conflicting builds. Users will have to create two conflicting builds then resolve them.
