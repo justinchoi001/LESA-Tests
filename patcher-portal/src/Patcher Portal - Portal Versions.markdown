@@ -4,8 +4,6 @@ Patcher Portal - Portal Versions
 ####Prerequisites: ####
 
 * Patcher Portal credentials
-* VPN credentials
-* CISCO VPN Client
 
 ####Description: ####
 This test is designed to have the user create a new portal version but not all fixes are built on the root portal versions. Users must connect to the Patcher Staging site through a VPN.

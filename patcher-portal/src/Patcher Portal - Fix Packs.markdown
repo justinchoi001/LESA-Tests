@@ -4,8 +4,6 @@ Patcher Portal - Fix Packs
 ####Prerequisites: ####
 
 * Patcher Portal credentials
-* VPN credentials
-* CISCO VPN Client
 
 ####Description: ####
 This test is designed to have the user create a fix pack to be released. Users must connect to the Patcher Staging site through a VPN.

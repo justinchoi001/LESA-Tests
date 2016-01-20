@@ -19,7 +19,7 @@ This test is designed to have the user create a fix and then create a new versio
 	b) Branch Name:	LPEALPHA-1    
 	c) GitHub URL: git@github.com:EddieOlson/liferay-portal-ee.git
 1. Click the Save button.
-1. Assert that LPEALPHAFIX-1 has been created.
+1. Assert that LPEALPHAFIX-11 has been created.
 1. Click the "Builds" tab.
 1. Click "Add Build." 
 1. Enter in the appropriate metadata:    
