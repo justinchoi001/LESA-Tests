@@ -19,7 +19,7 @@ This test is designed to have the user resolve conflicting builds. Users will ha
 ****
 
 ####Test Steps: ####
-1. <a href="#SignIn" name="SignIn"></a>Navigate to https://lrdcom-vm-37
+1. <a href="#SignIn" name="SignIn"></a>Navigate to http://cloud-10-50-0-130/
 1. Sign in as administrator.    
 <a href="#CreateTwoFixes" name="CreateTwoFixes">Create Two Fixes</a>
 1. Click the Fixes tab.
