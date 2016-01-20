@@ -22,7 +22,7 @@ This test is designed to have the user create a fix pack to be released. Users m
 
 
 ####Test Steps: ####
-1. <a href="#CreateAFix" name="CreateAFix"></a>Navigate to https://lrdcom-vm-37
+1. <a href="#CreateAFix" name="CreateAFix"></a>Navigate to http://cloud-10-50-0-130/
 1. Sign in as administrator.
 1. Click the Patcher Portal Page.
 1. Click the Fixes tab.

@@ -87,11 +87,12 @@
 		<execute function="Select" locator1="PGAddTicket#OPERATING_SYSTEM" value1="Ubuntu 12" />
 		<execute function="Select" locator1="PGAddTicket#JAVA_VIRTUAL_MACHINE" value1="Java 6" />
 		<execute function="Select" locator1="PGAddTicket#PRIMARY_BROWSER" value1="${browser}" />
-		
+
+		<execute function="Click" locator1="PGAddTicket#UPLOAD_SOCIAL_OFFICE_PLUGIN" />
 		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
 		<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\Social Office EE.lpkg" />
 		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
-
+		
 		<execute function="Pause" locator1="5000" />
 		<execute function="Click" locator1="PGAddTicket#UPLOAD_NEW_PORTAL_EXT" />
 		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />

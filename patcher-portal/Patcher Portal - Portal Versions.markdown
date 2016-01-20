@@ -11,7 +11,7 @@ Patcher Portal - Portal Versions
 This test is designed to have the user create a new portal version but not all fixes are built on the root portal versions. Users must connect to the Patcher Staging site through a VPN.
 
 ####Test Steps: ####
-1. Navigate to https://lrdcom-vm-37
+1. Navigate to http://cloud-10-50-0-130/
 1. Sign in as administrator.
 1. Click the Portal Versions tab.
 1. Click the Create Portal Versions button.
