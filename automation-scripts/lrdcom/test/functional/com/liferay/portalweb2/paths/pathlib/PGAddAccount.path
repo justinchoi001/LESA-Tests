@@ -55,12 +55,12 @@
 </tr>
 <tr>
 	<td>SELECT_COMPONENT</td>
-	<td>//select[@name='_2_WAR_osbportlet_component']</td>
+	<td>//select[contains(@name,'component')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CONTINUE_BUTTON</td>
-	<td>//input[@id='_2_WAR_osbportlet_submitButton']</td>
+	<td>//input[contains(@id,'submitButton')]</td>
 	<td></td>
 </tr>
 <!---->

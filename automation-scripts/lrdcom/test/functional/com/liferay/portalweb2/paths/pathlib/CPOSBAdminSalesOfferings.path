@@ -15,17 +15,17 @@
 </tr>
 <tr>
 	<td>PRODUCT</td>
-	<td>//select[@name='_1_WAR_osbportlet_productEntryIds']</td>
+	<td>//select[contains(@name,'productEntryIds')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>SUPPORT</td>
-	<td>//select[@name='_1_WAR_osbportlet_supportResponseIds']</td>
+	<td>//select[contains(@name,'supportResponseIds')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CURRENCY</td>
-	<td>//select[@name='_1_WAR_osbportlet_currencyEntryIds']</td>
+	<td>//select[contains(@name,'currencyEntryIds')]</td>
 	<td></td>
 </tr>
 <tr>

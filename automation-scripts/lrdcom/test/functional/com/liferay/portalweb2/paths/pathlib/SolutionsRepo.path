@@ -10,27 +10,27 @@
 <tbody>
 <tr>
 	<td>SOLUTION_SUMMARY</td>
-	<td>//textarea[@name='_2_WAR_osbportlet_solution']</td>
+	<td>//textarea[contains(@name,'solution')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>ISSUE_SUMMARY_TOGGLE</td>
-	<td>//select[@name='_2_WAR_osbportlet_useCustomerSummary']</td>
+	<td>//select[contains(@name,'useCustomerSummary')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>ISSUE_SUMMARY</td>
-	<td>//textarea[@id='_2_WAR_osbportlet_summary']</td>
+	<td>//textarea[contains(@id,'summary')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>SUBCOMPONENT_DROPDOWN</td>
-	<td>//select[@name='_2_WAR_osbportlet_ticketEntrySubcomponent']</td>
+	<td>//select[contains(@name,'ticketEntrySubcomponent')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>BROWSE_BUTTON</td>
-	<td>//input[@id='_2_WAR_osbportlet_file1']</td>
+	<td>UPLOAD_BUTTON</td>
+	<td>//a[.='Upload']</td>
 	<td></td>
 </tr>
 <tr>
@@ -40,22 +40,22 @@
 </tr>
 <tr>
 	<td>URL_FIELD</td>
-	<td>//input[@name='_2_WAR_osbportlet_ticketLinkURL1']</td>
+	<td>//input[contains(@name,'ticketLinkURL1')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>URL_TYPE</td>
-	<td>//select[@name='_2_WAR_osbportlet_ticketLinkType1']</td>
+	<td>//select[contains(@name,'ticketLinkType1')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>SEND_BUTTON</td>
-	<td>//form[@id='_2_WAR_osbportlet_fm']/div/div/div[2]/input[@value='Send']</td>
+	<td>//form[contains(@id,'fm')]/div/div[2]/input[@value='Send']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CANCEL_BUTTON</td>
-	<td>//form[@id='_2_WAR_osbportlet_fm']/div/div/div[2]/input[@value='Cancel']</td>
+	<td>//form[contains(@id,'fm')]/div/div[2]/input[@value='Cancel']</td>
 	<td></td>
 </tr>
 <tr>

@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>L2TicketFeedback</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">L2TicketFeedback</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>SUCCESS_MESSAGE</td>
+	<td>//div[@class='portlet-msg-success']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>POSITIVE_FEEDBACK</td>
+	<td>//input[@value='Yes']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NEGATIVE_FEEDBACK</td>
+	<td>//input[@value='No']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>COMMENTS_FIELD</td>
+	<td>//textarea[contains(@name,'comments')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUBMIT_BUTTON</td>
+	<td>//div[contains(@id,'commentSection')]/div/input[@value='Submit']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

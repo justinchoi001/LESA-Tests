@@ -15,22 +15,22 @@
 </tr>
 <tr>
 	<td>ACCOUNT</td>
-	<td>//select[@name='_4_WAR_osbportlet_accountEntryId']</td>
+	<td>//select[contains(@name,'accountEntryId')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>LIFERAY_VERSION</td>
-	<td>//select[@name='_4_WAR_osbportlet_productVersion']</td>
+	<td>//select[contains(@name,'productVersion')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>PRODUCT</td>
-	<td>//select[@name='_4_WAR_osbportlet_productEntryId']</td>
+	<td>//select[contains(@name,'productEntryId')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>TYPE</td>
-	<td>//select[@name='_4_WAR_osbportlet_licenseEntryId']</td>
+	<td>//select[contains(@name,'licenseEntryId')]</td>
 	<td></td>
 </tr>
 <tr>

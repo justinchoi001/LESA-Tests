@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>PGPreferences</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PGPreferences</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>SCREEN_SHARE_MODE_CHECKBOX</td>
+	<td>//input[contains(@id,'screenShareModeCheckbox')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REVERSE_COMMENT_ORDER_CHECKBOX</td>
+	<td>//input[contains(@id,'reverseCommentOrderCheckbox')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VIEW_NEW_CHANGES_CHECKBOX</td>
+	<td>//input[contains(@id,'version2EnabledCheckbox')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_BUTTON</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

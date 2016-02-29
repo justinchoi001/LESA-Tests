@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>L2EditTicket</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">L2EditTicket</td></tr>
+</thead>
+<tbody>
+<!--Ticket Details -->
+<tr>
+	<td>TICKET_DETAILS_TAB</td>
+	<td>//span[contains(@id,'ticketDetails')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUBJECT_FIELD</td>
+	<td>//input[contains(@name,'subject')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DESCRIPTION_FIELD</td>
+	<td>//textarea[contains(@name,'description')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>COMPONENT</td>
+	<td>//select[contains(@name,'component')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUBCOMPONENT</td>
+	<td>//select[contains(@name,'subcomponent')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ESCALATION_LEVEL</td>
+	<td>//select[contains(@name,'escalationLevel')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEVERITY</td>
+	<td>//select[contains(@name,'severity')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STATUS</td>
+	<td>//select[contains(@name,'status')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RESOLUTION</td>
+	<td>//select[contains(@name,'resolution')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CHOOSE_OFFERING</td>
+	<td>//spacontains(n[@id,'productEntryName')]/../input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUPPORT_REGION</td>
+	<td>//select[contains(@name,'supportRegionId')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CHOOSE_REPORTER</td>
+	<td>//spacontains(n[@id,'reportedByUserName')]/../input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_TICKET_DETAILS_BUTTON</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CLOSE_TICKET_DETAILS_BUTTON</td>
+	<td>//input[@value='Close']</td>
+	<td></td>
+</tr>
+<!-- Environment Details Tab-->
+<tr>
+	<td>ENVIRONMENT_DETAILS_TAB</td>
+	<td>//span[contains(@id,'environmentDetails')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LIFERAY_VERSION</td>
+	<td>//select[contains(@name,'envLFR')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DATABASE</td>
+	<td>//select[contains(@name,'envDB')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OPERATING_SYSTEM</td>
+	<td>//select[contains(@name,'envOS')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>JAVA_VIRTUAL_MACHINE</td>
+	<td>//select[contains(@name,'envJVM')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRIMARY_BROWSER</td>
+	<td>//select[@contains(name,'envBrowser')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_TICKET_DETAILS_BUTTON</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CLOSE_TICKET_DETAILS_BUTTON</td>
+	<td>//input[@value='Close']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

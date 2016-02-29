@@ -15,12 +15,12 @@
 </tr>
 <tr>
 	<td>SELECT_PRODUCT</td>
-	<td>//select[@name='_1_WAR_osbportlet_productEntryIds']</td>
+	<td>//select[contains(@name,'productEntryIds')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>SELECT_SUPPORT</td>
-	<td>//select[@name='_1_WAR_osbportlet_supportResponseIds']</td>
+	<td>//select[contains(@name,'supportResponseIds')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -29,13 +29,18 @@
 	<td></td>
 </tr>
 <tr>
-	<td>SELECTED_OFFERING</td>
-	<td>//td[contains(.,'${key_product}')]/../td[contains(.,'${key_lifetime}')]</td>
+	<td>90_DAYS_LIFETIME</td>
+	<td>//form[contains(@id,'fm')]/div[2]/div/div/table/tbody/tr/td[contains(.,'90 Days')]/a</td>
 	<td></td>
 </tr>
 <tr>
+	<td>15_MONTHS_LIFETIME</td>
+	<td>//td[contains(.,'15 Months')]/a</td>
 	<td></td>
-	<td></td>
+</tr>
+<tr>
+	<td>SELECTED_OFFERING</td>
+	<td>//form[contains(@id,'fm')]/div[2]/div/div/table/tbody/tr/td[contains(.,'Portal Non-Production')]/../td[contains(.,'${key_lifetime}')]/a</td>
 	<td></td>
 </tr>
 <tr>

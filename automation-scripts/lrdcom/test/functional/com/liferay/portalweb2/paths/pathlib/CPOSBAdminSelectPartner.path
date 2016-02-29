@@ -30,7 +30,7 @@
 </tr>
 <tr>
 	<td>SEARCH_CONTAINER_FIRST_ROW</td>
-	<td>//td[@headers='_1_WAR_osbportlet_partnerEntriesSearchContainer_col-code']/a[contains(.,'${key_partnerName}')]</td>
+	<td>//td[contains(@headers,'partnerEntriesSearchContainer_col-code')]/a[contains(.,'${key_partnerName}')]</td>
 	<td></td>
 </tr>
 <tr>

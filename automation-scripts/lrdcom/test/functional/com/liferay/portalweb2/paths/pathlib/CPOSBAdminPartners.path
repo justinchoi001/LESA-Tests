@@ -21,7 +21,7 @@
 <!--Top Level Tabs -->
 <tr>
 	<td>SEARCH_FIELD</td>
-	<td>//input[@name='_1_WAR_osbportlet_keywords']</td>
+	<td>//input[contains(@name,'keywords')]</td>
 	<td></td>
 </tr>
 <tr>

@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>L2ManagerDashboard</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">L2ManagerDashboard</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>SUCCESS_MESSAGE</td>
+	<td>//div[@class='portlet-msg-success']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEAM_TABLE_TITLE</td>
+	<td>//div[@class='team-title']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CSE_STATUS_IN</td>
+	<td>//td[contains(@class,'user-name') and contains(.,'Brian Suh')]/..//td[@class='switch']/div/a/span[contains(.,'In')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CSE_STATUS_ON_PTO</td>
+	<td>//td[contains(@class,'user-name') and contains(.,'Brian Suh')]/..//td[@class='switch']/div/a/span[contains(.,'On PTO')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

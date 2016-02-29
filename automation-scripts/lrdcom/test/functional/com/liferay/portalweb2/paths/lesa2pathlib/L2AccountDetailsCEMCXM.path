@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>L2AccountDetailsCEMCXM</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">L2AccountDetailsCEMCXM</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>BACK</td>
+	<td>//div[@class='back-link cleared txt-sb']/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VIEW_TICKETS_BUTTON</td>
+	<td>//input[@value='View Tickets']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>THREE_DOT_ICON</td>
+	<td>//span[contains(@id,'threeDotIcon')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDIT_BUTTON</td>
+	<td>//div[contains(@id,'contentCemCxmInformation')]/div/div[4]/div/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LICENSE_INFORMATION_FIELD</td>
+	<td>//textarea[contains(@name,'field--8')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SALESFORCE_URL_FIELD</td>
+	<td>//textarea[contains(@name,'field--9')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TRAININGS_ATTENDED_FIELD</td>
+	<td>//textarea[contains(@name,'field--10')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_BUTTON</td>
+	<td>//div[contains(@id,'experience-manager-information')]/div[4]/div/input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL_BUTTON</td>
+	<td>//div[contains(@id,'experience-manager-information')]/div[4]/div/input[@value='Cancel']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>L2TicketAttachments</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">L2TicketAttachments</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>SUCCESS_MESSAGE</td>
+	<td>//div[@class='portlet-msg-success']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BACK</td>
+	<td>//div[@class='back-link cleared txt-sb']/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TICKET_STATUS</td>
+	<td>//div[contains(@id,'statusDisplay')]/span[contains(.,'${ticketStatus}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>THREE_DOT_DROPDOWN</td>
+	<td>//span[contains(@id,'threeDotIcon')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NEXT_STEP_BUTTON</td>
+	<td>//input[@value='${key_name}']</td>
+	<td></td>
+</tr>
+<!--Top Tier Tabs -->
+<tr>
+	<td>DESCRIPTION_TAB</td>
+	<td>//span[contains(@id,'description')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ATTACHMENTS_TAB</td>
+	<td>//span[contains(@id,'attachments')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LINKS_TAB</td>
+	<td>//span[contains(@id,'links')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUPPORT_INSTRUCTIONS_TAB</td>
+	<td>//span[contains(@id,'supportInstructions')]</td>
+	<td></td>
+</tr>
+<!--Attachments -->
+<tr>
+	<td>SELECT_FILE_BUTTON</td>
+	<td>//button[contains(@id,'selectButton')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UPLOADER_TOGGLE</td>
+	<td>//a[contains(@id,'classicUploaderButton']|//a[contains(@id,'regularUploaderButton')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_NEED_RESPONSE_FROM_BUTTON</td>
+	<td>//input[contains(@id,'needResponseButton')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL_BUTTON</td>
+	<td>//input[@value='Cancel']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PAUSE_UPLOAD_BUTTON_PNG</td>
+	<td>portal/buttons/pause_upload.png</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RESUME_UPLOAD_BUTTON_PNG</td>
+	<td>portal/buttons/resume_upload.png</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PAUSED_MESSAGE</td>
+	<td>//div[contains(@id,'messageContainer')]/span[contains(.,'Paused...')]</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

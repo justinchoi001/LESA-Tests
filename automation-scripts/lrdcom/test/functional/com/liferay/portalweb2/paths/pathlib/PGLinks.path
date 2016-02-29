@@ -25,22 +25,22 @@
 </tr>
 <tr>
 	<td>URL_1</td>
-	<td>//input[@name='_2_WAR_osbportlet_url1']</td>
+	<td>//input[contains(@name,'url1')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>URL_2</td>
-	<td>//input[@name='_2_WAR_osbportlet_url2']</td>
+	<td>//input[contains(@name,'url2')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>URL_3</td>
-	<td>//input[@name='_2_WAR_osbportlet_url3']</td>
+	<td>//input[contains(@name,'url3')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>VISIBILITY_DROPDOWN</td>
-	<td>//select[@name='_2_WAR_osbportlet_visibility']</td>
+	<td>//select[contains(@name,'visibility')]</td>
 	<td></td>
 </tr>
 <tr>

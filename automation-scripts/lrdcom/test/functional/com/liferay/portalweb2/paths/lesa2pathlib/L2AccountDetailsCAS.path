@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>L2AccountDetailsCAS</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">L2AccountDetailsCAS</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>BACK</td>
+	<td>//div[@class='back-link cleared txt-sb']/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VIEW_TICKETS_BUTTON</td>
+	<td>//input[@value='View Tickets']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>THREE_DOT_ICON</td>
+	<td>//span[contains(@id,'threeDotIcon')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDIT_BUTTON</td>
+	<td>//div[contains(@id,'contentCasInformation')]/div/div[6]/div/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REASONS_FOR_STRATEGIC_FIELD</td>
+	<td>//textarea[contains(@name,'field--2')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROJECT_OVERVIEW_FIELD</td>
+	<td>//textarea[contains(@name,'field--3')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONTACT_OVERVIEW_FIELD</td>
+	<td>//textarea[contains(@name,'field--4')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MILESTONES_FIELD</td>
+	<td>//textarea[contains(@name,'field--5')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OTHER_INFO_FIELD</td>
+	<td>//textarea[contains(@name,'field--6')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_BUTTON</td>
+	<td>//div[contains(@id,'advocacy-specialist-information')]/div[6]/div/input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL_BUTTON</td>
+	<td>//div[contains(@id,'advocacy-specialist-information')]/div[6]/div/input[@value='Cancel']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

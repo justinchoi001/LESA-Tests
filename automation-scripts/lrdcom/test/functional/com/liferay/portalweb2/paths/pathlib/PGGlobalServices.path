@@ -21,47 +21,47 @@
 <!-- Project iFrame -->
 <tr>
 	<td>PROJECT_IFRAME</td>
-	<td>//iframe[@id='_2_WAR_osbportlet_updateAccountProject']</td>
+	<td>//iframe[contains(@id,'updateAccountProject')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>PROJECT_NAME_FIELD</td>
-	<td>//input[@name='_2_WAR_osbportlet_name']</td>
+	<td>//input[contains(@name,'name')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CLIENT_CONTACTS_FIELD</td>
-	<td>//textarea[@id='_2_WAR_osbportlet_field--11']</td>
+	<td>//textarea[contains(@id,'field--11')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>LIFERAY_CONTACTS_FIELD</td>
-	<td>//textarea[@id='_2_WAR_osbportlet_field--12']</td>
+	<td>//textarea[contains(@id,'field--12')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>TYPE_OF_PROJECT_FIELD</td>
-	<td>//textarea[@id='_2_WAR_osbportlet_field--13']</td>
+	<td>//textarea[contains(@id,'field--13')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>GENERAL_NOTES_FIELD</td>
-	<td>//textarea[@id='_2_WAR_osbportlet_field--14']</td>
+	<td>//textarea[contains(@id,'field--14')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>DEBRIEF_FIELD</td>
-	<td>//textarea[@id='_2_WAR_osbportlet_field--15']</td>
+	<td>//textarea[contains(@id,'field--15')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>SAVE_BUTTON</td>
-	<td>//form[@id='_2_WAR_osbportlet_fm']/div/div[7]/div/input[@value='Save']</td>
+	<td>//form[contains(@id,'fm')]/div/div[7]/div/input[@value='Save']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CANCEL_BUTTON</td>
-	<td>//form[@id='_2_WAR_osbportlet_fm']/div/div[7]/div/input[@value='Cancel']</td>
+	<td>//form[contains(@id,'fm')]/div/div[7]/div/input[@value='Cancel']</td>
 	<td></td>
 </tr>
 </tbody>

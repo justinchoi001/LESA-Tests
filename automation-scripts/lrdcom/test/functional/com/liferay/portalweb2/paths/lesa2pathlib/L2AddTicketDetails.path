@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>L2AddTicketDetails</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">L2AddTicketDetails</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>SUMMARY_FIELD</td>
+	<td>//input[@name='_2_WAR_osbportlet_subject']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SYSTEM_STATUS_DROPDOWN</td>
+	<td>//select[@name='_2_WAR_osbportlet_systemStatus']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DESCRIPTION_FIELD</td>
+	<td>//textarea[@name='_2_WAR_osbportlet_description']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BROWSER</td>
+	<td>//select[@name='_2_WAR_osbportlet_envBrowser']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PORTAL_EXT_CHECKBOX</td>
+	<td>//input[@id='_2_WAR_osbportlet_portalExtCheckbox']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UPLOAD_NEW_PORTAL_EXT</td>
+	<td>//div[@class='fr']/div[contains(.,'This Portal-Ext is current.')]/../div/a[.='Upload']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UPLOAD_NEW_PORTAL_EXT_PNG</td>
+	<td>/os/buttons/upload_new_button.png</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PATCH_LEVEL_CHECKBOX</td>
+	<td>//input[@id='_2_WAR_osbportlet_patchLevelCheckbox']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UPLOAD_NEW_PATCH_LEVEL</td>
+	<td>//div[@class='fr']/div[contains(.,'This Patch Level is current.')]/../div/a[.='Upload']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PREVIOUS_BUTTON</td>
+	<td>//input[@value='Previous']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CREATE_BUTTON</td>
+	<td>//input[@value='Create']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UPLOAD_SOCIAL_OFFICE_PLUGIN</td>
+	<td>//div[@class='fr']/div/a[@id='_2_WAR_osbportlet_selectsocialOfficePluginFile']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LIFERAY_VERSION</td>
+	<td>//select[@name='_2_WAR_osbportlet_envLFR']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>APPLICATION_SERVER</td>
+	<td>//select[@name='_2_WAR_osbportlet_envAS']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OPERATING_SYSTEM</td>
+	<td>//select[@name='_2_WAR_osbportlet_envOS']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DATABASE</td>
+	<td>//select[@name='_2_WAR_osbportlet_envDB']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>JAVA_VIRTUAL_MACHINE</td>
+	<td>//select[@name='_2_WAR_osbportlet_envJVM']</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

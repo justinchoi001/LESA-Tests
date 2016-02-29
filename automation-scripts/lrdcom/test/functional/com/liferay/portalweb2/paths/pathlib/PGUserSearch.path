@@ -11,7 +11,7 @@
 <!--Assigned to Search Window -->
 <tr>
 	<td>ASSIGNED_TO_SEARCH_FIELD</td>
-	<td>//input[@id='_2_WAR_osbportlet_toggle_id_users_admin_user_searchkeywords']</td>
+	<td>//input[contains(@id,'toggle_id_users_admin_user_searchkeywords')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -21,17 +21,17 @@
 </tr>
 <tr>
 	<td>USER_NAME</td>
-	<td>//tr/td[@id='_2_WAR_osbportlet_usersSearchContainer_col-name_row-1']/a</td>
+	<td>//tr/td[contains(@id,'usersSearchContainer_col-name_row-1')]/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>USER_SCREEN_NAME</td>
-	<td>//tr/td[@id='_2_WAR_osbportlet_usersSearchContainer_col-screen-name_row-1']/a[contains(.,'${otherCSEScreenName}')]</td>
+	<td>//tr/td[contains(@id,'usersSearchContainer_col-screen-name_row-1')]/a[contains(.,'${otherCSEScreenName}')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>USER_EMAIL_ADDRESS</td>
-	<td>//tr/td[@id='_2_WAR_osbportlet_usersSearchContainer_col-email-address_row-1']/a</td>
+	<td>//tr/td[contains(@id,'usersSearchContainer_col-email-address_row-1')]/a</td>
 	<td></td>
 </tr>
 <tr>

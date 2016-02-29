@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>L2Preferences</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">L2Preferences</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>GENERAL_TAB</td>
+	<td>//li/span/a/strong[contains(.,'General')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MANAGER_DASHBOARD_TAB</td>
+	<td>//li/span/a[contains(.,'Manager Dashboard')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

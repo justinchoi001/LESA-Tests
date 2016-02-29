@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>L2Search</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">L2Search</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>SEARCH_FIELD</td>
+	<td>//input[contains(@name,'keywords')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TICKETS_FILTER</td>
+	<td>//span[contains(@id,'tickets')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROJECTS_FILTER</td>
+	<td>//span[contains(@id,'accounts')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FEEDBACK_FILTER</td>
+	<td>//span[contains(@id,'feedback')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PARTNERS_FILTER</td>
+	<td>//span[contains(@id,'partners')]</td>
+	<td></td>
+</tr>
+<!--Search results-->
+<tr>
+	<td>CODE</td>
+	<td>//td[@class='account-column code']/div/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROJECT_NAME</td>
+	<td>//td[@class='account-column project-name']/div/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TIER</td>
+	<td>//td[@class='account-column tier']/div/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

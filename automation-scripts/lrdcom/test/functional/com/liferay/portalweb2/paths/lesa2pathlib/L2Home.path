@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>L2Home</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">L2Home</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Left Navigation-->
+<tr>
+	<td>TICKETS_VIEW_ICON</td>
+	<td>//div[contains(@id,'homeIcon')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MY_OPEN_TICKETS</td>
+	<td>//div[contains(@id,'homeIcon')]/ul/li[2]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEARCH</td>
+	<td>//div[contains(@id,'advSearchIcon')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NEW_TICKET</td>
+	<td>//div[contains(@id,'newTicketIcon')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HELP</td>
+	<td>//div[contains(@id,'helpIcon')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FEEDBACK_BUGS</td>
+	<td>//div[contains(@id,'lesaFeedbackIcon')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PREFERENCES</td>
+	<td>//div[contains(@id,'settingsIcon')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Ticket Table Rows-->
+<tr>
+	<td>PRIMARY_ASSIGNEE_OPEN_TICKET_1</td>
+	<td>//td[@class='ticket-column number']/div/a[contains(.,'${key_account}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRIMARY_ASSIGNEE_OPEN_TICKET_2</td>
+	<td>//td[@class='ticket-column subject']/div/a[contains(.,'Support Test')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRIMARY_ASSIGNEE_OPEN_TICKET_3</td>
+	<td>//td[@class='ticket-column subject']/div/a[contains(.,'Solution Repo Test')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRIMARY_ASSIGNEE_SOLUTION_PROPOSED_TICKET</td>
+	<td>//td[@class='ticket-column status']/div/span[contains(.,'Solution Proposed')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FORWARDING_TICKET</td>
+	<td>//div[@class='search-detail']/a[contains(.,'Forwarding Test')]</td>
+	<td></td>
+</tr>
+<!--Key word search-->
+<tr>
+	<td>KEYWORD_SEARCH</td>
+	<td>//input[contains(@name,'keywords')]</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

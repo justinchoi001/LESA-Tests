@@ -42,22 +42,22 @@
 <!--Search fields-->
 <tr>
 	<td>ACCOUNT</td>
-	<td>//input[@name='_4_WAR_osbportlet_accountEntryName']</td>
+	<td>//input[contains(@name,'accountEntryName')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>NAME</td>
-	<td>//input[@name='_4_WAR_osbportlet_licenseKeySetName']</td>
+	<td>//input[contains(@name,'licenseKeySetName')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>OWNER</td>
-	<td>//input[@name='_4_WAR_osbportlet_owner']</td>
+	<td>//input[contains(@name,'owner')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>ACTIVE_STATUS</td>
-	<td>//select[@name='_4_WAR_osbportlet_active']</td>
+	<td>//select[contains(@name,'active')]</td>
 	<td></td>
 </tr>
 <!--License Type-->

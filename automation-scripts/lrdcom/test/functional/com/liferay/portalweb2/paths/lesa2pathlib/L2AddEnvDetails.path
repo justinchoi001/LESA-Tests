@@ -1,36 +1,21 @@
 <html>
 <head>
-<title>PGAddTicket</title>
+<title>L2AddEnvDetails</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">PGAddTicket</td></tr>
+<tr><td rowspan="1" colspan="3">L2AddEnvDetails</td></tr>
 </thead>
 <tbody>
 <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>BACK_TO_PREVIOUS_PAGE</td>
-	<td>//div[@class='portlet-body']/form/div/div/a</td>
+	<td>SELECT_PROJECT</td>
+	<td>//select[contains(@name,'accountEntryId')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>CHANGE_BUTTON</td>
-	<td>//div[@class='callout-content']/div/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>SUMMARY_FIELD</td>
-	<td>//input[contains(@name,'subject')]</td>
+	<td>SELECT_PRODUCT</td>
+	<td>//select[contains(@name,'offeringEntryId')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -39,17 +24,12 @@
 	<td></td>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>DESCRIPTION_FIELD</td>
-	<td>//textarea[contains(@name,'description')]</td>
+	<td>SELECT_SAVED_ENV_CONFIG</td>
+	<td>//select[contains(@name,'accountEnvironmentId')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>VERSION</td>
+	<td>LIFERAY_VERSION</td>
 	<td>//select[contains(@name,'envLFR')]</td>
 	<td></td>
 </tr>
@@ -59,13 +39,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>DATABASE</td>
-	<td>//select[contains(@name,'envDB')]</td>
+	<td>OPERATING_SYSTEM</td>
+	<td>//select[contains(@name,'envOS')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>OPERATING_SYSTEM</td>
-	<td>//select[contains(@name,'envOS')]</td>
+	<td>DATABASE</td>
+	<td>//select[contains(@name,'envDB')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -74,13 +54,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>PRIMARY_BROWSER</td>
+	<td>BROWSER</td>
 	<td>//select[contains(@name,'envBrowser')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -109,23 +84,38 @@
 	<td></td>
 </tr>
 <tr>
-	<td>UPLOAD_SOCIAL_OFFICE_PLUGIN</td>
-	<td>//div[@class='fr']/div/a[contains(@id,'selectsocialOfficePluginFile')]</td>
+	<td>SELECT_COMPONENT</td>
+	<td>//select[contains(@name,'component')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
+	<td>SUMMARY_FIELD</td>
+	<td>//input[contains(@name,'subject')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>SUBMIT_BUTTON</td>
-	<td>//input[@value='Submit']</td>
+	<td>DESCRIPTION_FIELD</td>
+	<td>//textarea[contains(@name,'description')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CREATE_BUTTON</td>
+	<td>//input[@value='Create']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CANCEL_BUTTON</td>
 	<td>//input[@value='Cancel']</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>UPLOAD_SOCIAL_OFFICE_PLUGIN</td>
+	<td>//div[@class='fr']/div/a[(contains(@id,'selectsocialOfficePluginFile')]</td>
 	<td></td>
 </tr>
 </tbody>

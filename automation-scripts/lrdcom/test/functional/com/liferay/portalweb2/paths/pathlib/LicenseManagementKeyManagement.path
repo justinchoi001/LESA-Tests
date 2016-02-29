@@ -96,7 +96,7 @@
 </tr>
 <tr>
 	<td>DEACTIVATED_LICENSE_HEADER</td>
-	<td>//div[@id='_4_WAR_osbportlet_inactiveLicenses']/div/div/span[contains(.,'Deactivated Licenses')]</td>
+	<td>//div[contains(@id,'inactiveLicenses')]/div/div/span[contains(.,'Deactivated Licenses')]</td>
 	<td></td>
 </tr>
 </tbody>

@@ -1,0 +1,296 @@
+<html>
+<head>
+<title>L2Ticket</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">L2Ticket</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>SUCCESS_MESSAGE</td>
+	<td>//div[@class='portlet-msg-success']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TICKET_STATUS</td>
+	<td>//span[contains(@id,'statusLabel')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TICKET_RESOLUTION</td>
+	<td>//span[contains(@id,'resolutionLabel')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>THREE_DOT_DROPDOWN</td>
+	<td>//span[contains(@id,'threeDotIcon')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NEXT_STEP_BUTTON</td>
+	<td>//input[@value='${key_name}']</td>
+	<td></td>
+</tr>
+<!--Top Tier Tabs -->
+<tr>
+	<td>DESCRIPTION_TAB</td>
+	<td>//span[contains(@id,'description')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FEEDBACK_TAB</td>
+	<td>//span[contains(@id,'feedback')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ATTACHMENTS_TAB</td>
+	<td>//span[contains(@id,'attachments')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LINKS_TAB</td>
+	<td>//span[contains(@id,'links')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUPPORT_INSTRUCTIONS_TAB</td>
+	<td>//span[contains(@id,'supportInstructions')]</td>
+	<td></td>
+</tr>
+<!--Lower Tier Tabs -->
+<tr>
+	<td>PUBLIC_COMMENTS_TAB</td>
+	<td>//span[contains(@id,'public')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>WORKERS_COMMENTS_TAB</td>
+	<td>//span[contains(@id,'workers')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LIFERAY_COMMENTS_TAB</td>
+	<td>//span[contains(@id,'liferay')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ALL_COMMENTS_TAB</td>
+	<td>//span[contains(@id,'all-comments')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HISTORY_TAB</td>
+	<td>//span[contains(@id,'history')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SOLUTIONS_TAB</td>
+	<td>//span[contains(@id,'solutions')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NEW_COMMENT_FIELD</td>
+	<td>//textarea[contains(@id,'commentBody0')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLY_BUTTON</td>
+	<td>//input[contains(@id,'addCommentButton0')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_ATTACHMENTS</td>
+	<td>//input[contains(@id,'addAttachmentsButton')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_CANNED_RESPONSE</td>
+	<td>//input[@value='Add Canned Response']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_AS_DRAFT</td>
+	<td>//input[contains(@id,'saveAsDraft')]</td>
+	<td></td>
+</tr>
+<!--Edit Ticket Iframe -->
+<tr>
+	<td>EDIT_TICKET_IFRAME</td>
+	<td>//iframe[contains(@name,'updateTicketEntry')]</td>
+	<td></td>
+</tr>
+<!--Main Dropdown -->
+<tr>
+	<td>EDIT_TICKET</td>
+	<td>//span[contains(@id,'threeDotMenu')]/div/ul/li/a[contains(.,'Edit')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ESCALATE_TICKET</td>
+	<td>//a[contains(.,'Escalate')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FORWARD_TICKET</td>
+	<td>//a[contains(.,'Forward')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LOG_CALL</td>
+	<td>//a[contains(.,'Log Call')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROPOSE_SOLUTION</td>
+	<td>//a[contains(.,'Propose Solution')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UNWATCH_TICKET</td>
+	<td>//a[contains(.,'Unwatch Ticket')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BROWSE_1</td>
+	<td>//input[contains(@name,'file0_1')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BROWSE_2</td>
+	<td>//input[contains(@name,'file0_2')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BROWSE_3</td>
+	<td>//input[contains(@name,'file0_3')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>COMMENT_FIELD</td>
+	<td>//div[@class='comment-body']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ASSIGNEE</td>
+	<td>//div[contains(.,'Assignee')]/span[contains(.,'${key_cse1}')]|//div[contains(.,'Assignee')]/span[contains(.,'${key_cse2}')]</td>
+	<td></td>
+</tr>
+<!-- Forwarding -->
+<tr>
+	<td>YES_BUTTON</td>
+	<td>//form[contains(@id,'forwardFm')]/input[@value='1']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NO_BUTTON</td>
+	<td>//form[contains(@id,'forwardFm')]/input[@value='0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MAIN_GOAL_FIELD</td>
+	<td>//form/div[contains(@id,'mainGoalContainer')]/textarea</td>
+	<td></td>
+</tr>
+<tr>
+	<td>WORK_DONE_FIELD</td>
+	<td>//form/div[contains(@id,'workDoneContainer')]/textarea</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CUSTOMER_NEXT_STEPS_FIELD</td>
+	<td>//form/div[contains(@id,'customerNextStepsContainer')]/textarea</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NEXT_REGION_NEXT_STEPS_FIELD</td>
+	<td>//textarea[contains(@id,'nextRegionNextSteps')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IFRAME_FORWARD_BUTTON</td>
+	<td>//input[contains(@id,'forwardSubmit')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL_BUTTON</td>
+	<td>//input[contains(@id,'forwardCancel')]</td>
+	<td></td>
+</tr>
+<!--Solutions Repository -->
+<tr>
+	<td>SOLUTION_PROPOSED_TAB</td>
+	<td>//div[@class='solution-confirm-tab']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SOLUTION_YES_BUTTON</td>
+	<td>//div[@class='solution-confirm-answer']/a[@class='btn solution-confirm-btn btn-yes']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SOLUTION_NO_BUTTON</td>
+	<td>//div[@class='solution-confirm-answer']/a[@class='btn solution-confirm-btn btn-no']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SOLUTION_NOT_APPLICABLE_BUTTON</td>
+	<td>//div[@class='solution-confirm-answer']/a[@class='btn solution-confirm-btn style-a btn-not-applicable']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REJECT_REASON</td>
+	<td>//select[contains(@name,'statusReason')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REJECT_EXPLANATION</td>
+	<td>//textarea[contains(@id,'statusMessage')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REJECT_SEND_BUTTON</td>
+	<td>//div[@class='solution-confirm-container']/div/input[@value='Send']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REJECT_CANCEL_BUTTON</td>
+	<td>//div[@class='solution-confirm-container']/div/input[@value='Cancel']</td>
+	<td></td>
+</tr>
+<!--Links -->
+<tr>
+	<td>URL_1</td>
+	<td>//input[contains(@name,'url1')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>URL_2</td>
+	<td>//input[contains(@name,'url2')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>URL_3</td>
+	<td>//input[contains(@name,'url3')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VISIBILITY_DROPDOWN</td>
+	<td>//td/select[contains(@name,'visibility')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VISIBILITY_LIFERAY</td>
+	<td>//td/select[contains(@name,'visibility')]/option[contains(.,'Liferay')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_BUTTON</td>
+	<td>//form/input[@value='Save']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

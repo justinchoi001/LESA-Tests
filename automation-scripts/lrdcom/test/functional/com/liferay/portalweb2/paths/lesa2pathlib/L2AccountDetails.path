@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>L2AccountDetails</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">L2AccountDetails</td></tr>
+</thead>
+<tbody>
+<tr>
+	<td>BACK</td>
+	<td>//div[@class='back-link cleared txt-sb']/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VIEW_TICKETS_BUTTON</td>
+	<td>//input[@value='View Tickets']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>THREE_DOT_ICON</td>
+	<td>//span[contains(@id,'threeDotIcon')]</td>
+	<td></td>
+</tr>
+<!--Top Tier Tabs-->
+<tr>
+	<td>CONTACTS_TAB</td>
+	<td>//span[contains(@id,'contacts')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OFFERINGS_TAB</td>
+	<td>//span[contains(@id,'offerings')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ENVIRONMENT_DETAILS_TAB</td>
+	<td>//span[contains(@id,'environmentDetails')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ATTACHMENTS_TAB</td>
+	<td>//span[contains(@id,'attachments')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACCOUNT_DETAILS_TAB</td>
+	<td>//span[contains(@id,'accountDetails')]</td>
+	<td></td>
+</tr>
+<!--Lower Tiers Tab-->
+<tr>
+	<td>CALL_LOG_TAB</td>
+	<td>//span[contains(@id,'callLog')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CAS_INFORMATION_TAB</td>
+	<td>//span[contains(@id,'casInformation')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CEM_CXM_INFORMATION_TAB</td>
+	<td>//span[contains(@id,'cemCxmInformation')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUPPORT_INSTRUCTIONS_TAB</td>
+	<td>//span[contains(@id,'supportInstructions')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROJECT_NOTES_TAB</td>
+	<td>//span[contains(@id,'projectNotes')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ADD_CALL_LOG_BUTTON</td>
+	<td>//input[@value='Add Call Log']</td>
+	<td></td>
+</tr>
+<!--Add Call Log Iframe-->
+<tr>
+	<td>CALL_LOG_IFRAME</td>
+	<td>//iframe[contains(@id,'updateAccountCall')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_TYPE_DROPDOWN</td>
+	<td>//select[contains(@id,'type')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_DATE_MONTH</td>
+	<td>//select[contains(@id,'callDateMonth')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_DATE_DAY</td>
+	<td>//select[contains(@id,'callDateDay')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_DATE_YEAR</td>
+	<td>//select[contains(@id,'callDateYear')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_LENGTH_HOURS</td>
+	<td>//select[contains(@name,'callLengthHours')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_LENGTH_MINUTES</td>
+	<td>//select[contains(@name,'callLengthMinutes')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_LENGTH_SECONDS</td>
+	<td>//select[contains(@name,'callLengthSeconds')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUMMARY_FIELD</td>
+	<td>//textarea[contains(@name,'summary')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CLIENTS_PRESENT_FIELD</td>
+	<td>//textarea[contains(@name,'clientsPresent')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NOTES_FIELD</td>
+	<td>//textarea[contains(@name,'notes')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTION_ITEMS_FIELD</td>
+	<td>//textarea[contains(@name,'actionItems')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SAVE_BUTTON</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CANCEL_BUTTON</td>
+	<td>//input[@value='Cancel']</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

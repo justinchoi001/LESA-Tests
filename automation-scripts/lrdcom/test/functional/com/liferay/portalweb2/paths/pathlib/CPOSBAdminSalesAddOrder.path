@@ -15,7 +15,7 @@
 </tr>
 <tr>
 	<td>CURRENCY</td>
-	<td>//select[@name='_1_WAR_osbportlet_currencyEntryId']</td>
+	<td>//select[contains(@name,'currencyEntryId')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -25,32 +25,32 @@
 </tr>
 <tr>
 	<td>ACCOUNT</td>
-	<td>//select[@name='_1_WAR_osbportlet_accountEntryId']</td>
+	<td>//select[contains(@name,'accountEntryId')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>PURCHASE_ORDER</td>
-	<td>//input[@name='_1_WAR_osbportlet_purchaseOrderKey']</td>
+	<td>//input[contains(@name,'purchaseOrderKey')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>START_MONTH</td>
-	<td>//select[@name='_1_WAR_osbportlet_startDateMonth']</td>
+	<td>//select[contains(@name,'startDateMonth')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>START_DAY</td>
-	<td>//select[@name='_1_WAR_osbportlet_startDateDay']</td>
+	<td>//select[contains(@name,'startDateDay')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>START_YEAR</td>
-	<td>//select[@name='_1_WAR_osbportlet_startDateYear']</td>
+	<td>//select[contains(@name,'startDateYear')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>ACTUAL_PRICE</td>
-	<td>//input[@name='_1_WAR_osbportlet_actualPrice']</td>
+	<td>//input[contains(@name,'actualPrice')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -75,7 +75,7 @@
 </tr>
 <tr>
 	<td>QUANTITY_FIELD</td>
-	<td>//input[contains(@name,'_1_WAR_osbportlet_quantity')]</td>
+	<td>//input[contains(@name,'quantity')]</td>
 	<td></td>
 </tr>
 <tr>

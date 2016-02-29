@@ -26,17 +26,17 @@
 <!--Available Tab-->
 <tr>
 	<td>FIRST_NAME_FIELD</td>
-	<td>//input[@name='_1_WAR_osbportlet_firstName']</td>
+	<td>//input[contains(@name,'firstName')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>LAST_NAME_FIELD</td>
-	<td>//input[@name='_1_WAR_osbportlet_lastName']</td>
+	<td>//input[contains(@name,'lastName')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>SCREEN_NAME_FIELD</td>
-	<td>//input[@name='_1_WAR_osbportlet_screenName']</td>
+	<td>//input[contains(@name,'screenName')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -51,7 +51,7 @@
 </tr>
 <tr>
 	<td>CHECKBOX</td>
-	<td>//input[@name='_1_WAR_osbportlet_rowIds']</td>
+	<td>//input[contains(@name,'rowIds')]</td>
 	<td></td>
 </tr>
 <tr>

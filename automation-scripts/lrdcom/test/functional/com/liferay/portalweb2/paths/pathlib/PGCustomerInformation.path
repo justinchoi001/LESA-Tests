@@ -15,17 +15,17 @@
 </tr>
 <tr>
 	<td>EDIT_CONTACT_BUTTON</td>
-	<td>//div[@id='_2_WAR_osbportlet_sectionDisplay_on-boarding-contact']/div[2]/div/input</td>
+	<td>//div[contains(@id,'sectionDisplay_on-boarding-contact')]/div[2]/div/input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CONTACT_INFORMATION_FIELD</td>
-	<td>//div[@id='_2_WAR_osbportlet_sectionEditDisplay_on-boarding-contact']/div/div[2]/textarea</td>
+	<td>//div[contains(@id,'sectionEditDisplay_on-boarding-contact')]/div/div[2]/textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>EDIT_ADVOCACY_SPECIALIST_BUTTON</td>
-	<td>//div[@id='_2_WAR_osbportlet_sectionDisplay_advocacy-specialist-information']/div/div/input</td>
+	<td>//div[contains(@id,'sectionDisplay_advocacy-specialist-information')]/div/div/input</td>
 	<td></td>
 </tr>
 <tr>
@@ -35,7 +35,7 @@
 </tr>
 <tr>
 	<td>EDIT_EXPERIENCE_MANAGER_INFO_BUTTON</td>
-	<td>//div[@id='_2_WAR_osbportlet_sectionDisplay_experience-manager-information']/div/div/input</td>
+	<td>//div[contains(@id,'sectionDisplay_experience-manager-information')]/div/div/input</td>
 	<td></td>
 </tr>
 <tr>
@@ -45,12 +45,12 @@
 </tr>
 <tr>
 	<td>SAVE_CONTACT_BUTTON</td>
-	<td>//div[@id='_2_WAR_osbportlet_sectionEditDisplay_on-boarding-contact']/div[2]/div/input[@value='Save']</td>
+	<td>//div[contains(@id,'sectionEditDisplay_on-boarding-contact')]/div[2]/div/input[@value='Save']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>SAVE_ADVOCACY_SPECIALIST_BUTTON</td>
-	<td>//div[@id='_2_WAR_osbportlet_sectionEditDisplay_advocacy-specialist-information']/div[6]/div/input[@value='Save']</td>
+	<td>//div[contains(@id,'sectionEditDisplay_advocacy-specialist-information')]/div[6]/div/input[@value='Save']</td>
 	<td></td>
 </tr>
 <tr>
@@ -66,32 +66,32 @@
 <!-- Account Call iframe -->
 <tr>
 	<td>CALL_IFRAME</td>
-	<td>//iframe[@id='_2_WAR_osbportlet_updateAccountCall']</td>
+	<td>//iframe[contains(@id,'updateAccountCall')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CALL_TYPE</td>
-	<td>//select[@id='_2_WAR_osbportlet_type']</td>
+	<td>//select[contains(@id,'type')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CALL_DATE_MONTH</td>
-	<td>//select[@id='_2_WAR_osbportlet_callDateMonth']</td>
+	<td>//select[contains(@id,'callDateMonth')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CALL_DATE_DAY</td>
-	<td>//select[@id='_2_WAR_osbportlet_callDateDay']</td>
+	<td>//select[contains(@id,'callDateDay')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CALL_DATE_YEAR</td>
-	<td>//select[@id='_2_WAR_osbportlet_callDateYear']</td>
+	<td>//select[contains(@id,'callDateYear')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CALL_DATE_HOUR</td>
-	<td>//select[@name='callDateHour']</td>
+	<td>//select[contains(@name,'callDateHour')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -106,17 +106,17 @@
 </tr>
 <tr>
 	<td>CALL_LENGTH_HOUR</td>
-	<td>//select[@name='_2_WAR_osbportlet_callLengthHours']</td>
+	<td>//select[contains(@name,'callLengthHours')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CALL_LENGTH_MINUTES</td>
-	<td>//select[@name='_2_WAR_osbportlet_callLengthMinutes']</td>
+	<td>//select[contains(@name,'callLengthMinutes')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CALL_LENGTH_SECONDS</td>
-	<td>//select[@name='_2_WAR_osbportlet_callLengthSeconds']</td>
+	<td>//select[contains(@name,'callLengthSeconds')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -126,17 +126,17 @@
 </tr>
 <tr>
 	<td>CALL_CLIENTS_PRESENT_FIELD</td>
-	<td>//textarea[@id='_2_WAR_osbportlet_clientsPresent']</td>
+	<td>//textarea[contains(@id,'clientsPresent')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CALL_NOTES_FIELD</td>
-	<td>//textarea[@id='_2_WAR_osbportlet_notes']</td>
+	<td>//textarea[contains(@id,'notes')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CALL_ACTION_ITEMS_FIELD</td>
-	<td>//textarea[@id='_2_WAR_osbportlet_actionItems']</td>
+	<td>//textarea[contains(@id,'actionItems')]</td>
 	<td></td>
 </tr>
 <tr>

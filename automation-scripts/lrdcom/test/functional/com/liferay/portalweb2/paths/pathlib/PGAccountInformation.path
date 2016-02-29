@@ -10,17 +10,17 @@
 <tbody>
 <tr>
 	<td>PROJECT_NAME_FIELD</td>
-	<td>//input[@id='_2_WAR_osbportlet_name']</td>
+	<td>//input[contains(@id,'name')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>CODE_FIELD</td>
-	<td>//input[@id='_2_WAR_osbportlet_code']</td>
+	<td>//input[contains(@id,'code')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>TIER</td>
-	<td>//select[@name='_2_WAR_osbportlet_tiers']</td>
+	<td>//select[contains(@name,'tiers')]</td>
 	<td></td>
 </tr>
 <tr>

@@ -10,7 +10,7 @@
 <tbody>
 <tr>
 	<td>CLASSIC_UPLOADER_TOGGLE</td>
-	<td>//div[@id='_2_WAR_osbportlet_switchButtonHolder']/a[@id='_2_WAR_osbportlet_classicUploaderButton']|//div[@id='_2_WAR_osbportlet_switchButtonHolder']/a[@id='_2_WAR_osbportlet_regularUploaderButton']</td>
+	<td>//div[contains(@id,'switchButtonHolder')]/a[contains(@id,'classicUploaderButton')]|//div[contains(@id,'switchButtonHolder')]/a[contains(@id,'regularUploaderButton')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -25,7 +25,7 @@
 </tr>
 <tr>
 	<td>SELECT_FILE_BUTTON</td>
-	<td>//button[@id='_2_WAR_osbportlet_selectButton']</td>
+	<td>//button[contains(@id,'selectButton')]</td>
 	<td></td>
 </tr>
 <tr>
