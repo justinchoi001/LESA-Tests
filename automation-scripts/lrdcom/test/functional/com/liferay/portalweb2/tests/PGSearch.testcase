@@ -1,9 +1,6 @@
 <definition component-name="support-qa">
 	<property name="testray.main.component.name" value="Support QA" />
 
-	<!-- Run with Gradle, not ant-->
-	<!-- Advanced Search will be manual only.-->
-	
 	<var name="lesaURL" value="/group/customer" />
 
 	<set-up>
@@ -20,17 +17,6 @@
 
 	<command name="BasicSearch" priority="5">
 		<var name="accountCode" value="ADELPHIUNIV" />
-		<!--
-		<execute macro="Ticket#CreateTicket">
-			<var name="account" value="${account}" />
-			<var name="component" value="${component}" />
-			<var name="summary" value="Support Test" />
-			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
-		</execute>
-
-		<execute function="Click" locator1="PGTicket#BACK_TO_PREVIOUS_PAGE_BUTTON" />
-
-		<execute function="AssertElementPresent" locator1="PGHome#BASIC_SEARCH_FIELD" /> -->
 
 		<if>
 			<condition function="IsElementNotPresent" locator1="PGHome#ADVANCED_SEARCH_TOGGLE" value1="Advanced" />

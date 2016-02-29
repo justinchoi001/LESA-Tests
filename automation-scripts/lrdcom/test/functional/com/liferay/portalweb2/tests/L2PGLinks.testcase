@@ -1,0 +1,28 @@
+<definition component-name="support-qa">
+	<property name="testray.main.component.name" value="Support QA" />
+
+	<var name="lesaURL" value="/group/customer" />
+	<var name="summary" value="Support Test" />
+
+	<set-up>
+		<execute macro="User#login">
+			<var method="TestPropsUtil#get('lesa2.email.address.9')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.9')" name="userPassword" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+	</set-up>
+
+	<command name="AddLinks" priority="3">
+		<execute function="Click" locator1="L2Home#PRIMARY_ASSIGNEE_OPEN_TICKET_2" />
+		<execute function="Click" locator1="L2Ticket#LINKS_TAB" />
+
+		<execute function="Type" locator1="L2Ticket#URL_1" value1="http://www.google.com" />
+		<execute function="Type" locator1="L2Ticket#URL_2" value1="http://www.support-kb.liferay.com" />
+		<execute function="Click" locator1="L2Ticket#VISIBILITY_LIFERAY" value1="Liferay" />
+		<execute function="Click" locator1="L2Ticket#SAVE_BUTTON" />
+		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+</definition>

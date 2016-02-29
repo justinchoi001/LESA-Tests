@@ -1,0 +1,99 @@
+<definition component-name="support-qa">
+	<property name="testray.main.component.name" value="Support QA" />
+
+
+	<var name="browser" value="Firefox 20+" />
+	<var name="component" value="Document Library" />
+	<var name="description" value="Support Test Ticket" />
+	<var name="status" value="Completely Inoperable/Shutdown" />
+
+	<var name="lesaURL" value="/group/customer" />
+
+	<set-up>
+		<execute macro="User#login">
+			<var method="TestPropsUtil#get('lesa2.email.address.9')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.9')" name="userPassword" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+
+	</set-up>
+<!--
+	<command name="AddFormattedComment" priority="5">
+		<execute macro="L2Ticket#CreateTicketWithExistingDetails">
+			<var method="TestPropsUtil#get('account.1')" name="account" />
+			<var name="browser" value="${browser}" />
+			<var name="component" value="${component}" />
+			<var name="envDetailsName" value="portal" />
+			<var name="summary" value="Support Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+			<var name="description" value="Support Test Ticket" />
+		</execute>
+
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="[b]bold[/b]" />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="\RETURN"  />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="[i]italics comment[/i]" />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="\RETURN" />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="[u]underline[/u]" />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="\RETURN"  />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="[quote]This is quoted text.[/quote]" />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="\RETURN" />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="[code] This is a line of code.[/code]" />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="\RETURN" />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="[url=http://www.google.com]Google[/url]" />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="\RETURN" />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="[url=https://en.wikipedia.org/wiki/Zip_(file_format)]Wikipedia article on Zip (file format)[/url]" />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="\RETURN" />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="[url=https://issues.liferay.com/browse/LPP-17573?focusedCommentId=646544#comment-646544]JIRA Comment[/url]" />
+		<execute function="ScrollWebElementIntoView" locator1="L2Ticket#REPLY_BUTTON" />
+		<execute function="Click#clickAtAndWait" locator1="L2Ticket#REPLY_BUTTON" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="AssertTextEquals" locator1="L2Ticket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+
+	<command name="AddSmallAttachmentOnComment" priority="4">
+		<execute macro="L2Ticket#CreateTicketWithExistingDetails">
+			<var method="TestPropsUtil#get('account.1')" name="account" />
+			<var name="browser" value="${browser}" />
+			<var name="component" value="${component}" />
+			<var name="envDetailsName" value="portal" />
+			<var name="summary" value="Support Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+			<var name="description" value="Support Test Ticket" />
+		</execute>
+
+		<execute function="Type" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="This is a comment with an attachment." />
+		<execute function="Click" locator1="L2Ticket#ADD_ATTACHMENTS" />
+		<execute function="UploadCommonFile" locator1="L2Ticket#BROWSE_1" value1="panther tank.txt" />
+		<execute function="Click" locator1="L2Ticket#REPLY_BUTTON" />
+		<execute function="Pause" locator1="2000" />
+		<execute function="AssertTextEquals" locator1="L2Ticket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute function="AssertElementPresent" locator1="L2Ticket#COMMENT_FIELD" value1="This is a comment with an attachment." />
+	</command>
+-->
+	<command name="AddCommentsOnOtherTabs" priority="4">
+		<var name="${summary}" value="Support Test" />
+		
+		<execute function="Click#clickAtAndWait" locator1="L2Home#PRIMARY_ASSIGNEE_OPEN_TICKET_2" />
+		<execute function="Pause" locator1="1000" />
+		<execute function="Click" locator1="L2Ticket#WORKERS_COMMENTS_TAB" />
+		<execute function="KeyPress" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="[b]This comment is on the Workers tab. Partners, look here.[/b]" />
+		<execute function="ScrollWebElementIntoView" locator1="L2Ticket#REPLY_BUTTON" />
+		<execute function="Click#clickAtAndWait" locator1="L2Ticket#REPLY_BUTTON" />
+		<execute function="Pause" locator1="2000" />
+		<execute function="AssertTextEquals" locator1="L2Ticket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+
+		<execute function="Click" locator1="L2Ticket#LIFERAY_COMMENTS_TAB" />
+		<execute function="Type" locator1="L2Ticket#NEW_COMMENT_FIELD" value1="There were twenty ships, one sent each year by the United Nations Office of Colonization. The first ship arrived in the planet. The captain, American Captain Dennis Kerry, hailed from Massachusetts and had been a Roman Catholic. Acknowledging his roots, he christened the planet Plymouth. His wife, Helen Wheeler, was also an American and came from Virginia. She had christened the first colony Jamestown, also in acknowledgement of her roots. The ship had made a safe landing and the colonists got to work. Some worked to take soil samples. Geologists and surveyors began to mark out the colony before the construction workers could begin to build the massive crystoplast dome. Once the survey was completed, they dismantled the ship. The ship's computer core was placed in an underground chamber. The ship's reactors had become the power plants for the colony. The rest of the ship had been dismantled so that they could serve as crew quarters. It had taken the colonists over ten months to build the dome, build some decent housing and buildings, including a town hall, but they had finished in time before the next colony ship arrived. Most of the buildings were made from local brick and wood, which was surprisingly hard but sturdy. The colony ship had two shuttles and they were used extensively to survey the surrounding area." />
+		<execute function="ScrollWebElementIntoView" locator1="L2Ticket#REPLY_BUTTON" />
+		<execute function="Click#clickAtAndWait" locator1="L2Ticket#REPLY_BUTTON" />
+		<execute function="Pause" locator1="1000" />
+		<execute function="AssertTextEquals" locator1="L2Ticket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+
+	<tear-down>
+		<execute macro="User#logout" />
+	</tear-down>
+</definition>

@@ -1,0 +1,168 @@
+<definition component-name="support-qa">
+	<property name="testray.main.component.name" value="Support QA" />
+
+	<var name="browser" value="Firefox 20+" />
+	<var name="component" value="Security" />
+	<var name="cse1" value="Alex Chau" />
+	<var name="cse2" value="Christopher Lui" />
+	<var name="description" value="Support Test Ticket" />
+	<var name="summary" value="Support Test" />
+	<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+
+	<var name="lesaURL" value="/group/customer" />
+
+	<set-up>
+		<execute macro="User#login">
+			<var method="TestPropsUtil#get('lesa2.email.address.2')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.2')" name="userPassword" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+	</set-up>
+	
+	<command name="CloseTicket" priority="5">
+		<var name="nextStep" value="Close Ticket" />
+		<var name="key_name" value="${nextStep}" />
+		
+		<execute macro="L2Ticket#CreateTicketWithExistingDetails">
+			<var method="TestPropsUtil#get('account.2')" name="account" />
+			<var name="browser" value="${browser}" />
+			<var name="component" value="${component}" />
+			<var name="description" value="Support Test Ticket" />
+			<var name="envDetailsName" value="Ameriprise Environment" />
+			<var name="summary" value="Support Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+		</execute>
+		
+		<execute macro="L2Ticket#CloseTicket">
+			<var name="nextStep" value="Close Ticket" />
+			<var name="key_name" value="${nextStep}" />
+			<var name="resolution" value="Duplicate" />
+			<var name="comment" value="Closing this ticket as a duplicate. This question was answered by another CSE in another ticket." />
+		</execute>
+	</command>
+	
+	<command name="CreatePartnerTicket" priority="5">
+		<execute macro="User#logoutAndLogin">
+			<var name="liferayURL" value="${liferayURL}" />
+			<var method="TestPropsUtil#get('lesa2.email.address.8')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.8')" name="userPassword" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+
+		<execute macro="L2Ticket#CreateTicketWithNewDetails">
+			<var method="TestPropsUtil#get('account.3')" name="account" />
+			<var name="browser" value="Firefox 20+" />
+			<var name="component" value="${component}" />
+			<var name="description" value="${description}" />
+			<var name="summary" value="${summary}" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+		</execute>
+	</command>
+	
+	
+	
+	<command name="EditTicket" priority="4">
+		<!--
+		<var method="TestPropsUtil#get('account.1')" name="account" />
+		<var name="account" value="${account}" />-->
+		
+		<execute macro="L2Ticket#CreateTicketWithExistingDetails">
+			<var method="TestPropsUtil#get('account.2')" name="account" />
+			<var name="browser" value="${browser}" />
+			<var name="component" value="${component}" />
+			<var name="description" value="Support Test Ticket" />
+			<var name="envDetailsName" value="Ameriprise Environment" />
+			<var name="summary" value="Support Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+		</execute>
+
+		<execute macro="User#logoutAndLogin">
+			<var method="TestPropsUtil#get('lesa2.email.address.1')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.1')" name="userPassword" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+		<execute function="Click" locator1="L2Home#SEARCH" />
+		<execute function="Type" locator1="L2Home#KEYWORD_SEARCH" value1="${summary}" />
+		<execute function="KeyPress" locator1="L2Home#KEYWORD_SEARCH" value1="\RETURN"  />
+
+		<execute function="DoubleClick" locator1="L2Home#PRIMARY_ASSIGNEE_OPEN_TICKET_2" />
+		<execute function="Pause" locator1="2000" />
+		<execute function="Click" locator1="L2Ticket#THREE_DOT_DROPDOWN" />
+		<execute function="Click" locator1="L2Ticket#EDIT_TICKET" />
+		
+		<execute function="SelectFrame" locator1="L2Ticket#EDIT_TICKET_IFRAME" />
+		<execute function="Type" locator1="L2EditTicket#SUBJECT_FIELD" value1="Support Test Edited" />
+		<execute function="Type" locator1="L2EditTicket#DESCRIPTION_FIELD" value1="Nomad Central was built by hollowing out the rocks in the cliff face. As a result, most of it was underground. The only visible parts from the air were the giant airlock leading inside and the giant Interceptor missile turrets. A wide, paved road that winded for miles and miles led to the airlock. The missile turrets were the only things that did not look like it had been cobbled together from spare parts and factory rejects." />
+		<execute function="Select" locator1="L2EditTicket#COMPONENT" value1="Web Content Management" />
+		<execute function="Select" locator1="L2EditTicket#STATUS" value1="Investigating" />
+		<execute function="ScrollWebElementIntoView" locator1="L2EditTicket#SAVE_TICKET_DETAILS_BUTTON" />
+		<execute function="Click#clickAtAndWait" locator1="L2EditTicket#SAVE_TICKET_DETAILS_BUTTON" />
+		<execute function="SelectFrame" value1="relative=top" />
+		
+	</command>
+
+	<command name="ForwardTicket" priority="5">
+		<var name="cse1" value="Alex Chau" />
+		<var name="cse2" value="Christopher Lui" />
+
+		<var name="key_cse1" value="${cse1}" />
+		<var name="key_cse2" value="${cse2}" />
+
+
+		<execute macro="User#logoutAndLogin">
+			<var method="TestPropsUtil#get('lesa2.email.address.2')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.2')" name="userPassword" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+
+		<execute macro="L2Ticket#CreateTicketWithExistingDetails">
+			<var method="TestPropsUtil#get('account.2')" name="account" />
+			<var name="browser" value="${browser}" />
+			<var name="component" value="${component}" />
+			<var name="description" value="Support Test Ticket" />
+			<var name="envDetailsName" value="Ameriprise Environment" />
+			<var name="summary" value="Forwarding Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+		</execute>
+
+		<if>
+			<condition function="IsTextEqual#isPartialText" locator1="L2Ticket#ASSIGNEE" value1="${cse1}" />
+			<then>
+				<execute macro="User#logoutAndLogin">
+					<var name="liferayURL" value="${liferayURL}" />
+					<var method="TestPropsUtil#get('lesa2.email.address.4')" name="userEmailAddress" />
+					<var method="TestPropsUtil#get('lesa2.email.password.4')" name="userPassword" />
+				</execute>
+			</then>
+			<else>
+				<execute macro="User#logoutAndLogin">
+					<var name="liferayURL" value="${liferayURL}" />
+					<var method="TestPropsUtil#get('lesa2.email.address.5')" name="userEmailAddress" />
+					<var method="TestPropsUtil#get('lesa2.email.password.5')" name="userPassword" />
+				</execute>
+			</else>
+		</if>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+
+		<execute macro="L2Ticket#ForwardTicket">
+			<var method="TestPropsUtil#get('account.2')" name="account" />
+			<var name="summary" value="Forwarding Test" />
+		</execute>
+	</command>
+	
+</definition>

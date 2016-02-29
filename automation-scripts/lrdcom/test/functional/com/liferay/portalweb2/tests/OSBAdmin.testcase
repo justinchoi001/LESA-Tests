@@ -1,8 +1,6 @@
 <definition component-name="support-qa">
 	<property name="testray.main.component.name" value="Support QA" />
 
-	<!-- Run with Gradle, not ant -->
-
 	<var name="partnerName" value="Slacker" />
 	<var name="lifetime" value="90 Days" />
 	<var name="product" value="Portal Non-Production" />
@@ -10,11 +8,9 @@
 
 	<set-up>
 		<execute macro="User#login">
-			<var name="userEmailAddress" value="justin.choi@liferay.com.broken" />
-			<var name="userPassword" value="test" />
+			<var method="TestPropsUtil#get('email.address.3')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('marketplace.email.password.1')" name="userPassword" />
 		</execute>
-
-		<!--<execute function="Open" locator1="${lesaURL}" />-->
 
 		<execute function="Click" locator1="MainMenu#MAIN_MENU_ICON" />
 		<execute function="Click#clickAtAndWait" locator1="MainMenu#CONTROL_PANEL" />
@@ -23,7 +19,7 @@
 	</set-up>
 
 	<command name="addAccount" priority="5" >
-		
+
 		<execute macro="OSB#addAccount">
 			<var name="businessAccountName" value="ACME" />
 			<var name="projectName" value="ACME Portal" />
@@ -58,6 +54,7 @@
 
 
 	<command name="addPartnerManagedAccount" priority="5">
+
 		<!--
 		<execute macro="OSB#addPartner">
 			<var name="partnerName" value="Slacker" />
@@ -120,7 +117,7 @@
 	<command name="addOrder" priority="5">
 		<var name="lifetime" value="90 Days" />
 		<var name="product" value="Portal Non-Production" />
-		
+
 		<var name="key_product" value="${product}" />
 		<var name="key_lifetime" value="${lifetime}" />
 
@@ -167,30 +164,30 @@
 		<execute macro="OSB#advancedSearch">
 			<var name="code" value="ACMEPORTAL" />
 			<var name="highestSupportLevel" value="Gold" />
-			<var name="industry" value="Telecommunications" />
+			<var name="industry" value="Manufacturing" />
 			<var name="projectName" value="ACME Portal" />
 			<var name="supportLevel" value="Americas English Gold" />
 			<var name="tier" value="Premier" />
 		</execute>
-	
+
 		<execute macro="OSB#assignCustomer">
 			<var name="code" value="ACMEPORTAL" />
 			<var name="customerFirstName" value="Erin" />
 			<var name="customerLastName" value="White" />
 			<var name="customerRole" value="Developer" />
 		</execute>
-	</command> 
-	
+	</command>
+
 	<command name="assignWorker" priority="5">
 		<execute macro="OSB#advancedSearch">
 			<var name="code" value="ACMEPORTAL" />
 			<var name="highestSupportLevel" value="Gold" />
-			<var name="industry" value="Telecommunications" />
+			<var name="industry" value="Manufacturing" />
 			<var name="projectName" value="ACME Portal" />
 			<var name="supportLevel" value="Americas English Gold" />
 			<var name="tier" value="Premier" />
 		</execute>
-	
+
 		<execute macro="OSB#assignCustomer">
 			<var name="code" value="ACMEPORTAL" />
 			<var name="workerFirstName" value="Kevin" />
@@ -198,7 +195,7 @@
 			<var name="workerRole" value="Advocacy Specialist" />
 		</execute>
 	</command>
-	
+
 	<tear-down>
 		<execute macro="User#logout" />
 	</tear-down>

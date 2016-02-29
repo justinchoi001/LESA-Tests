@@ -1,8 +1,6 @@
 <definition component-name="support-qa">
 	<property name="testray.main.component.name" value="Support QA" />
 
-	<!--Run with gradle, not ant -->
-
 	<var name="browser" value="Firefox 20+" />
 	<var name="component" value="Document Library" />
 	<var name="description" value="Support Test Ticket" />
@@ -53,7 +51,7 @@
 		<execute function="KeyPress" locator1="PGTicket#NEW_COMMENT_FIELD" value1="[url=https://issues.liferay.com/browse/LPP-17573?focusedCommentId=646544#comment-646544]JIRA Comment[/url]" />
 		<execute function="ScrollWebElementIntoView" locator1="PGTicket#REPLY_BUTTON" />
 		<execute function="Click#clickAtAndWait" locator1="PGTicket#REPLY_BUTTON" />
-		<execute function="Pause" locator1="5000" />
+		<execute function="Pause" locator1="2000" />
 		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 	</command>
 
@@ -74,7 +72,7 @@
 		<execute function="Click" locator1="PGTicket#ADD_ATTACHMENT_BUTTON" />
 		<execute function="UploadCommonFile" locator1="PGTicket#BROWSE_1" value1="panther tank.txt" />
 		<execute function="Click" locator1="PGTicket#REPLY_BUTTON" />
-		<execute function="Pause" locator1="5000" />
+		<execute function="Pause" locator1="3000" />
 		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 		<execute function="AssertElementPresent" locator1="PGTicket#COMMENT_FIELD" value1="This is a comment with an attachment." />
 	</command>
@@ -90,15 +88,9 @@
 
 		<execute macro="GoToLESA#goToLESA" />
 
-		<execute macro="Ticket#CreateTicket">
-			<var method="TestPropsUtil#get('account.4')" name="account" />
-			<var name="browser" value="${browser}" />
-			<var name="component" value="${component}" />
-			<var name="summary" value="Support Test" />
-			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
-			<var name="description" value="Support Test Ticket" />
-		</execute>
-
+		<execute function="Click" locator1="PGHome#IN_PROGRESS" />
+		<execute function="Click#clickAtAndWait" locator1="PGHome#IN_PROGRESS_TICKET_NAME_1" />
+		<execute function="Pause" locator1="1000" />
 		<execute function="ScrollWebElementIntoView" locator1="PGTicket#WORKERS" />
 		<execute function="Click" locator1="PGTicket#WORKERS" />
 		<execute function="Click" locator1="PGTicket#ADD_COMMENT" />

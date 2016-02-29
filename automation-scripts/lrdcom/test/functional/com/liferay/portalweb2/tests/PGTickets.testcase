@@ -1,8 +1,6 @@
 <definition component-name="support-qa">
 	<property name="testray.main.component.name" value="Support QA" />
 
-	<!--Run with gradle, not ant. -->
-
 	<var name="browser" value="Firefox 20+" />
 	<var name="component" value="Security" />
 	<var name="cse1" value="Alex Chau" />
@@ -42,11 +40,32 @@
 		</execute>
 	</command>
 
-	<command name="CreateP1Ticket" priority="5">
+	<command name="CreateCustomerP1Ticket" priority="5">
 		<execute macro="User#logoutAndLogin">
 			<var name="liferayURL" value="${liferayURL}" />
 			<var method="TestPropsUtil#get('marketplace.email.address.1')" name="userEmailAddress" />
 			<var method="TestPropsUtil#get('marketplace.email.password.1')" name="userPassword" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+
+		<execute macro="Ticket#CreateTicket">
+			<var method="TestPropsUtil#get('account.3')" name="account" />
+			<var name="browser" value="Firefox 20+" />
+			<var name="component" value="${component}" />
+			<var name="description" value="${description}" />
+			<var name="summary" value="${summary}" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+		</execute>
+	</command>
+	
+	<command name="CreatePartnerTicket" priority="5">
+		<execute macro="User#logoutAndLogin">
+			<var name="liferayURL" value="${liferayURL}" />
+			<var method="TestPropsUtil#get('marketplace.email.address.3')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('marketplace.email.password.3')" name="userPassword" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />
@@ -165,15 +184,15 @@
 			<then>
 				<execute macro="User#logoutAndLogin">
 					<var name="liferayURL" value="${liferayURL}" />
-					<var name="userEmailAddress" value="christopher.lui@liferay.com.broken" />
-					<var name="userPassword" value="test" />
+					<var method="TestPropsUtil#get('email.address.4')" name="userEmailAddress" />
+					<var method="TestPropsUtil#get('email.password.4')" name="userPassword" />
 				</execute>
 			</then>
 			<else>
 				<execute macro="User#logoutAndLogin">
 					<var name="liferayURL" value="${liferayURL}" />
-					<var name="userEmailAddress" value="alexander.chau@liferay.com.broken" />
-					<var name="userPassword" value="test" />
+					<var method="TestPropsUtil#get('email.address.5')" name="userEmailAddress" />
+					<var method="TestPropsUtil#get('email.password.5')" name="userPassword" />
 				</execute>
 			</else>
 		</if>

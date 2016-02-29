@@ -1,0 +1,86 @@
+<definition component-name="support-qa">
+	<property name="testray.main.component.name" value="Support QA" />
+
+	<var name="browser" value="Firefox 20+" />
+	<var name="component" value="Document Library" />
+	<var name="cse1" value="Alex Chau" />
+	<var name="cse2" value="Christopher Lui" />
+
+	<var name="lesaURL" value="/group/customer" />
+
+	<set-up>
+		<execute macro="User#login">
+			<var method="TestPropsUtil#get('lesa2.email.address.2')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.2')" name="userPassword" />
+		</execute>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+	</set-up>
+
+	<command name="ProvideFeedback" priority="5">
+		<var name="key_cse1" value="${cse1}" />
+		<var name="key_cse2" value="${cse2}" />
+
+		<execute macro="L2Ticket#CreateTicketWithExistingDetails">
+			<var method="TestPropsUtil#get('account.2')" name="account" />
+			<var name="browser" value="${browser}" />
+			<var name="component" value="${component}" />
+			<var name="description" value="Support Test Ticket: testing ticket feedback" />
+			<var name="envDetailsName" value="Ameriprise Environment" />
+			<var name="summary" value="Solution Repo Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+		</execute>
+
+		<if>
+			<condition function="IsTextEqual#isPartialText" locator1="L2Ticket#ASSIGNEE" value1="Alex Chau" />
+			<then>
+				<execute macro="User#logoutAndLogin">
+					<var name="liferayURL" value="${liferayURL}" />
+					<var method="TestPropsUtil#get('lesa2.email.address.4')" name="userEmailAddress" />
+					<var method="TestPropsUtil#get('lesa2.email.password.4')" name="userPassword" />
+				</execute>
+			</then>
+			<else>
+				<execute macro="User#logoutAndLogin">
+					<var name="liferayURL" value="${liferayURL}" />
+					<var method="TestPropsUtil#get('lesa2.email.address.5')" name="userEmailAddress" />
+					<var method="TestPropsUtil#get('lesa2.email.password.5')" name="userPassword" />
+				</execute>
+			</else>
+		</if>
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+
+		<execute macro="L2Solution#ProposeSolution">
+			<var method="TestPropsUtil#get('account.2')" name="account" />
+			<var name="summary" value="Solution Repo Test" />
+		</execute>
+
+		<execute macro="User#logoutAndLogin">
+			<var name="liferayURL" value="${liferayURL}" />
+			<var method="TestPropsUtil#get('lesa2.email.address.2')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.2')" name="userPassword" />
+		</execute>
+
+
+		<execute function="Open" locator1="${lesaURL}" />
+
+		<execute macro="GoToLESA#goToLESA" />
+
+		<execute macro="L2Solution#AcceptSolution" />
+		<execute function="Click" locator1="L2Ticket#FEEDBACK_TAB" />
+		<execute function="Click" locator1="L2TicketFeedback#POSITIVE_FEEDBACK" />
+		<execute function="Type" locator1="L2TicketFeedback#COMMENTS_FIELD" value1="This is a comment." />
+		<execute function="Click" locator1="L2TicketFeedback#SUBMIT_BUTTON" />
+
+		<execute function="AssertTextEquals" locator1="L2Ticket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+
+	<tear-down>
+		<execute macro="User#logout" />
+	</tear-down>
+</definition>

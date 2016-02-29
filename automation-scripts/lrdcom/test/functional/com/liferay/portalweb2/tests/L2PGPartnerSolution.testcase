@@ -1,15 +1,16 @@
 <definition component-name="support-qa">
 	<property name="testray.main.component.name" value="Support QA" />
 
-
 	<var name="browser" value="Firefox 20+" />
 	<var name="component" value="Document Library" />
 	<var name="lesaURL" value="/group/customer" />
+	<var name="summary" value="Solution Repo Test" />
+	<var name="description" value="Solution Test ticket" />
 
 	<set-up>
 		<execute macro="User#login">
-			<var method="TestPropsUtil#get('marketplace.email.address.1')" name="userEmailAddress" />
-			<var method="TestPropsUtil#get('marketplace.email.password.1')" name="userPassword" />
+			<var method="TestPropsUtil#get('lesa2.email.address.6')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.6')" name="userPassword" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />
@@ -18,83 +19,82 @@
 
 	</set-up>
 	<command name="AcceptSolution" priority="5">
-		<execute macro="Ticket#CreateTicket">
+		<execute macro="L2Ticket#CreateTicketWithNewDetails">
 			<var method="TestPropsUtil#get('account.3')" name="account" />
-			<var name="browser" value="${browser}" />
+			<var name="browser" value="Firefox 20+" />
 			<var name="component" value="${component}" />
-			<var name="description" value="Solution Repo Test Ticket" />
+			<var name="description" value="${description}" />
+			<var name="summary" value="${summary}" />
 			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
-			<var name="summary" value="Solution Repo Test" />
 		</execute>
-
+		
 		<execute macro="User#logoutAndLogin">
 			<var name="liferayURL" value="${liferayURL}" />
-			<var method="TestPropsUtil#get('marketplace.email.address.3')" name="userEmailAddress" />
-			<var method="TestPropsUtil#get('marketplace.email.password.3')" name="userPassword" />
+			<var method="TestPropsUtil#get('lesa2.email.address.8')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.8')" name="userPassword" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />
 
 		<execute macro="GoToLESA#goToLESA" />
 
-		<execute macro="Solution#ProposeSolution">
+		<execute macro="L2Solution#ProposeSolution">
 			<var method="TestPropsUtil#get('account.3')" name="account" />
 			<var name="summary" value="Solution Repo Test" />
 		</execute>
 
 		<execute macro="User#logoutAndLogin">
 			<var name="liferayURL" value="${liferayURL}" />
-			<var method="TestPropsUtil#get('marketplace.email.address.1')" name="userEmailAddress" />
-			<var method="TestPropsUtil#get('marketplace.email.password.1')" name="userPassword" />
+			<var method="TestPropsUtil#get('lesa2.email.address.6')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.6')" name="userPassword" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />
 
 		<execute macro="GoToLESA#goToLESA" />
 
-		<execute macro="Solution#AcceptSolution" />
+		<execute macro="L2Solution#AcceptSolution" />
 
-		<execute function="AssertTextEquals" locator1="PGTicket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 	</command>
 
 	<command name="RejectSolution" priority="5">
 
-		<execute macro="Ticket#CreateTicket">
+		<execute macro="L2Ticket#CreateTicketWithNewDetails">
 			<var method="TestPropsUtil#get('account.3')" name="account" />
-			<var name="browser" value="${browser}" />
+			<var name="browser" value="Firefox 20+" />
 			<var name="component" value="${component}" />
-			<var name="description" value="Solution Repo Test Ticket" />
-			<var name="summary" value="Solution Repo Test" />
+			<var name="description" value="${description}" />
+			<var name="summary" value="${summary}" />
 			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
 		</execute>
-
+		
 		<execute macro="User#logoutAndLogin">
 			<var name="liferayURL" value="${liferayURL}" />
-			<var method="TestPropsUtil#get('marketplace.email.address.3')" name="userEmailAddress" />
-			<var method="TestPropsUtil#get('marketplace.email.password.3')" name="userPassword" />
+			<var method="TestPropsUtil#get('lesa2.email.address.8')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.8')" name="userPassword" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />
 
 		<execute macro="GoToLESA#goToLESA" />
 
-		<execute macro="Solution#ProposeSolution">
+		<execute macro="L2Solution#ProposeSolution">
 			<var method="TestPropsUtil#get('account.3')" name="account" />
 			<var name="summary" value="Solution Repo Test" />
 		</execute>
 
 		<execute macro="User#logoutAndLogin">
 			<var name="liferayURL" value="${liferayURL}" />
-			<var method="TestPropsUtil#get('marketplace.email.address.1')" name="userEmailAddress" />
-			<var method="TestPropsUtil#get('marketplace.email.password.1')" name="userPassword" />
+			<var method="TestPropsUtil#get('lesa2.email.address.6')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.6')" name="userPassword" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />
 
 		<execute macro="GoToLESA#goToLESA" />
 
-		<execute macro="Solution#rejectSolution">
-			<var name="account" value="${account}" />
+		<execute macro="L2Solution#RejectSolution">
+			<var method="TestPropsUtil#get('account.3')" name="account" />
 		</execute>
 	</command>
 

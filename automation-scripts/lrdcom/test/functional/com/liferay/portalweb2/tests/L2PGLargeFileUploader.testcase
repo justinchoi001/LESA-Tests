@@ -9,8 +9,8 @@
 
 	<set-up>
 		<execute macro="User#login">
-			<var method="TestPropsUtil#get('marketplace.email.address.2')" name="userEmailAddress" />
-			<var method="TestPropsUtil#get('marketplace.email.password.2')" name="userPassword" />
+			<var method="TestPropsUtil#get('lesa2.email.address.2')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('lesa2.email.password.2')" name="userPassword" />
 		</execute>
 
 		<execute function="Open" locator1="${lesaURL}" />
@@ -20,32 +20,30 @@
 	</set-up>
 
 	<command name="UploadLargeFile" priority="5">
-		<execute macro="Ticket#CreateTicket">
-			<var method="TestPropsUtil#get('account.1')" name="account" />
+		<execute macro="L2Ticket#CreateTicketWithExistingDetails">
+			<var method="TestPropsUtil#get('account.2')" name="account" />
 			<var name="browser" value="${browser}" />
 			<var name="component" value="${component}" />
-			<var name="summary" value="Support Test" />
-			<var name="systemStatus" value="${systemStatus}" />
 			<var name="description" value="Support Test Ticket" />
+			<var name="envDetailsName" value="Ameriprise Environment" />
+			<var name="summary" value="Support Test" />
+			<var name="systemStatus" value="Completely Inoperable/Shutdown" />
 		</execute>
 
-		<execute function="Click" locator1="PGTicket#MANAGE_ATTACHMENTS_BUTTON" />
-		<execute function="Click" locator1="PGAttachments#SELECT_FILE_BUTTON" />
+		<execute function="Click" locator1="L2Ticket#ATTACHMENTS_TAB" />
+		<execute function="Click" locator1="L2TicketAttachments#SELECT_FILE_BUTTON" />
 		<execute function="Pause" locator1="5000" />
+	
 		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
 		<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\LESA\dependencies\vm-winxp.vmdk.sql-server-2005-sp2.zip" />
 		<execute function="SikuliClick#sikuliClickNoError" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
 
-		<execute function="SikuliClick" locator1="PGAttachments#PAUSE_UPLOAD_BUTTON_PNG" />
-		<execute function="AssertTextEquals" locator1="PGAttachments#PAUSED_MESSAGE" value1="Paused..." />
-		<execute function="Pause" locator1="5000" />
-		<execute function="SikuliClick#sikuliClickNoError" locator1="PGAttachments#RESUME_UPLOAD_BUTTON_PNG" />
-		<execute function="Pause" locator1="5000" />
-		<execute function="SikuliClick" locator1="PGAttachments#PAUSE_UPLOAD_BUTTON_PNG" />
-
-		<!--
-		<execute function="Click" locator1="PGAttachments#SAVE_BUTTON" />
-		-->
+		<execute function="SikuliClick" locator1="L2TicketAttachments#PAUSE_UPLOAD_BUTTON_PNG" />
+		<execute function="AssertTextEquals" locator1="L2TicketAttachments#PAUSED_MESSAGE" value1="Paused..." />
+		<execute function="Pause" locator1="2500" />
+		<execute function="SikuliClick#sikuliClickNoError" locator1="L2TicketAttachments#RESUME_UPLOAD_BUTTON_PNG" />
+		<execute function="Pause" locator1="2500" />
+		<execute function="SikuliClick" locator1="L2TicketAttachments#PAUSE_UPLOAD_BUTTON_PNG" />
 
 	</command>
 

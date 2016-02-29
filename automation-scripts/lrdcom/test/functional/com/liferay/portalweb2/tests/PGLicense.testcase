@@ -1,21 +1,37 @@
 <definition component-name="support-qa">
 	<property name="testray.main.component.name" value="Support QA" />
 
-	<!-- run with gradle -->
 	<var name="licenseManagement" value="/web/justin.choi/license" />
 	<var name="lifetime" value="90 Days" />
 
 	<set-up>
 		<execute macro="User#login">
-			<var name="userEmailAddress" value="justin.choi@liferay.com.broken" />
-			<var name="userPassword" value="test" />
+			<var method="TestPropsUtil#get('email.address.3')" name="userEmailAddress" />
+			<var method="TestPropsUtil#get('email.password.4')" name="userPassword" />
 		</execute>
 
 		<execute function="Open" locator1="${licenseManagement}" />
 	</set-up>
 
 	<command name="GenerateNewLicense" priority="5">
-		<!--Run the OSB tests: add an account, an offering, and an order first. -->
+		<execute macro="OSB#addOffering">
+			<var name="currency" value="USD" />
+			<var name="lifetime" value="90 Days" />
+			<var name="noOfServers" value="3" />
+			<var name="product" value="Portal Non-Production" />
+			<var name="support" value="Americas English Gold" />
+		</execute>
+		
+		<execute macro="OSB#addOrder">
+			<var name="currency" value="USD" />
+			<var name="account" value="ACME Portal" />
+			<var name="price" value="99,999" />
+			<var name="lifetime" value="90 Days" />
+			<var name="product" value="Portal Non-Production" />
+			<var name="support" value="Americas English Gold" />
+			<var name="noOfCores" value="3" />
+			<var name="quantity" value="3" />
+		</execute>
 
 		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortal#GENERATE_NEW_LICENSE" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#ACCOUNT" value1="ACME Portal" />
@@ -34,16 +50,25 @@
 	</command>
 
 	<command name="GenerateTrialLicense" priority="5">
-		<!--Run the OSB tests: add an account, an offering, and an order first. -->
+		<execute macro="OSB#addOrder">
+			<var name="currency" value="USD" />
+			<var name="account" value="ACME Portal" />
+			<var name="price" value="99,999" />
+			<var name="lifetime" value="90 Days" />
+			<var name="product" value="Portal Non-Production" />
+			<var name="support" value="Americas English Gold" />
+			<var name="noOfCores" value="3" />
+			<var name="quantity" value="3" />
+		</execute>
 
 		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortal#GENERATE_NEW_LICENSE" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#ACCOUNT" value1="Liferay Trial" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#LIFERAY_VERSION" value1="6.1 GA3" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#PRODUCT" value1="Portal Development" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#TYPE" value1="Portal Developer (Developer)" />
-		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_MONTH" value1="September" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_MONTH" value1="January" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_DAY" value1="10" />
-		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_YEAR" value1="2015" />
+		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#START_DATE_YEAR" value1="2016" />
 		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortalSelectEnv#CHOOSE_BUTTON" />
 		<execute function="Select" locator1="LicenseManagementPortalAddServer#MAXIMUM_CONNECTIONS" value1="6" />
 		<execute function="Click" locator1="LicenseManagementPortalAddServer#GENERATE_BUTTON" />
@@ -73,30 +98,27 @@
 		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#KEY_STATUS" value1="Active" />
 		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 	</command>
-	
+
 	<command name="DeactivateLicense" priority="5">
-		<!--Run the OSB tests: add an account, an offering, an order, and generate license first. -->
 		<var name="key_account" value="ACME" />
 
 		<execute function="Type" locator1="LicenseManagementPortal#ACCOUNT" value1="ACME" />
 		<!--<execute function="Select" locator1="LicenseManagementPortal#ACTIVE_STATUS" value1="True" />-->
 		<execute function="ScrollWebElementIntoView" locator1="LicenseManagementPortal#SEARCH_BUTTON" value1="Search" />
 		<execute function="DoubleClick" locator1="LicenseManagementPortal#SEARCH_BUTTON" value1="Search" />
-		
+
 
 		<execute function="ScrollWebElementIntoView" locator1="LicenseManagementPortal#ACCOUNT_FIRST_ROW" />
 		<execute function="Click" locator1="LicenseManagementPortal#ACCOUNT_FIRST_ROW" />
-		
+
 		<execute function="ClickNoError" locator1="LicenseManagementKeyManagement#DEACTIVATE" />
 		<execute function="Confirm" value1="Are you sure you want to deactivate this license key?" />
 		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 		<execute function="AssertElementPresent" locator1="LicenseManagementKeyManagement#DEACTIVATED_LICENSE_HEADER" />
 		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#KEY_STATUS" value1="Inactive" />
 	</command>
-	
-	<command name="moveLicense" priority="5">
-		<!--Run the OSB tests: add an account, an offering, two orders off the same offering, and generate a license first. -->
 
+	<command name="moveLicense" priority="5">
 		<var name="key_account" value="ACME" />
 		<var name="key_product" value="${product}" />
 		<var name="key_lifetime" value="${lifetime}" />
@@ -105,8 +127,7 @@
 		<execute function="Click#clickAtAndWait" locator1="MainMenu#CONTROL_PANEL" />
 		<execute function="Click" locator1="ControlPanel#OSB_ADMIN" />
 
-
-		<execute macro="OSB#addOrder"> 
+		<execute macro="OSB#addOrder">
 			<var name="currency" value="USD" />
 			<var name="account" value="ACME Portal" />
 			<var name="price" value="99,999" />
@@ -116,8 +137,8 @@
 			<var name="noOfCores" value="3" />
 			<var name="quantity" value="2" />
 		</execute>
-		
-		<execute macro="OSB#addOrder"> 
+
+		<execute macro="OSB#addOrder">
 			<var name="currency" value="USD" />
 			<var name="account" value="ACME Portal" />
 			<var name="price" value="99,999" />
@@ -129,7 +150,7 @@
 		</execute>
 
 		<execute function="Open" locator1="${licenseManagement}" />
-		
+
 		<execute function="Click#clickAtAndWait" locator1="LicenseManagementPortal#GENERATE_NEW_LICENSE" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#ACCOUNT" value1="ACME Portal" />
 		<execute function="Select" locator1="LicenseManagementPortalSelectEnv#LIFERAY_VERSION" value1="6.1 GA3" />
@@ -148,8 +169,8 @@
 		<execute function="Click" locator1="LicenseManagementChooseLicense#CHOOSE_NEW_LICENSE" />
 		<execute function="AssertTextEquals" locator1="LicenseManagementKeyManagement#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 	</command>
-	<!--
+
 	<tear-down>
 		<execute macro="User#logout" />
-	</tear-down>-->
+	</tear-down>
 </definition>

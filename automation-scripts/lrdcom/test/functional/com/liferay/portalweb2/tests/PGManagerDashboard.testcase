@@ -1,8 +1,6 @@
 <definition component-name="support-qa">
 	<property name="testray.main.component.name" value="Support QA" />
 
-	<!-- run with gradle-->
-
 	<var name="cse" value="Brian Suh" />
 	<var name="lesaURL" value="/group/customer" />
 
