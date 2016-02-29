@@ -118,8 +118,6 @@
 		</while>
 	</command>
 
-
-
 	<command name="viewMail">
 		<var name="key_gmailAssetType" value="${gmailAssetType}" />
 
@@ -147,5 +145,4 @@
 
 		<execute function="AssertElementNotPresent" locator1="Gmail#GMAIL_HTML_MODE_MAIL_TABLE_MESSAGE_TITLE" />
 	</command>
-
 </definition>

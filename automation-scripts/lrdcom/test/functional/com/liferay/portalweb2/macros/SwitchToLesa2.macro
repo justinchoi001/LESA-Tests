@@ -1,0 +1,11 @@
+<definition>
+	<command name="SwitchToLesa2">
+		<if>
+			<condition function="IsElementPresent" locator1="PGHome#ACCOUNTS_TAB" />
+			<then>
+				<execute function="Click" locator1="PGHome#PREFERENCES_TAB" />
+				<execute function="AssertChecked" locator1="PGPreferences#VIEW_NEW_CHANGES_CHECKBOX" />
+			</then>
+		</if>
+	</command>
+</definition>

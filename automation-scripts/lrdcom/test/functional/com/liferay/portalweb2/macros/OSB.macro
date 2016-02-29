@@ -37,8 +37,8 @@
 	</command>
 
 	<command name="addOrder">
-		<var name="key_product" value="${product}" />
 		<var name="key_lifetime" value="${lifetime}" />
+		<var name="key_product" value="${product}" />
 
 		<execute function="Click" locator1="CPOSBAdminAccounts#SALES_TAB" />
 		<execute function="Click#clickAtAndWait" locator1="CPOSBAdminSalesOrders#ADD_ORDER_BUTTON" />

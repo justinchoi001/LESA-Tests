@@ -1,0 +1,129 @@
+<definition>
+	<command name="CloseTicket">
+		<var name="ticketReslution" value="(Duplicate)" />
+		<var name="ticketStatus" value="Closed" />
+
+		<execute function="Click" locator1="L2Ticket#NEXT_STEP_BUTTON" />
+		<execute function="SelectWindow" locator1="title=Support" />
+		<execute function="Select" locator1="L2Resolution#RESOLUTION_DROPDOWN" value1="${resolution}" />
+		<execute function="Type" locator1="L2Resolution#COMMENT_FIELD" value1="${comment}" />
+		<execute function="AssertClickNoError" locator1="L2Resolution#CLOSE_TICKET_BUTTON" value1="Close Ticket" />
+		<execute function="SelectWindow" locator1="null" />
+		<execute function="AssertTextEquals" locator1="L2Ticket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute function="AssertTextEquals" locator1="L2Ticket#TICKET_STATUS" value1="Closed" />
+		<execute function="AssertTextEquals" locator1="L2Ticket#TICKET_RESOLUTION" value1="(Duplicate)" />
+	</command>
+
+	<command name="CreateSOTicket">
+		<var name="component" value="Social Office" />
+		<var name="envDetailsName" value="Select New Configuration" />
+		<var name="SOaccount" value="${SOaccount}" />
+		<var name="systemStatus" value="Completely Inoperable/Shutdown" />
+
+		<execute function="Click" locator1="L2Home#NEW_TICKET" />
+		<execute function="Select" locator1="L2AddEnvDetails#SELECT_PROJECT" value1="${SOaccount}" />
+		<execute function="Select" locator1="L2AddEnvDetails#SELECT_PRODUCT" value1="Social Office" />
+		<execute function="Select" locator1="L2AddEnvDetails#SYSTEM_STATUS_DROPDOWN" value1="${systemStatus}" />
+		<execute function="Select" locator1="L2AddEnvDetails#SELECT_SAVED_ENV_CONFIG" value1="${envDetailsName}" />
+		<execute function="Select" locator1="L2AddEnvDetails#LIFERAY_VERSION" value1="6.2 EE" />
+		<execute function="Select" locator1="L2AddEnvDetails#APPLICATION_SERVER" value1="Weblogic 12c" />
+		<execute function="Select" locator1="L2AddEnvDetails#DATABASE" value1="Oracle 11.2" />
+		<execute function="Select" locator1="L2AddEnvDetails#OPERATING_SYSTEM" value1="Ubuntu 12" />
+		<execute function="Select" locator1="L2AddEnvDetails#JAVA_VIRTUAL_MACHINE" value1="Java 6" />
+		<execute function="ClickNoError#pauseClick" locator1="L2AddEnvDetails#UPLOAD_SOCIAL_OFFICE_PLUGIN" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
+		<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\Social Office EE.lpkg" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
+
+		<execute function="Pause" locator1="5000" />
+		<execute function="ClickNoError#pauseClick" locator1="L2AddEnvDetails#UPLOAD_NEW_PORTAL_EXT" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
+		<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\LESA\dependencies\portal-ext.properties" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
+		<execute function="SelectWindow" locator1="null" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="ClickNoError#pauseClick" locator1="L2AddEnvDetails#UPLOAD_NEW_PATCH_LEVEL" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
+		<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\LESA\dependencies\patchinfo.txt" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
+		<execute function="SelectWindow" locator1="null" />
+
+		<execute function="Type" locator1="L2AddEnvDetails#SUMMARY_FIELD" value1="${summary}" />
+		<execute function="Select" locator1="L2AddEnvDetails#SYSTEM_STATUS_DROPDOWN" value1="${systemStatus}" />
+		<execute function="Type" locator1="L2AddEnvDetails#DESCRIPTION_FIELD" value1="${description}" />
+
+		<execute function="Click" locator1="L2AddEnvDetails#CREATE_BUTTON" />
+		<execute function="AssertTextEquals" locator1="L2Ticket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+-->
+
+	<command name="CreateTicketWithExistingDetails">
+		<execute function="Click" locator1="L2Home#NEW_TICKET" />
+
+		<execute function="Select" locator1="L2AddEnvDetails#SELECT_PROJECT" value1="${account}" />
+		<execute function="Select" locator1="L2AddEnvDetails#SELECT_PRODUCT" value1="Portal Production" />
+		<execute function="Select" locator1="L2AddEnvDetails#SELECT_SAVED_ENV_CONFIG" value1="${envDetailsName}" />
+		<execute function="Select#selectAndWait" locator1="L2AddEnvDetails#SELECT_COMPONENT" value1="${component}" />
+		<execute function="Select" locator1="L2AddEnvDetails#BROWSER" value1="${browser}" />
+		<execute function="Check" locator1="L2AddEnvDetails#PORTAL_EXT_CHECKBOX" />
+		<execute function="Check" locator1="L2AddEnvDetails#PATCH_LEVEL_CHECKBOX" />
+		<execute function="Select" locator1="L2AddEnvDetails#SYSTEM_STATUS_DROPDOWN" value1="${systemStatus}" />
+		<execute function="Type" locator1="L2AddEnvDetails#SUMMARY_FIELD" value1="${summary}" />
+		<execute function="Type" locator1="L2AddEnvDetails#DESCRIPTION_FIELD" value1="${description}" />
+
+		<execute function="Click" locator1="L2AddEnvDetails#CREATE_BUTTON" value1="Create" />
+		<execute function="AssertTextEquals" locator1="L2Ticket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+
+	<command name="CreateTicketWithNewDetails">
+		<var name="envDetailsName" value="Select New Configuration" />
+		<var name="liferayVersion" value="6.2 EE" />
+
+		<execute function="Click" locator1="L2Home#NEW_TICKET" />
+
+		<execute function="Select" locator1="L2AddEnvDetails#SELECT_PROJECT" value1="${account}" />
+		<execute function="Select" locator1="L2AddEnvDetails#SELECT_PRODUCT" value1="Portal Production" />
+		<execute function="Select" locator1="L2AddEnvDetails#SELECT_SAVED_ENV_CONFIG" value1="${envDetailsName}" />
+		<execute function="Select#selectAndWait" locator1="L2AddEnvDetails#SELECT_COMPONENT" value1="${component}" />
+		<execute function="Select" locator1="L2AddEnvDetails#LIFERAY_VERSION" value1="${liferayVersion}" />
+		<execute function="Select" locator1="L2AddEnvDetails#APPLICATION_SERVER" value1="Weblogic 12c" />
+		<execute function="Select" locator1="L2AddEnvDetails#OPERATING_SYSTEM" value1="Ubuntu 12" />
+		<execute function="Select" locator1="L2AddEnvDetails#DATABASE" value1="Oracle 11.2" />
+		<execute function="Select" locator1="L2AddEnvDetails#JAVA_VIRTUAL_MACHINE" value1="Java 6" />
+		<execute function="Select" locator1="L2AddEnvDetails#BROWSER" value1="${browser}" />
+		<execute function="ClickNoError#pauseClick" locator1="L2AddEnvDetails#UPLOAD_NEW_PORTAL_EXT" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
+		<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\LESA\dependencies\portal-ext.properties" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
+		<execute function="SelectWindow" locator1="null" />
+		<execute function="Pause" locator1="5000" />
+		<execute function="ClickNoError#pauseClick" locator1="L2AddEnvDetails#UPLOAD_NEW_PATCH_LEVEL" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_TYPE_FILE_NAME_ICON_PNG" />
+		<execute function="SikuliType" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="D:\Support Ops Repository\LESA\dependencies\patchinfo.txt" />
+		<execute function="SikuliClick" locator1="OS#FILE_DIALOG_BOX_OPEN_BUTTON_PNG" />
+		<execute function="SelectWindow" locator1="null" />
+		<execute function="Select" locator1="L2AddEnvDetails#SYSTEM_STATUS_DROPDOWN" value1="${systemStatus}" />
+		<execute function="Type" locator1="L2AddEnvDetails#SUMMARY_FIELD" value1="${summary}" />
+		<execute function="Type" locator1="L2AddEnvDetails#DESCRIPTION_FIELD" value1="${description}" />
+
+		<execute function="Click" locator1="L2AddEnvDetails#CREATE_BUTTON" value1="Create" />
+		<execute function="AssertTextEquals" locator1="L2Ticket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+
+	<command name="ForwardTicket">
+		<var name="key_summary" value="${summary}" />
+
+		<execute function="DoubleClick" locator1="L2Home#FORWARDING_TICKET" />
+		<execute function="Pause" locator1="2000" />
+		<execute function="Click" locator1="L2Ticket#THREE_DOT_DROPDOWN" />
+		<execute function="Click" locator1="L2Ticket#FORWARD_TICKET" />
+		<execute function="Click" locator1="L2Ticket#YES_BUTTON" />
+		<execute function="Type" locator1="L2Ticket#MAIN_GOAL_FIELD" value1="This is the main goal: Drink water" />
+		<execute function="Type" locator1="L2Ticket#WORK_DONE_FIELD" value1="This is the work done field: buy cups" />
+		<execute function="Type" locator1="L2Ticket#CUSTOMER_NEXT_STEPS_FIELD" value1="Customer's next steps: buy straws" />
+		<execute function="Type" locator1="L2Ticket#NEXT_REGION_NEXT_STEPS_FIELD" value1="This is the next region field: buy water" />
+		<execute function="Click" locator1="L2Ticket#IFRAME_FORWARD_BUTTON" />
+		<execute function="AssertTextEquals" locator1="L2Ticket#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+</definition>
