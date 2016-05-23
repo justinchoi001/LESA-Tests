@@ -22,7 +22,8 @@ This test is designed to have the user resolve conflicting builds. Users will ha
 <a href="#CreateTwoFixes" name="CreateTwoFixes">Create Two Fixes</a>
 1. Click the Fixes tab.
 1. Click the Create Fix button.
-1. Select *6.1.30* from Portal Version.
+1. Select *6.x* from Product Version drop down menu.
+1. Select *liferay-portal-ee 6.1.30* from the Project Version drop down menu.
 1. Enter the following:    
 	a) Patcher Fix Name: 	LPEBETAFIX-1    
 	b) Branch Name:	LPEBETA-1    
@@ -30,7 +31,8 @@ This test is designed to have the user resolve conflicting builds. Users will ha
 1. Click the Save button.
 1. Assert that LPEBETAFIX-1 has been created.
 1. Click the Create Fix button.
-1. Select *6.1.30* from Portal Version.
+1. Select *6.x* from Product Version drop down menu.
+1. Select *liferay-portal-ee 6.1.30* from the Project Version drop down menu.
 1. Enter the following:    
 	a) Patcher Fix Name: 	LPEBETAFIX-2    
 	b) Branch Name:	LPEBETA-2    
@@ -39,12 +41,15 @@ This test is designed to have the user resolve conflicting builds. Users will ha
 1. Assert that LPEBETAFIX-2 has been created.    
 <a href="#CreateTheBuild" name="CreateTheBuild">Create The Build</a>
 1. Click the "Builds" tab.
-1. Click "Add Build." 
+1. Click the top account (does not matter which customer).
+1. Click "Create Build." 
+1. Select *6.x* from Product Version drop down menu.
+1. Select *6.1.30* from the Project Version drop down menu.
 1. Enter in the appropriate metadata:    
 	a) **Portal Version**: 6.1.30    
 	b) **Tickets List**: LPEBETAFIX-1, LPEBETAFIX-2    
-	c) **Account Name**: (leave blank)    
-	d) **Ticket Name**: (leave blank)
+	c) **Account Name**: ACMEPortal    
+	d) **Ticket Name**: ACMEPORTAL-1
 1. Click "Save." 
 1. Assert that the message "Your request completed successfully." displays.
 1. Assert that "Pending Compile" status displays.

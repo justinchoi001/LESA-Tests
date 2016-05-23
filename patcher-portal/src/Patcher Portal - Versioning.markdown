@@ -13,7 +13,8 @@ This test is designed to have the user create a fix and then create a new versio
 1. Sign in as administrator.
 1. Click the Fixes tab.
 1. Click the Create Fix button.
-1. Select *6.1.30* from Portal Version.
+1. Select *6.x* from Product Version drop down menu.
+1. Select *liferay-portal-ee 6.1.30* from the Project Version drop down menu.
 1. Enter the following:    
 	a) Patcher Fix Name: 	LPEALPHAFIX-11    
 	b) Branch Name:	LPEALPHA-1    
@@ -21,12 +22,15 @@ This test is designed to have the user create a fix and then create a new versio
 1. Click the Save button.
 1. Assert that LPEALPHAFIX-11 has been created.
 1. Click the "Builds" tab.
-1. Click "Add Build." 
+1. Click the top account (does not matter which customer).
+1. Click "Create Build." 
+1. Select *6.x* from Product Version drop down menu.
+1. Select *6.1.30* from the Project Version drop down menu. 
 1. Enter in the appropriate metadata:    
 	a) **Portal Version**: 6.1.30    
 	b) **Tickets List**: LPEALPHAFIX-11    
-	c) **Account Name**: (leave blank)    
-	d) **Ticket Name**: (leave blank)
+	c) **Account Name**: ACMEPORTAL    
+	d) **Ticket Name**: ACMEPORTAL-2
 1. Click "Save." 
 1. Assert that the message "Your request completed successfully." displays.
 1. Click the Fixes tab.
