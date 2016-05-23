@@ -23,7 +23,8 @@ This test is designed to have the user use an existing build as a template for a
 1. Click the Patcher Portal Page.
 1. Click the Fixes tab.
 1. Click the Create Fix button.
-1. Select *6.1.30* from Portal Version.
+1. Select *6.x* from the Product Version drop down menu.
+1. Select *liferay-portal-ee 6.1.30* from Project Version.
 1. Enter the following:    
 	a) Patcher Fix Name: 	LPEALPHAFIX-1    
 	b) Branch Name:	LPEALPHA-1    
@@ -32,7 +33,8 @@ This test is designed to have the user use an existing build as a template for a
 1. Assert that the LPEALPHAFIX-1 has been created.    
 <a href="#CreateASecondFix" name="CreateASecondFix">Create A Second Fix</a>
 1. Click the Create Fix button.
-1. Select *6.1.30* from Portal Version.
+1. Select *6.x* from the Product Version drop down menu.
+1. Select *liferay-portal-ee 6.1.30* from Project Version.
 1. Enter the following:    
 	a) Patcher Fix Name: 	LPEALPHAFIX-2    
 	b) Branch Name:	LPEALPHA-2    
@@ -41,7 +43,8 @@ This test is designed to have the user use an existing build as a template for a
 1. Assert that the LPEALPHAFIX-2 has been created.    
 <a href="#CreateAThirdFix" name="CreateAThirdFix">Create A Third Fix</a>
 1. Click the Create Fix button.
-1. Select *6.1.30* from Portal Version.
+1. Select *6.x* from the Product Version drop down menu.
+1. Select *liferay-portal-ee 6.1.30* from Project Version.
 1. Enter the following:    
 	a) Patcher Fix Name: 	LPEALPHAFIX-11    
 	b) Branch Name:	LPEALPHA-1    
@@ -51,11 +54,12 @@ This test is designed to have the user use an existing build as a template for a
 <a href="#CreateABuild" name="CreateABuild">Create A Build</a>
 1. Click any account.
 1. Click Create Build.
+1. Select *6.x* from the Product Version drop down.
 1. Select *6.1.30* from Portal Version.
 1. Enter the following in the Tickets List:    
 	 *LPEALPHAFIX-1, LPEALPHAFIX-2*.
 1. Enter *ACME* in the Account Code field.
-1. Enter *1* in the Ticket Name field.
+1. Enter *3* in the Ticket Name field.
 1. Click the Add button.
 1. Wait until the build is completed.    
 <a href="#CreateASecondBuildUsingATemplate" name="CreateASecondBuildUsingATemplate">Create A Second Build Using A Template</a>
@@ -63,5 +67,5 @@ This test is designed to have the user use an existing build as a template for a
 ![screenshot](../images/build-template.png)
 1. Enter the following in the Tickets List:    
 	 *LPEALPHAFIX-1, LPEALPHAFIX-2, LPEALPHAFIX-11*.
-1. Enter *2* in the Ticket Name field.
+1. Enter *4* in the Ticket Name field.
 1. Click the Add button.

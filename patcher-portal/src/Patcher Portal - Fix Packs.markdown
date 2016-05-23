@@ -6,7 +6,8 @@ Patcher Portal - Fix Packs
 * Patcher Portal credentials
 
 ####Description: ####
-This test is designed to have the user create a fix pack to be released. Users must connect to the Patcher Staging site through a VPN.
+This test is designed to have the user create a fix pack to be released. 
+
 
 #### Road Map: ####
 1. [Create A Fix](#CreateAFix)
@@ -25,7 +26,8 @@ This test is designed to have the user create a fix pack to be released. Users m
 1. Click the Patcher Portal Page.
 1. Click the Fixes tab.
 1. Click the Create Fix button.
-1. Select *6.1.30* from Portal Version.
+1. Select *6.x* from the Product Version drop down menu.
+1. Select *liferay-portal-ee 6.1.30* from Project Version.
 1. Enter the following:    
 	a) Patcher Fix Name: 	LPEALPHAFIX-1    
 	b) Branch Name:	LPEALPHA-1    
@@ -40,7 +42,7 @@ This test is designed to have the user create a fix pack to be released. Users m
 <a href="#CreateAFixPack" name="CreateAFixPack">Create A Fix Pack</a>
 1. Click the Fix Packs tab.
 1. Click the Create Fix Pack button.
-1. Select *6.1.30* from Portal Version.
+1. Select *liferay-portal-ee 6.1.30* from Portal Version.
 1. Select *ginger* from Component.
 1. Enter 1 in the Initial Version field.
 1. Click the Save button.

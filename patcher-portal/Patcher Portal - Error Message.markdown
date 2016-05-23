@@ -13,6 +13,7 @@ This test is designed to have the user verify that whenever users add a non-exis
 1. Click the Accounts tab
 1. Click on any account link
 1. Click the Create Build button
+1. Select *6.x* from the Product Version.
 1. Select *6.1.30* from Portal Version.
 1. Enter the following:    
 	a) Tickets List: 	*any LPEs that do not exist* (e.g. LPEALPHAFIX-100, LPEALPHAFIX-1001)    

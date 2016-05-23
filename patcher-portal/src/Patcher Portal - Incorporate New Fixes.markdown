@@ -13,7 +13,8 @@ This test is designed to test how updated fixes are incorporated into existing b
 1. Sign in as administrator.
 1. Click the Fixes tab.
 1. Click the Create Fix button.
-1. Select *6.1.30* from Portal Version.
+1. Select *6.x* from the Product Version drop down menu.
+1. Select *liferay-portal-ee 6.1.30* from Project Version.
 1. Enter the following:    
 	a) Patcher Fix Name: 	LPEALPHAFIX-11    
 	b) Branch Name:	LPEALPHA-1    
@@ -23,6 +24,8 @@ This test is designed to test how updated fixes are incorporated into existing b
 1. Click the Builds tab.
 1. Click on any account
 1. Click the Create Build button
+1. Select *6.x* from the Product Version drop down menu.
+1. Select *6.1.30* from the Project Version drop down menu.
 1. Enter in the appropriate metadata:    
 	a) **Portal Version**: 6.1.30    
 	b) **Tickets List**: LPEALPHAFIX-11    
