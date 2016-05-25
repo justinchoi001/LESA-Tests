@@ -21,7 +21,7 @@ This test is designed to have the user create a fix and then create a new versio
 	c) GitHub URL: git@github.com:EddieOlson/liferay-portal-ee.git
 1. Click the Save button.
 1. Assert that LPEALPHAFIX-11 has been created.
-1. Click the "Builds" tab.
+1. Click the "Accounts" tab.
 1. Click the top account (does not matter which customer).
 1. Click "Create Build." 
 1. Select *6.x* from Product Version drop down menu.
