@@ -18,7 +18,7 @@ This test is designed to have the user create a 7.x fix and a 7.x build. In 7.x 
 1. Enter the following:    
 	a) Patcher Fix Name: 	LPEDELTAFIX-33    
 	b) Branch Name:	LPEDELTA-33    
-	c) GitHub URL: git@github.com:vishal-reddy/liferay-portal-ee.git
+	c) GitHub URL: git@github.com:johnnyduong/liferay-portal-ee.git
 1. Click the Add button.
 1. Assert that LPEDELAFIX-33 has been created.
 1. Click the "Builds" tab.
